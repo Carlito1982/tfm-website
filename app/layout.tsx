@@ -41,6 +41,9 @@ export const metadata: Metadata = {
     url: "https://www.thefurnituremagazine.com",
     siteName: "The Furniture Magazine",
   },
+  verification: {
+    google: "3ZpX-KmZxAco98Ehz2lYJ1CtqmJ_jqUWOFu-jGclGng",
+  },
 }
 
 export default function RootLayout({
