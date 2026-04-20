@@ -1,34 +1,66 @@
 @import "tailwindcss";
 
 @theme {
-  --color-green:      #2A4A35;
-  --color-green-mid:  #3D6B4F;
-  --color-cream:      #F2EBD9;
-  --color-cream-dark: #E8DEC8;
-  --color-copper:     #B07040;
-  --color-ink:        #1A1A1A;
-  --color-muted:      #6B6B6B;
-  --color-border:     #D4C9B0;
+  /* New palette — warm editorial, not green-dominant */
+  --color-ink:         #1A1A1A;
+  --color-charcoal:    #2C2C2C;
+  --color-cream:       #F5F1ED;
+  --color-paper:       #FAFAF8;
+  --color-copper:      #8B7355;
+  --color-copper-warm: #B07040;
+  --color-green:       #4A6B5C;
+  --color-muted:       #6B6866;
+  --color-border:      #E2DDD8;
 
-  --font-serif: Georgia, "Times New Roman", serif;
-  --font-sans:  Calibri, Arial, Helvetica, sans-serif;
+  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-sans:  var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: #F2EBD9;
+  background-color: #F5F1ED;
   color: #1A1A1A;
-  font-family: Calibri, Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: Georgia, "Times New Roman", serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
   line-height: 1.2;
+  font-weight: 700;
 }
 
-a { text-decoration: none; }
-a:hover { text-decoration: underline; }
+a { text-decoration: none; color: inherit; }
+
+img { display: block; max-width: 100%; }
+
+/* Article card hover */
+.article-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.article-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+}
+.article-card:hover .card-headline {
+  color: #8B7355;
+}
+
+/* Category tag */
+.category-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+.tag-news      { background: #EFF3F1; color: #4A6B5C; }
+.tag-salary    { background: #F3EFE8; color: #8B7355; }
+.tag-craft     { background: #F0EFEE; color: #2C2C2C; }
+.tag-business  { background: #F5EDE3; color: #9B5C2A; }

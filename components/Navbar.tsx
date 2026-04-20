@@ -4,84 +4,73 @@ import Link from "next/link"
 import { useState } from "react"
 
 const links = [
-  { href: "/", label: "Home" },
   { href: "/issues", label: "Issues" },
   { href: "/jobs", label: "Jobs" },
   { href: "/events", label: "Events" },
   { href: "/advertise", label: "Advertise" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ]
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header style={{ backgroundColor: "#F2EBD9", borderBottom: "1px solid #D4C9B0" }}>
-      {/* Top bar */}
-      <div
-        style={{
-          backgroundColor: "#2A4A35",
-          color: "#F2EBD9",
-          fontSize: "12px",
-          textAlign: "center",
-          padding: "6px 16px",
-          letterSpacing: "0.05em",
-          fontFamily: "Calibri, Arial, sans-serif",
-        }}
-      >
-        The UK&rsquo;s trade publication for the furniture and upholstery industry
-      </div>
-
-      {/* Main nav */}
+    <header
+      style={{
+        backgroundColor: "#F5F1ED",
+        borderBottom: "1px solid #E2DDD8",
+        position: "sticky",
+        top: 0,
+        zIndex: 50,
+      }}
+    >
       <div
         style={{
           maxWidth: "1200px",
           margin: "0 auto",
-          padding: "0 24px",
+          padding: "0 28px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          height: "72px",
+          height: "68px",
         }}
       >
         {/* Logo */}
-        <Link href="/" style={{ textDecoration: "none" }}>
+        <Link href="/" style={{ textDecoration: "none", flexShrink: 0 }}>
           <div>
             <div
               style={{
-                fontFamily: "Georgia, serif",
-                fontSize: "22px",
-                fontWeight: "bold",
-                color: "#2A4A35",
-                letterSpacing: "0.02em",
+                fontFamily: "var(--font-playfair), Georgia, serif",
+                fontSize: "18px",
+                fontWeight: 700,
+                color: "#1A1A1A",
+                letterSpacing: "0.04em",
                 lineHeight: 1,
+                textTransform: "uppercase",
               }}
             >
-              THE FURNITURE
+              The Furniture
             </div>
             <div
               style={{
-                fontFamily: "Georgia, serif",
-                fontSize: "13px",
-                color: "#B07040",
-                letterSpacing: "0.18em",
+                fontFamily: "var(--font-inter), sans-serif",
+                fontSize: "9px",
+                color: "#8B7355",
+                letterSpacing: "0.28em",
                 lineHeight: 1,
-                marginTop: "2px",
+                marginTop: "4px",
+                textTransform: "uppercase",
+                fontWeight: 600,
               }}
             >
-              MAGAZINE
+              Magazine
             </div>
           </div>
         </Link>
 
-        {/* Desktop links */}
+        {/* Desktop nav */}
         <nav
-          style={{
-            display: "flex",
-            gap: "28px",
-            alignItems: "center",
-          }}
+          style={{ display: "flex", gap: "32px", alignItems: "center" }}
           className="hidden md:flex"
         >
           {links.map((l) => (
@@ -89,9 +78,9 @@ export default function Navbar() {
               key={l.href}
               href={l.href}
               style={{
-                fontFamily: "Calibri, Arial, sans-serif",
-                fontSize: "14px",
-                color: "#1A1A1A",
+                fontFamily: "var(--font-inter), sans-serif",
+                fontSize: "13px",
+                color: "#2C2C2C",
                 letterSpacing: "0.03em",
                 textDecoration: "none",
                 fontWeight: 500,
@@ -103,18 +92,19 @@ export default function Navbar() {
           <Link
             href="/#subscribe"
             style={{
-              backgroundColor: "#2A4A35",
-              color: "#F2EBD9",
-              padding: "8px 20px",
-              fontFamily: "Calibri, Arial, sans-serif",
-              fontSize: "13px",
-              fontWeight: "bold",
-              letterSpacing: "0.05em",
+              backgroundColor: "#1A1A1A",
+              color: "#F5F1ED",
+              padding: "9px 20px",
+              fontFamily: "var(--font-inter), sans-serif",
+              fontSize: "11px",
+              fontWeight: 700,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
               textDecoration: "none",
               whiteSpace: "nowrap",
             }}
           >
-            SUBSCRIBE FREE
+            Subscribe Free
           </Link>
         </nav>
 
@@ -127,12 +117,15 @@ export default function Navbar() {
             border: "none",
             cursor: "pointer",
             padding: "4px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "5px",
           }}
           aria-label="Toggle menu"
         >
-          <div style={{ width: "24px", height: "2px", background: "#2A4A35", marginBottom: "5px" }} />
-          <div style={{ width: "24px", height: "2px", background: "#2A4A35", marginBottom: "5px" }} />
-          <div style={{ width: "24px", height: "2px", background: "#2A4A35" }} />
+          <div style={{ width: "22px", height: "2px", background: "#1A1A1A" }} />
+          <div style={{ width: "22px", height: "2px", background: "#1A1A1A" }} />
+          <div style={{ width: "22px", height: "2px", background: "#1A1A1A" }} />
         </button>
       </div>
 
@@ -140,8 +133,9 @@ export default function Navbar() {
       {open && (
         <div
           style={{
-            backgroundColor: "#2A4A35",
-            padding: "16px 24px 24px",
+            backgroundColor: "#1A1A1A",
+            padding: "16px 28px 28px",
+            borderTop: "1px solid #333",
           }}
         >
           {links.map((l) => (
@@ -151,11 +145,11 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               style={{
                 display: "block",
-                color: "#F2EBD9",
-                fontFamily: "Calibri, Arial, sans-serif",
-                fontSize: "16px",
-                padding: "10px 0",
-                borderBottom: "1px solid #3D6B4F",
+                color: "#F5F1ED",
+                fontFamily: "var(--font-inter), sans-serif",
+                fontSize: "15px",
+                padding: "12px 0",
+                borderBottom: "1px solid #2C2C2C",
                 textDecoration: "none",
               }}
             >
@@ -167,18 +161,20 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
             style={{
               display: "block",
-              backgroundColor: "#B07040",
+              backgroundColor: "#8B7355",
               color: "#fff",
-              padding: "12px 20px",
-              marginTop: "16px",
-              fontFamily: "Calibri, Arial, sans-serif",
-              fontWeight: "bold",
-              letterSpacing: "0.05em",
+              padding: "13px 20px",
+              marginTop: "20px",
+              fontFamily: "var(--font-inter), sans-serif",
+              fontWeight: 700,
+              fontSize: "12px",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
               textDecoration: "none",
               textAlign: "center",
             }}
           >
-            SUBSCRIBE FREE
+            Subscribe Free
           </Link>
         </div>
       )}

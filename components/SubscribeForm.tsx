@@ -1,9 +1,5 @@
 "use client"
 
-const COPPER = "#B07040"
-const GREEN  = "#2A4A35"
-const CREAM  = "#F2EBD9"
-
 interface SubscribeFormProps {
   variant?: "hero" | "footer"
 }
@@ -13,19 +9,14 @@ export default function SubscribeForm({ variant = "hero" }: SubscribeFormProps) 
 
   return (
     <form
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "0",
-        ...(isFooter ? { maxWidth: "480px", margin: "0 auto" } : {}),
-      }}
+      style={{ display: "flex", flexWrap: "wrap", gap: "0" }}
       onSubmit={(e) => {
         e.preventDefault()
         const form = e.currentTarget
         const email = (form.elements.namedItem("email") as HTMLInputElement)?.value
         if (email) {
           // TODO: connect to Beehiiv subscribe API
-          alert(`Thanks! We'll be in touch at ${email}`)
+          alert(`Thanks! You're subscribed at ${email}`)
           form.reset()
         }
       }}
@@ -37,32 +28,33 @@ export default function SubscribeForm({ variant = "hero" }: SubscribeFormProps) 
         required
         style={{
           flex: 1,
-          minWidth: "220px",
-          padding: "14px 16px",
-          fontFamily: "Calibri, Arial, sans-serif",
-          fontSize: "15px",
+          minWidth: "200px",
+          padding: "13px 16px",
+          fontFamily: "var(--font-inter), sans-serif",
+          fontSize: "14px",
           border: "none",
           outline: "none",
-          backgroundColor: isFooter ? "#fff" : "rgba(255,255,255,0.15)",
-          color: isFooter ? GREEN : CREAM,
+          backgroundColor: isFooter ? "#fff" : "rgba(255,255,255,0.12)",
+          color: isFooter ? "#1A1A1A" : "#F5F1ED",
         }}
       />
       <button
         type="submit"
         style={{
-          backgroundColor: isFooter ? GREEN : COPPER,
+          backgroundColor: "#8B7355",
           color: "#fff",
-          padding: "14px 28px",
+          padding: "13px 24px",
           border: "none",
-          fontFamily: "Calibri, Arial, sans-serif",
-          fontWeight: "bold",
-          fontSize: "14px",
-          letterSpacing: "0.05em",
+          fontFamily: "var(--font-inter), sans-serif",
+          fontWeight: 700,
+          fontSize: "12px",
+          letterSpacing: "0.07em",
+          textTransform: "uppercase",
           cursor: "pointer",
           whiteSpace: "nowrap",
         }}
       >
-        SUBSCRIBE FREE
+        Subscribe Free
       </button>
     </form>
   )

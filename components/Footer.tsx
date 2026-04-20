@@ -2,11 +2,10 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "#2A4A35", color: "#F2EBD9", marginTop: "auto" }}>
-      {/* Copper top border */}
-      <div style={{ height: "4px", backgroundColor: "#B07040" }} />
+    <footer style={{ backgroundColor: "#1A1A1A", color: "#F5F1ED", marginTop: "auto" }}>
+      <div style={{ height: "3px", backgroundColor: "#8B7355" }} />
 
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "56px 24px 32px" }}>
+      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "56px 28px 32px" }}>
         <div
           style={{
             display: "grid",
@@ -15,66 +14,62 @@ export default function Footer() {
             marginBottom: "48px",
           }}
         >
-          {/* Brand column */}
+          {/* Brand */}
           <div>
             <div
               style={{
-                fontFamily: "Georgia, serif",
-                fontSize: "20px",
-                fontWeight: "bold",
-                color: "#F2EBD9",
+                fontFamily: "var(--font-playfair), Georgia, serif",
+                fontSize: "18px",
+                fontWeight: 700,
+                color: "#F5F1ED",
+                letterSpacing: "0.04em",
+                textTransform: "uppercase",
                 lineHeight: 1,
                 marginBottom: "4px",
               }}
             >
-              THE FURNITURE
+              The Furniture
             </div>
             <div
               style={{
-                fontFamily: "Georgia, serif",
-                fontSize: "12px",
-                color: "#B07040",
-                letterSpacing: "0.18em",
-                marginBottom: "16px",
+                fontFamily: "var(--font-inter), sans-serif",
+                fontSize: "9px",
+                color: "#8B7355",
+                letterSpacing: "0.28em",
+                textTransform: "uppercase",
+                fontWeight: 600,
+                marginBottom: "20px",
               }}
             >
-              MAGAZINE
+              Magazine
             </div>
             <p
               style={{
                 fontSize: "13px",
-                color: "#C8BEAA",
-                lineHeight: 1.7,
-                fontFamily: "Calibri, Arial, sans-serif",
+                color: "rgba(245,241,237,0.45)",
+                lineHeight: 1.75,
+                fontFamily: "var(--font-inter), sans-serif",
                 maxWidth: "240px",
               }}
             >
               The UK&rsquo;s dedicated trade publication for the furniture and
               upholstery industry. Free. Weekly. Straight to the point.
             </p>
-            <div style={{ marginTop: "20px", display: "flex", gap: "12px" }}>
+            <div style={{ marginTop: "20px", display: "flex", gap: "16px" }}>
               <a
                 href="https://www.linkedin.com/company/thefurnituremagazine"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  color: "#B07040",
-                  fontSize: "13px",
-                  fontFamily: "Calibri, Arial, sans-serif",
-                }}
+                style={{ color: "#8B7355", fontSize: "12px", fontFamily: "var(--font-inter), sans-serif", fontWeight: 500 }}
               >
                 LinkedIn
               </a>
-              <span style={{ color: "#4A6A55" }}>|</span>
+              <span style={{ color: "#333" }}>|</span>
               <a
                 href="https://www.instagram.com/thefurnituremagazine"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  color: "#B07040",
-                  fontSize: "13px",
-                  fontFamily: "Calibri, Arial, sans-serif",
-                }}
+                style={{ color: "#8B7355", fontSize: "12px", fontFamily: "var(--font-inter), sans-serif", fontWeight: 500 }}
               >
                 Instagram
               </a>
@@ -85,12 +80,12 @@ export default function Footer() {
           <div>
             <h4
               style={{
-                fontFamily: "Calibri, Arial, sans-serif",
-                fontSize: "11px",
-                fontWeight: "bold",
-                letterSpacing: "0.12em",
-                color: "#B07040",
-                marginBottom: "16px",
+                fontFamily: "var(--font-inter), sans-serif",
+                fontSize: "10px",
+                fontWeight: 700,
+                letterSpacing: "0.14em",
+                color: "#8B7355",
+                marginBottom: "18px",
                 textTransform: "uppercase",
               }}
             >
@@ -108,9 +103,9 @@ export default function Footer() {
                 href={l.href}
                 style={{
                   display: "block",
-                  color: "#C8BEAA",
-                  fontSize: "14px",
-                  fontFamily: "Calibri, Arial, sans-serif",
+                  color: "rgba(245,241,237,0.50)",
+                  fontSize: "13px",
+                  fontFamily: "var(--font-inter), sans-serif",
                   marginBottom: "10px",
                   textDecoration: "none",
                 }}
@@ -124,12 +119,12 @@ export default function Footer() {
           <div>
             <h4
               style={{
-                fontFamily: "Calibri, Arial, sans-serif",
-                fontSize: "11px",
-                fontWeight: "bold",
-                letterSpacing: "0.12em",
-                color: "#B07040",
-                marginBottom: "16px",
+                fontFamily: "var(--font-inter), sans-serif",
+                fontSize: "10px",
+                fontWeight: 700,
+                letterSpacing: "0.14em",
+                color: "#8B7355",
+                marginBottom: "18px",
                 textTransform: "uppercase",
               }}
             >
@@ -138,27 +133,19 @@ export default function Footer() {
             {[
               { href: "/jobs", label: "Live UK Jobs" },
               { href: "/events", label: "Industry Events" },
-              {
-                href: "https://www.thetalentbranch.com",
-                label: "The Talent Branch",
-              },
-              {
-                href: "https://www.festivalofupholstery.co.uk",
-                label: "Festival of Upholstery",
-              },
+              { href: "https://www.thetalentbranch.com", label: "The Talent Branch" },
+              { href: "https://www.festivalofupholstery.co.uk", label: "Festival of Upholstery" },
             ].map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 target={l.href.startsWith("http") ? "_blank" : undefined}
-                rel={
-                  l.href.startsWith("http") ? "noopener noreferrer" : undefined
-                }
+                rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 style={{
                   display: "block",
-                  color: "#C8BEAA",
-                  fontSize: "14px",
-                  fontFamily: "Calibri, Arial, sans-serif",
+                  color: "rgba(245,241,237,0.50)",
+                  fontSize: "13px",
+                  fontFamily: "var(--font-inter), sans-serif",
                   marginBottom: "10px",
                   textDecoration: "none",
                 }}
@@ -172,12 +159,12 @@ export default function Footer() {
           <div>
             <h4
               style={{
-                fontFamily: "Calibri, Arial, sans-serif",
-                fontSize: "11px",
-                fontWeight: "bold",
-                letterSpacing: "0.12em",
-                color: "#B07040",
-                marginBottom: "16px",
+                fontFamily: "var(--font-inter), sans-serif",
+                fontSize: "10px",
+                fontWeight: 700,
+                letterSpacing: "0.14em",
+                color: "#8B7355",
+                marginBottom: "18px",
                 textTransform: "uppercase",
               }}
             >
@@ -186,10 +173,10 @@ export default function Footer() {
             <p
               style={{
                 fontSize: "13px",
-                color: "#C8BEAA",
-                lineHeight: 1.7,
-                fontFamily: "Calibri, Arial, sans-serif",
-                marginBottom: "16px",
+                color: "rgba(245,241,237,0.45)",
+                lineHeight: 1.75,
+                fontFamily: "var(--font-inter), sans-serif",
+                marginBottom: "18px",
               }}
             >
               The Furniture Magazine is published by The Talent Branch Ltd —
@@ -202,17 +189,18 @@ export default function Footer() {
               rel="noopener noreferrer"
               style={{
                 display: "inline-block",
-                border: "1px solid #B07040",
-                color: "#B07040",
-                padding: "8px 16px",
-                fontSize: "12px",
-                fontFamily: "Calibri, Arial, sans-serif",
-                fontWeight: "bold",
-                letterSpacing: "0.06em",
+                border: "1px solid #8B7355",
+                color: "#8B7355",
+                padding: "9px 18px",
+                fontSize: "11px",
+                fontFamily: "var(--font-inter), sans-serif",
+                fontWeight: 700,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
                 textDecoration: "none",
               }}
             >
-              VISIT THE TALENT BRANCH
+              Visit The Talent Branch
             </a>
           </div>
         </div>
@@ -220,7 +208,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div
           style={{
-            borderTop: "1px solid #3D6B4F",
+            borderTop: "1px solid #2C2C2C",
             paddingTop: "24px",
             display: "flex",
             flexWrap: "wrap",
@@ -229,15 +217,8 @@ export default function Footer() {
             alignItems: "center",
           }}
         >
-          <p
-            style={{
-              fontSize: "12px",
-              color: "#6B8A75",
-              fontFamily: "Calibri, Arial, sans-serif",
-            }}
-          >
-            &copy; {new Date().getFullYear()} The Furniture Magazine. Published
-            by The Talent Branch Ltd. All rights reserved.
+          <p style={{ fontSize: "12px", color: "rgba(245,241,237,0.28)", fontFamily: "var(--font-inter), sans-serif" }}>
+            &copy; {new Date().getFullYear()} The Furniture Magazine. Published by The Talent Branch Ltd.
           </p>
           <div style={{ display: "flex", gap: "20px" }}>
             {["Privacy Policy", "Terms of Use", "Cookie Policy"].map((t) => (
@@ -246,8 +227,8 @@ export default function Footer() {
                 href="/contact"
                 style={{
                   fontSize: "12px",
-                  color: "#6B8A75",
-                  fontFamily: "Calibri, Arial, sans-serif",
+                  color: "rgba(245,241,237,0.28)",
+                  fontFamily: "var(--font-inter), sans-serif",
                   textDecoration: "none",
                 }}
               >

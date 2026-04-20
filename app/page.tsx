@@ -1,542 +1,441 @@
+import Image from "next/image"
 import Link from "next/link"
-import { getFeaturedIssue, getRecentIssues } from "@/data/issues"
-import { getFeaturedJobs } from "@/data/jobs"
-import { getFeaturedEvent, getUpcomingEvents } from "@/data/events"
 import SubscribeForm from "@/components/SubscribeForm"
+import ArticleCard from "@/components/ArticleCard"
+import { getFeaturedArticle, getLatestArticles, getSecondaryArticles } from "@/data/articles"
 
-const GREEN  = "#2A4A35"
-const CREAM  = "#F2EBD9"
-const COPPER = "#B07040"
-const BLACK  = "#1A1A1A"
-const BORDER = "#D4C9B0"
-
-function CategoryTag({ label }: { label: string }) {
-  return (
-    <span style={{
-      display: "inline-block",
-      backgroundColor: COPPER,
-      color: "#fff",
-      fontSize: "10px",
-      fontFamily: "Calibri, Arial, sans-serif",
-      fontWeight: "bold",
-      letterSpacing: "0.08em",
-      padding: "3px 10px",
-      textTransform: "uppercase",
-      marginBottom: "10px",
-    }}>
-      {label}
-    </span>
-  )
-}
+const categories = [
+  {
+    label: "Industry News",
+    description: "Market moves, skills data and company news from across the UK trade.",
+    tagClass: "tag-news",
+    href: "/issues",
+  },
+  {
+    label: "Craft & Technique",
+    description: "Step-by-step guides written by and for working professionals.",
+    tagClass: "tag-craft",
+    href: "/issues",
+  },
+  {
+    label: "Salary Data",
+    description: "Live benchmarks from UK placements and job market monitoring.",
+    tagClass: "tag-salary",
+    href: "/issues",
+  },
+  {
+    label: "Business Advice",
+    description: "Pricing, finding clients and running a furniture trade operation.",
+    tagClass: "tag-business",
+    href: "/issues",
+  },
+]
 
 export default function HomePage() {
-  const featured = getFeaturedIssue()
-  const recent   = getRecentIssues(3)
-  const jobs     = getFeaturedJobs()
-  const events   = getUpcomingEvents()
+  const featured = getFeaturedArticle()
+  const latest = getLatestArticles(6)
+  const secondary = getSecondaryArticles()
 
   return (
-    <div>
+    <div style={{ backgroundColor: "#F5F1ED" }}>
 
-      {/* ── HERO ─────────────────────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: GREEN, color: CREAM, padding: "72px 24px" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "1fr",
-            gap: "48px",
-            alignItems: "center",
-          }}>
-            <div style={{ maxWidth: "680px" }}>
-              <p style={{
-                fontFamily: "Calibri, Arial, sans-serif",
-                fontSize: "12px",
-                letterSpacing: "0.15em",
-                color: COPPER,
-                fontWeight: "bold",
-                marginBottom: "16px",
-                textTransform: "uppercase",
-              }}>
-                The UK Trade Publication for Furniture Professionals
-              </p>
-              <h1 style={{
-                fontFamily: "Georgia, serif",
-                fontSize: "clamp(36px, 5vw, 60px)",
-                fontWeight: "bold",
-                color: CREAM,
-                lineHeight: 1.1,
-                marginBottom: "24px",
-              }}>
-                Industry intelligence.<br />Every week. Free.
-              </h1>
-              <p style={{
-                fontFamily: "Calibri, Arial, sans-serif",
-                fontSize: "18px",
-                color: "#C8BEAA",
-                lineHeight: 1.7,
-                marginBottom: "36px",
-                maxWidth: "540px",
-              }}>
-                Salary benchmarks, craft technique, hiring trends, industry news and business
-                advice — written for upholsterers, cabinet makers, workshop owners and
-                furniture professionals across the UK.
-              </p>
-
-              {/* Subscribe form */}
-              <div id="subscribe">
-                <SubscribeForm variant="hero" />
-                <p style={{
-                  fontSize: "12px",
-                  color: "#6B8A75",
-                  fontFamily: "Calibri, Arial, sans-serif",
-                  marginTop: "10px",
-                }}>
-                  Free. Unsubscribe any time. No spam — ever.
-                </p>
-              </div>
-            </div>
-
-            {/* Stats block */}
-            <div style={{
-              display: "flex",
-              gap: "0",
-              flexWrap: "wrap",
-              borderTop: `1px solid #3D6B4F`,
-              paddingTop: "32px",
-            }}>
-              {[
-                { num: "571", label: "Industry candidates" },
-                { num: "187", label: "Partner companies" },
-                { num: "1,200+", label: "Job postings analysed" },
-                { num: "UK-wide", label: "Coverage" },
-              ].map((s) => (
-                <div key={s.label} style={{
-                  flex: "1 1 140px",
-                  padding: "16px 24px 16px 0",
-                  borderRight: `1px solid #3D6B4F`,
-                  marginRight: "24px",
-                  marginBottom: "8px",
-                }}>
-                  <div style={{
-                    fontFamily: "Georgia, serif",
-                    fontSize: "28px",
-                    fontWeight: "bold",
-                    color: COPPER,
-                    lineHeight: 1,
-                  }}>
-                    {s.num}
-                  </div>
-                  <div style={{
-                    fontFamily: "Calibri, Arial, sans-serif",
-                    fontSize: "12px",
-                    color: "#8BA895",
-                    marginTop: "4px",
-                    letterSpacing: "0.03em",
-                  }}>
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── FEATURED ISSUE ───────────────────────────────────────────────────── */}
-      {featured && (
-        <section style={{ backgroundColor: "#E8DEC8", borderBottom: `1px solid ${BORDER}` }}>
-          <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "56px 24px" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "32px" }}>
-              <div style={{ width: "32px", height: "3px", backgroundColor: COPPER }} />
-              <span style={{
-                fontFamily: "Calibri, Arial, sans-serif",
-                fontSize: "11px",
-                fontWeight: "bold",
-                letterSpacing: "0.12em",
-                color: COPPER,
-                textTransform: "uppercase",
-              }}>
-                Latest Issue
-              </span>
-            </div>
-
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-              gap: "48px",
-              alignItems: "center",
-            }}>
-              {/* Issue cover placeholder */}
-              <div style={{
-                backgroundColor: GREEN,
-                aspectRatio: "4/5",
-                maxWidth: "360px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-end",
-                padding: "32px",
-                position: "relative",
-                overflow: "hidden",
-              }}>
-                <div style={{
-                  position: "absolute",
-                  top: 0, left: 0, right: 0,
-                  height: "4px",
-                  backgroundColor: COPPER,
-                }} />
-                <div style={{
-                  fontFamily: "Calibri, Arial, sans-serif",
-                  fontSize: "10px",
-                  letterSpacing: "0.15em",
-                  color: COPPER,
-                  fontWeight: "bold",
-                  textTransform: "uppercase",
-                  marginBottom: "8px",
-                }}>
-                  Issue {featured.issue} — {new Date(featured.date).toLocaleDateString("en-GB", { month: "long", year: "numeric" })}
-                </div>
-                <h2 style={{
-                  fontFamily: "Georgia, serif",
-                  fontSize: "26px",
-                  color: CREAM,
-                  lineHeight: 1.2,
-                }}>
-                  {featured.title}
-                </h2>
-              </div>
-
-              <div>
-                <CategoryTag label={featured.category} />
-                <h2 style={{
-                  fontFamily: "Georgia, serif",
-                  fontSize: "clamp(24px, 3vw, 36px)",
-                  color: BLACK,
-                  lineHeight: 1.2,
-                  marginBottom: "16px",
-                }}>
-                  {featured.title}
-                </h2>
-                <p style={{
-                  fontFamily: "Calibri, Arial, sans-serif",
-                  fontSize: "16px",
-                  color: "#555",
-                  lineHeight: 1.7,
-                  marginBottom: "28px",
-                }}>
-                  {featured.excerpt}
-                </p>
-                <Link
-                  href={`/issues/${featured.slug}`}
-                  style={{
-                    display: "inline-block",
-                    backgroundColor: GREEN,
-                    color: CREAM,
-                    padding: "12px 28px",
-                    fontFamily: "Calibri, Arial, sans-serif",
-                    fontWeight: "bold",
-                    fontSize: "13px",
-                    letterSpacing: "0.05em",
-                    textDecoration: "none",
-                  }}
-                >
-                  READ THIS ISSUE
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ── RECENT ISSUES GRID ───────────────────────────────────────────────── */}
-      <section style={{ padding: "64px 24px", backgroundColor: CREAM }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "36px" }}>
-            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "26px", color: BLACK }}>
-              Recent Issues
-            </h2>
-            <Link href="/issues" style={{
-              fontFamily: "Calibri, Arial, sans-serif",
-              fontSize: "13px",
-              color: COPPER,
-              fontWeight: "bold",
-              letterSpacing: "0.05em",
-              textDecoration: "none",
-            }}>
-              ALL ISSUES →
-            </Link>
-          </div>
-
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-            gap: "1px",
-            backgroundColor: BORDER,
-          }}>
-            {recent.map((issue) => (
-              <article
-                key={issue.slug}
-                style={{ backgroundColor: CREAM, padding: "32px" }}
-              >
-                <CategoryTag label={issue.category} />
-                <div style={{
-                  fontFamily: "Calibri, Arial, sans-serif",
-                  fontSize: "11px",
-                  color: "#888",
-                  marginBottom: "8px",
-                  letterSpacing: "0.04em",
-                }}>
-                  Issue {issue.issue} — {new Date(issue.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}
-                </div>
-                <h3 style={{
-                  fontFamily: "Georgia, serif",
-                  fontSize: "20px",
-                  color: BLACK,
-                  lineHeight: 1.3,
-                  marginBottom: "12px",
-                }}>
-                  {issue.title}
-                </h3>
-                <p style={{
-                  fontFamily: "Calibri, Arial, sans-serif",
-                  fontSize: "14px",
-                  color: "#555",
-                  lineHeight: 1.6,
-                  marginBottom: "20px",
-                }}>
-                  {issue.excerpt}
-                </p>
-                <Link
-                  href={`/issues/${issue.slug}`}
-                  style={{
-                    fontFamily: "Calibri, Arial, sans-serif",
-                    fontSize: "13px",
-                    color: COPPER,
-                    fontWeight: "bold",
-                    letterSpacing: "0.04em",
-                    textDecoration: "none",
-                  }}
-                >
-                  READ MORE →
-                </Link>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── LIVE JOBS STRIP ──────────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: GREEN, padding: "64px 24px" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "36px", flexWrap: "wrap", gap: "12px" }}>
-            <div>
-              <h2 style={{ fontFamily: "Georgia, serif", fontSize: "26px", color: CREAM }}>
-                Live UK Jobs
-              </h2>
-              <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "14px", color: "#8BA895", marginTop: "4px" }}>
-                Sourced by The Talent Branch — specialist furniture &amp; upholstery recruiters
-              </p>
-            </div>
-            <Link href="/jobs" style={{
-              fontFamily: "Calibri, Arial, sans-serif",
-              fontSize: "13px",
-              color: COPPER,
-              fontWeight: "bold",
-              letterSpacing: "0.05em",
-              textDecoration: "none",
-            }}>
-              ALL JOBS →
-            </Link>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "1px", backgroundColor: "#3D6B4F" }}>
-            {jobs.map((job) => (
-              <div key={job.id} style={{ backgroundColor: "#2A4A35", padding: "28px" }}>
-                <div style={{
-                  fontFamily: "Calibri, Arial, sans-serif",
-                  fontSize: "10px",
-                  letterSpacing: "0.1em",
-                  color: COPPER,
-                  fontWeight: "bold",
-                  textTransform: "uppercase",
-                  marginBottom: "8px",
-                }}>
-                  {job.type}
-                </div>
-                <h3 style={{ fontFamily: "Georgia, serif", fontSize: "18px", color: CREAM, marginBottom: "6px" }}>
-                  {job.title}
-                </h3>
-                <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "13px", color: "#8BA895", marginBottom: "4px" }}>
-                  {job.location}
-                </p>
-                <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "15px", color: COPPER, fontWeight: "bold", marginBottom: "20px" }}>
-                  {job.salary}
-                </p>
-                <a
-                  href={job.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    fontFamily: "Calibri, Arial, sans-serif",
-                    fontSize: "12px",
-                    color: "#8BA895",
-                    fontWeight: "bold",
-                    letterSpacing: "0.05em",
-                    textDecoration: "none",
-                  }}
-                >
-                  ENQUIRE →
-                </a>
-              </div>
-            ))}
-          </div>
-
-          <div style={{ marginTop: "32px", textAlign: "center" }}>
-            <a
-              href="https://www.thetalentbranch.com"
-              target="_blank"
-              rel="noopener noreferrer"
+      {/* ── HERO ─────────────────────────────────────────────────── */}
+      <section
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "clamp(460px, 60vh, 620px)",
+          overflow: "hidden",
+          backgroundColor: "#1A1A1A",
+        }}
+      >
+        <Image
+          src={featured.image}
+          alt={featured.imageAlt}
+          fill
+          priority
+          style={{ objectFit: "cover", opacity: 0.55 }}
+          sizes="100vw"
+        />
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to right, rgba(26,26,26,0.90) 0%, rgba(26,26,26,0.50) 55%, rgba(26,26,26,0.10) 100%)",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            maxWidth: "1200px",
+            margin: "0 auto",
+            padding: "0 28px 52px",
+          }}
+        >
+          <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
+            <span
               style={{
-                fontFamily: "Calibri, Arial, sans-serif",
-                fontSize: "13px",
-                color: "#6B8A75",
-                textDecoration: "none",
+                backgroundColor: "#8B7355",
+                color: "#fff",
+                fontSize: "10px",
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                padding: "4px 10px",
+                fontFamily: "var(--font-inter), sans-serif",
               }}
             >
-              All roles managed by The Talent Branch Ltd — UK specialist recruiters for the furniture industry
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ── INDUSTRY EVENTS ──────────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#E8DEC8", padding: "64px 24px", borderTop: `1px solid ${BORDER}` }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "36px", flexWrap: "wrap", gap: "12px" }}>
-            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "26px", color: BLACK }}>
-              Industry Events
-            </h2>
-            <Link href="/events" style={{
-              fontFamily: "Calibri, Arial, sans-serif",
-              fontSize: "13px",
-              color: COPPER,
-              fontWeight: "bold",
-              letterSpacing: "0.05em",
-              textDecoration: "none",
-            }}>
-              ALL EVENTS →
-            </Link>
+              {featured.category}
+            </span>
+            <span
+              style={{
+                color: "rgba(245,241,237,0.6)",
+                fontSize: "11px",
+                fontFamily: "var(--font-inter), sans-serif",
+                letterSpacing: "0.06em",
+              }}
+            >
+              Issue No. 1 · April 2026
+            </span>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "24px" }}>
-            {events.map((event) => (
-              <article
-                key={event.id}
-                style={{
-                  backgroundColor: CREAM,
-                  border: `1px solid ${BORDER}`,
-                  padding: "28px",
-                  borderTop: event.featured ? `4px solid ${COPPER}` : `4px solid ${BORDER}`,
-                }}
-              >
-                {event.featured && (
-                  <div style={{
-                    fontFamily: "Calibri, Arial, sans-serif",
-                    fontSize: "10px",
-                    fontWeight: "bold",
-                    letterSpacing: "0.1em",
-                    color: COPPER,
-                    textTransform: "uppercase",
-                    marginBottom: "8px",
-                  }}>
-                    Featured Event
-                  </div>
-                )}
-                <div style={{
-                  fontFamily: "Calibri, Arial, sans-serif",
-                  fontSize: "12px",
-                  color: GREEN,
-                  fontWeight: "bold",
-                  marginBottom: "6px",
-                }}>
-                  {event.dateDisplay}
-                </div>
-                <h3 style={{ fontFamily: "Georgia, serif", fontSize: "18px", color: BLACK, marginBottom: "6px" }}>
-                  {event.name}
-                </h3>
-                <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "13px", color: "#888", marginBottom: "12px" }}>
-                  {event.location}
-                </p>
-                <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "14px", color: "#555", lineHeight: 1.6, marginBottom: "20px" }}>
-                  {event.description}
-                </p>
-                <a
-                  href={event.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    fontFamily: "Calibri, Arial, sans-serif",
-                    fontSize: "13px",
-                    color: COPPER,
-                    fontWeight: "bold",
-                    letterSpacing: "0.04em",
-                    textDecoration: "none",
-                  }}
-                >
-                  FIND OUT MORE →
-                </a>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── ABOUT TFM STRIP ──────────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: BLACK, color: CREAM, padding: "80px 24px" }}>
-        <div style={{ maxWidth: "760px", margin: "0 auto", textAlign: "center" }}>
-          <div style={{ width: "40px", height: "3px", backgroundColor: COPPER, margin: "0 auto 28px" }} />
-          <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(26px, 4vw, 40px)", color: CREAM, marginBottom: "20px" }}>
-            Built for people who do this work
-          </h2>
-          <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "17px", color: "#AAA", lineHeight: 1.8, marginBottom: "32px" }}>
-            The Furniture Magazine is published by The Talent Branch — the UK&rsquo;s specialist recruitment
-            agency for the upholstery and furniture industry. With 571 candidates and 187 companies in
-            our network, we see this industry more clearly than almost anyone else.
-          </p>
-          <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "17px", color: "#AAA", lineHeight: 1.8, marginBottom: "40px" }}>
-            This publication exists because the trade deserved a proper voice. Not consumer lifestyle.
-            Not design press. The trade.
-          </p>
-          <Link
-            href="/about"
+          <h1
             style={{
-              display: "inline-block",
-              border: `1px solid ${COPPER}`,
-              color: COPPER,
-              padding: "12px 32px",
-              fontFamily: "Calibri, Arial, sans-serif",
-              fontWeight: "bold",
-              fontSize: "13px",
-              letterSpacing: "0.06em",
+              fontFamily: "var(--font-playfair), Georgia, serif",
+              fontSize: "clamp(26px, 4vw, 46px)",
+              fontWeight: 700,
+              color: "#FFFFFF",
+              lineHeight: 1.2,
+              maxWidth: "640px",
+              marginBottom: "16px",
+            }}
+          >
+            {featured.title}
+          </h1>
+
+          <p
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontSize: "clamp(14px, 1.6vw, 16px)",
+              color: "rgba(245,241,237,0.78)",
+              lineHeight: 1.65,
+              maxWidth: "500px",
+              marginBottom: "28px",
+            }}
+          >
+            {featured.excerpt}
+          </p>
+
+          <Link
+            href={`/issues`}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              border: "1.5px solid rgba(245,241,237,0.7)",
+              color: "#F5F1ED",
+              padding: "10px 24px",
+              fontFamily: "var(--font-inter), sans-serif",
+              fontSize: "12px",
+              fontWeight: 600,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
               textDecoration: "none",
             }}
           >
-            ABOUT THE FURNITURE MAGAZINE
+            Read the Article →
           </Link>
         </div>
       </section>
 
-      {/* ── NEWSLETTER SIGNUP BOTTOM ─────────────────────────────────────────── */}
-      <section style={{ backgroundColor: COPPER, padding: "64px 24px" }}>
-        <div style={{ maxWidth: "640px", margin: "0 auto", textAlign: "center" }}>
-          <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(24px, 3vw, 36px)", color: "#fff", marginBottom: "12px" }}>
-            Join the mailing list
-          </h2>
-          <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "16px", color: "#F2E0CC", marginBottom: "32px", lineHeight: 1.6 }}>
-            Every week in your inbox. Free forever.
-          </p>
-          <SubscribeForm variant="footer" />
+      {/* ── SUBSCRIBE BAR ─────────────────────────────────────────── */}
+      <section
+        id="subscribe"
+        style={{ backgroundColor: "#2C2C2C", padding: "36px 28px" }}
+      >
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "28px",
+          }}
+        >
+          <div style={{ maxWidth: "400px" }}>
+            <p
+              style={{
+                fontFamily: "var(--font-playfair), Georgia, serif",
+                fontSize: "clamp(17px, 2.2vw, 21px)",
+                fontWeight: 600,
+                color: "#F5F1ED",
+                lineHeight: 1.3,
+                marginBottom: "6px",
+              }}
+            >
+              Salary data. Craft insight. Industry intelligence.
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--font-inter), sans-serif",
+                fontSize: "13px",
+                color: "rgba(245,241,237,0.5)",
+              }}
+            >
+              Free. Weekly. For UK furniture professionals.
+            </p>
+          </div>
+
+          <div style={{ flex: "1", minWidth: "280px", maxWidth: "460px" }}>
+            <SubscribeForm variant="footer" />
+            <p
+              style={{
+                fontFamily: "var(--font-inter), sans-serif",
+                fontSize: "11px",
+                color: "rgba(245,241,237,0.32)",
+                marginTop: "10px",
+              }}
+            >
+              Join 1,200+ furniture professionals. No spam. Unsubscribe any time.
+            </p>
+          </div>
         </div>
       </section>
+
+      {/* ── LATEST STORIES ───────────────────────────────────────── */}
+      <section style={{ maxWidth: "1200px", margin: "0 auto", padding: "60px 28px 44px" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "baseline",
+            justifyContent: "space-between",
+            marginBottom: "32px",
+            borderBottom: "2px solid #1A1A1A",
+            paddingBottom: "14px",
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: "var(--font-playfair), Georgia, serif",
+              fontSize: "clamp(20px, 2.8vw, 26px)",
+              fontWeight: 700,
+              color: "#1A1A1A",
+            }}
+          >
+            Latest Stories
+          </h2>
+          <Link
+            href="/issues"
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontSize: "12px",
+              fontWeight: 600,
+              color: "#8B7355",
+              letterSpacing: "0.07em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+            }}
+          >
+            All Issues →
+          </Link>
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+            gap: "28px",
+          }}
+        >
+          {latest.map((article) => (
+            <ArticleCard key={article.slug} article={article} />
+          ))}
+        </div>
+      </section>
+
+      {/* ── WHAT WE COVER ────────────────────────────────────────── */}
+      <section style={{ backgroundColor: "#1A1A1A", padding: "52px 28px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <h2
+            style={{
+              fontFamily: "var(--font-playfair), Georgia, serif",
+              fontSize: "clamp(20px, 2.5vw, 24px)",
+              fontWeight: 600,
+              color: "#F5F1ED",
+              marginBottom: "32px",
+              textAlign: "center",
+            }}
+          >
+            What We Cover
+          </h2>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+              gap: "16px",
+            }}
+          >
+            {categories.map((cat) => (
+              <Link
+                key={cat.label}
+                href={cat.href}
+                style={{
+                  textDecoration: "none",
+                  backgroundColor: "#242424",
+                  border: "1px solid #343434",
+                  padding: "24px 20px",
+                  borderRadius: "3px",
+                  display: "block",
+                }}
+              >
+                <span className={`category-tag ${cat.tagClass}`} style={{ display: "block", marginBottom: "12px" }}>
+                  {cat.label}
+                </span>
+                <p
+                  style={{
+                    fontFamily: "var(--font-inter), sans-serif",
+                    fontSize: "13px",
+                    color: "rgba(245,241,237,0.50)",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {cat.description}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ALSO IN THIS ISSUE ──────────────────────────────────── */}
+      {secondary.length > 0 && (
+        <section style={{ maxWidth: "1200px", margin: "0 auto", padding: "60px 28px 44px" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "baseline",
+              justifyContent: "space-between",
+              marginBottom: "32px",
+              borderBottom: "2px solid #1A1A1A",
+              paddingBottom: "14px",
+            }}
+          >
+            <h2
+              style={{
+                fontFamily: "var(--font-playfair), Georgia, serif",
+                fontSize: "clamp(20px, 2.8vw, 26px)",
+                fontWeight: 700,
+                color: "#1A1A1A",
+              }}
+            >
+              Also in This Issue
+            </h2>
+          </div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(400px, 1fr))",
+              gap: "28px",
+            }}
+          >
+            {secondary.map((article) => (
+              <ArticleCard key={article.slug} article={article} size="large" />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* ── ABOUT BANNER ─────────────────────────────────────────── */}
+      <section
+        style={{
+          backgroundColor: "#EDE8DF",
+          borderTop: "1px solid #DDD8CE",
+          padding: "56px 28px",
+        }}
+      >
+        <div style={{ maxWidth: "740px", margin: "0 auto", textAlign: "center" }}>
+          <p
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontSize: "10px",
+              fontWeight: 700,
+              color: "#8B7355",
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+              marginBottom: "18px",
+            }}
+          >
+            About The Furniture Magazine
+          </p>
+          <h2
+            style={{
+              fontFamily: "var(--font-playfair), Georgia, serif",
+              fontSize: "clamp(20px, 3vw, 30px)",
+              fontWeight: 700,
+              color: "#1A1A1A",
+              lineHeight: 1.35,
+              marginBottom: "20px",
+            }}
+          >
+            The UK furniture trade has been flying blind for too long.
+            No benchmarks. No trade voice. No central resource.
+          </h2>
+          <p
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontSize: "15px",
+              color: "#6B6866",
+              lineHeight: 1.8,
+              marginBottom: "32px",
+            }}
+          >
+            The Furniture Magazine is published by The Talent Branch — the UK&rsquo;s specialist
+            recruitment agency for the upholstery and furniture industry. With 571 candidates
+            and 187 companies in our network, we have a closer view of this industry than anyone else.
+          </p>
+          <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
+            <Link
+              href="/#subscribe"
+              style={{
+                backgroundColor: "#1A1A1A",
+                color: "#F5F1ED",
+                padding: "13px 32px",
+                fontFamily: "var(--font-inter), sans-serif",
+                fontSize: "12px",
+                fontWeight: 600,
+                letterSpacing: "0.07em",
+                textDecoration: "none",
+                textTransform: "uppercase",
+              }}
+            >
+              Subscribe Free
+            </Link>
+            <Link
+              href="/about"
+              style={{
+                border: "1.5px solid #1A1A1A",
+                color: "#1A1A1A",
+                padding: "13px 32px",
+                fontFamily: "var(--font-inter), sans-serif",
+                fontSize: "12px",
+                fontWeight: 600,
+                letterSpacing: "0.07em",
+                textDecoration: "none",
+                textTransform: "uppercase",
+              }}
+            >
+              About Us
+            </Link>
+          </div>
+        </div>
+      </section>
+
     </div>
   )
 }
