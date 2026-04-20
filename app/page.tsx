@@ -3,6 +3,9 @@ import Link from "next/link"
 import SubscribeForm from "@/components/SubscribeForm"
 import ArticleCard from "@/components/ArticleCard"
 import { getFeaturedArticle, getLatestArticles, getSecondaryArticles } from "@/data/articles"
+import { supabase, type SupabaseJob } from "@/lib/supabase"
+
+export const revalidate = 3600
 
 const categories = [
   {
@@ -31,10 +34,19 @@ const categories = [
   },
 ]
 
-export default function HomePage() {
+export default async function HomePage() {
   const featured = getFeaturedArticle()
   const latest = getLatestArticles(6)
   const secondary = getSecondaryArticles()
+
+  const { data: liveJobs } = await supabase
+    .from("jobs")
+    .select("id, title, location, postcode, salary_min, salary_max, job_type, published_at")
+    .eq("is_published", true)
+    .order("published_at", { ascending: false })
+    .limit(3)
+
+  const featuredJobs: Pick<SupabaseJob, "id" | "title" | "location" | "postcode" | "salary_min" | "salary_max" | "job_type" | "published_at">[] = liveJobs ?? []
 
   return (
     <div style={{ backgroundColor: "#F5F1ED" }}>
@@ -347,6 +359,152 @@ export default function HomePage() {
             {secondary.map((article) => (
               <ArticleCard key={article.slug} article={article} size="large" />
             ))}
+          </div>
+        </section>
+      )}
+
+      {/* ── LIVE VACANCIES ───────────────────────────────────────── */}
+      {featuredJobs.length > 0 && (
+        <section style={{ backgroundColor: "#1A1A1A", padding: "56px 28px" }}>
+          <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "baseline",
+                marginBottom: "32px",
+                borderBottom: "1px solid rgba(245,241,237,0.12)",
+                paddingBottom: "16px",
+              }}
+            >
+              <div>
+                <p
+                  style={{
+                    fontFamily: "var(--font-inter), sans-serif",
+                    fontSize: "10px",
+                    fontWeight: 700,
+                    letterSpacing: "0.16em",
+                    color: "#8B7355",
+                    textTransform: "uppercase",
+                    marginBottom: "6px",
+                  }}
+                >
+                  Powered by The Talent Branch
+                </p>
+                <h2
+                  style={{
+                    fontFamily: "var(--font-playfair), Georgia, serif",
+                    fontSize: "clamp(20px, 3vw, 28px)",
+                    fontWeight: 700,
+                    color: "#F5F1ED",
+                  }}
+                >
+                  Live UK Vacancies
+                </h2>
+              </div>
+              <Link
+                href="/jobs"
+                style={{
+                  fontFamily: "var(--font-inter), sans-serif",
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  letterSpacing: "0.08em",
+                  color: "#8B7355",
+                  textDecoration: "none",
+                  textTransform: "uppercase",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                View all →
+              </Link>
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: "1px", backgroundColor: "rgba(245,241,237,0.08)" }}>
+              {featuredJobs.map((job) => {
+                const salary =
+                  job.salary_min && job.salary_max
+                    ? `£${job.salary_min.toLocaleString("en-GB")} – £${job.salary_max.toLocaleString("en-GB")}`
+                    : job.salary_min
+                    ? `From £${job.salary_min.toLocaleString("en-GB")}`
+                    : "Salary on application"
+                const location = [job.location, job.postcode].filter(Boolean).join(", ") || "Location on application"
+                return (
+                  <Link
+                    key={job.id}
+                    href={`/jobs/${job.id}`}
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "1fr auto",
+                      gap: "20px",
+                      alignItems: "center",
+                      backgroundColor: "rgba(245,241,237,0.04)",
+                      padding: "22px 28px",
+                      textDecoration: "none",
+                    }}
+                  >
+                    <div>
+                      <span
+                        style={{
+                          fontFamily: "var(--font-inter), sans-serif",
+                          fontSize: "9px",
+                          fontWeight: 700,
+                          letterSpacing: "0.1em",
+                          color: "#8B7355",
+                          textTransform: "uppercase",
+                          display: "block",
+                          marginBottom: "6px",
+                        }}
+                      >
+                        {job.job_type ?? "permanent"} · {location}
+                      </span>
+                      <span
+                        style={{
+                          fontFamily: "var(--font-playfair), Georgia, serif",
+                          fontSize: "clamp(16px, 2vw, 19px)",
+                          fontWeight: 700,
+                          color: "#F5F1ED",
+                          display: "block",
+                          lineHeight: 1.25,
+                        }}
+                      >
+                        {job.title}
+                      </span>
+                    </div>
+                    <span
+                      style={{
+                        fontFamily: "var(--font-inter), sans-serif",
+                        fontSize: "14px",
+                        fontWeight: 700,
+                        color: "#8B7355",
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      {salary}
+                    </span>
+                  </Link>
+                )
+              })}
+            </div>
+
+            <div style={{ marginTop: "24px", textAlign: "center" }}>
+              <Link
+                href="/jobs"
+                style={{
+                  display: "inline-block",
+                  border: "1.5px solid rgba(139,115,85,0.6)",
+                  color: "#8B7355",
+                  padding: "11px 28px",
+                  fontFamily: "var(--font-inter), sans-serif",
+                  fontWeight: 700,
+                  fontSize: "11px",
+                  letterSpacing: "0.09em",
+                  textTransform: "uppercase",
+                  textDecoration: "none",
+                }}
+              >
+                See All Vacancies
+              </Link>
+            </div>
           </div>
         </section>
       )}
