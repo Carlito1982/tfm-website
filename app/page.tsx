@@ -2,6 +2,7 @@ import Link from "next/link"
 import { getFeaturedIssue, getRecentIssues } from "@/data/issues"
 import { getFeaturedJobs } from "@/data/jobs"
 import { getFeaturedEvent, getUpcomingEvents } from "@/data/events"
+import SubscribeForm from "@/components/SubscribeForm"
 
 const GREEN  = "#2A4A35"
 const CREAM  = "#F2EBD9"
@@ -83,44 +84,7 @@ export default function HomePage() {
 
               {/* Subscribe form */}
               <div id="subscribe">
-                <form
-                  style={{ display: "flex", flexWrap: "wrap", gap: "0" }}
-                  onSubmit={(e) => e.preventDefault()}
-                >
-                  <input
-                    type="email"
-                    placeholder="Your email address"
-                    required
-                    style={{
-                      flex: "1 1 260px",
-                      padding: "14px 20px",
-                      fontSize: "15px",
-                      fontFamily: "Calibri, Arial, sans-serif",
-                      border: "none",
-                      outline: "none",
-                      color: BLACK,
-                      backgroundColor: CREAM,
-                      minWidth: "200px",
-                    }}
-                  />
-                  <button
-                    type="submit"
-                    style={{
-                      backgroundColor: COPPER,
-                      color: "#fff",
-                      padding: "14px 28px",
-                      fontSize: "14px",
-                      fontFamily: "Calibri, Arial, sans-serif",
-                      fontWeight: "bold",
-                      letterSpacing: "0.05em",
-                      border: "none",
-                      cursor: "pointer",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    SUBSCRIBE FREE
-                  </button>
-                </form>
+                <SubscribeForm variant="hero" />
                 <p style={{
                   fontSize: "12px",
                   color: "#6B8A75",
@@ -570,43 +534,7 @@ export default function HomePage() {
           <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "16px", color: "#F2E0CC", marginBottom: "32px", lineHeight: 1.6 }}>
             Every week in your inbox. Free forever.
           </p>
-          <form
-            style={{ display: "flex", flexWrap: "wrap", gap: "0", maxWidth: "480px", margin: "0 auto" }}
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <input
-              type="email"
-              placeholder="Your email address"
-              required
-              style={{
-                flex: "1 1 220px",
-                padding: "14px 20px",
-                fontSize: "15px",
-                fontFamily: "Calibri, Arial, sans-serif",
-                border: "none",
-                outline: "none",
-                color: BLACK,
-                minWidth: "180px",
-              }}
-            />
-            <button
-              type="submit"
-              style={{
-                backgroundColor: GREEN,
-                color: CREAM,
-                padding: "14px 24px",
-                fontSize: "13px",
-                fontFamily: "Calibri, Arial, sans-serif",
-                fontWeight: "bold",
-                letterSpacing: "0.05em",
-                border: "none",
-                cursor: "pointer",
-                whiteSpace: "nowrap",
-              }}
-            >
-              SUBSCRIBE
-            </button>
-          </form>
+          <SubscribeForm variant="footer" />
         </div>
       </section>
     </div>
