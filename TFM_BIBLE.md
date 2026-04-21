@@ -196,7 +196,7 @@ File: `data/issues.ts`
 
 ---
 
-## 10. WHAT WORKS (AS OF SESSION 3)
+## 10. WHAT WORKS (AS OF SESSION 3 — 21 Apr 2026)
 
 - [x] Domain live and resolving
 - [x] Homepage — hero, featured article, latest articles grid, categories, live jobs widget (3 latest), subscribe form, about banner
@@ -205,7 +205,7 @@ File: `data/issues.ts`
 - [x] Individual job pages — `/jobs/[id]` — full description, sticky apply card, back link
 - [x] Subscribe form — wired to Beehiiv API V2 via server-side route, with loading/success/error states
 - [x] Google Search Console verified + sitemap submitted
-- [x] GA4 analytics code in layout (fires when `NEXT_PUBLIC_GA_ID` env var is set)
+- [x] **GA4 analytics LIVE** — Measurement ID `G-4GW3YBFHJW`, env var added to Vercel, deployed
 - [x] Editorial design palette consistent across ALL pages (ink/cream/copper, Playfair + Inter)
 - [x] Events page — 3 real events with external links
 - [x] About, Advertise, Contact, Issues pages — all updated to editorial palette
@@ -218,7 +218,6 @@ File: `data/issues.ts`
 
 | Priority | Task | Notes |
 |---|---|---|
-| HIGH | Add GA4 Measurement ID to Vercel | `NEXT_PUBLIC_GA_ID` = `G-4GW3YBFHJW` → add to Vercel env vars → Redeploy |
 | HIGH | Add Beehiiv URLs to issues.ts | After publishing Issue 1 on Beehiiv, paste public URL into `data/issues.ts` |
 | MEDIUM | Write Issue 1 newsletter content | First edition — based on existing article content |
 | MEDIUM | Personal LinkedIn post from Carlos Garcia | Launch announcement from personal profile |
