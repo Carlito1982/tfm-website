@@ -214,7 +214,7 @@ export default async function HomePage() {
                 marginTop: "10px",
               }}
             >
-              Join 1,200+ furniture professionals. No spam. Unsubscribe any time.
+              Free weekly. For furniture and upholstery trade professionals across the UK. No spam.
             </p>
           </div>
         </div>

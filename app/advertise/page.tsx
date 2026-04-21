@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   description: "Reach furniture and upholstery professionals across the UK. Advertising and sponsorship opportunities with The Furniture Magazine.",
 }
 
-const GREEN  = "#2A4A35"
-const CREAM  = "#F2EBD9"
-const COPPER = "#B07040"
+const GREEN  = "#1A1A1A"
+const CREAM  = "#F5F1ED"
+const COPPER = "#8B7355"
 const BLACK  = "#1A1A1A"
-const BORDER = "#D4C9B0"
+const BORDER = "#E2DDD8"
 
 const packages = [
   {
@@ -46,7 +46,7 @@ export default function AdvertisePage() {
       <div style={{ backgroundColor: COPPER, padding: "72px 24px" }}>
         <div style={{ maxWidth: "760px", margin: "0 auto" }}>
           <p style={{
-            fontFamily: "Calibri, Arial, sans-serif",
+            fontFamily: "var(--font-inter), sans-serif",
             fontSize: "11px",
             letterSpacing: "0.15em",
             color: "#F2E0CC",
@@ -56,10 +56,10 @@ export default function AdvertisePage() {
           }}>
             Partner With Us
           </p>
-          <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(32px, 5vw, 52px)", color: "#fff", lineHeight: 1.15 }}>
+          <h1 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "clamp(32px, 5vw, 52px)", color: "#fff", lineHeight: 1.15 }}>
             Reach the people who make UK furniture
           </h1>
-          <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "17px", color: "#F2E0CC", marginTop: "20px", lineHeight: 1.7, maxWidth: "580px" }}>
+          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "17px", color: "#F2E0CC", marginTop: "20px", lineHeight: 1.7, maxWidth: "580px" }}>
             The Furniture Magazine is the only UK trade publication written specifically for upholsterers,
             cabinet makers, finishers, workshop owners and furniture manufacturers. Our audience is active,
             trade-engaged and hard to reach through general media.
@@ -78,8 +78,8 @@ export default function AdvertisePage() {
               { num: "Weekly", label: "Publication cadence" },
             ].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
-                <div style={{ fontFamily: "Georgia, serif", fontSize: "32px", fontWeight: "bold", color: COPPER }}>{s.num}</div>
-                <div style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "13px", color: "#888", marginTop: "6px" }}>{s.label}</div>
+                <div style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "32px", fontWeight: "bold", color: COPPER }}>{s.num}</div>
+                <div style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "13px", color: "#888", marginTop: "6px" }}>{s.label}</div>
               </div>
             ))}
           </div>
@@ -88,10 +88,10 @@ export default function AdvertisePage() {
 
       {/* Packages */}
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "64px 24px" }}>
-        <h2 style={{ fontFamily: "Georgia, serif", fontSize: "28px", color: BLACK, marginBottom: "8px" }}>
+        <h2 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "28px", color: BLACK, marginBottom: "8px" }}>
           Advertising packages
         </h2>
-        <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "16px", color: "#555", marginBottom: "40px" }}>
+        <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "#555", marginBottom: "40px" }}>
           All packages include placement across newsletter, website and LinkedIn unless otherwise stated.
           Custom packages available on request.
         </p>
@@ -107,7 +107,7 @@ export default function AdvertisePage() {
               }}
             >
               <h3 style={{
-                fontFamily: "Georgia, serif",
+                fontFamily: "var(--font-playfair), Georgia, serif",
                 fontSize: "20px",
                 color: pkg.highlight ? CREAM : BLACK,
                 marginBottom: "6px",
@@ -115,7 +115,7 @@ export default function AdvertisePage() {
                 {pkg.name}
               </h3>
               <p style={{
-                fontFamily: "Calibri, Arial, sans-serif",
+                fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "18px",
                 fontWeight: "bold",
                 color: COPPER,
@@ -124,7 +124,7 @@ export default function AdvertisePage() {
                 {pkg.price}
               </p>
               <p style={{
-                fontFamily: "Calibri, Arial, sans-serif",
+                fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "14px",
                 color: pkg.highlight ? "#8BA895" : "#555",
                 lineHeight: 1.7,
@@ -135,7 +135,7 @@ export default function AdvertisePage() {
               <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                 {pkg.features.map((f) => (
                   <li key={f} style={{
-                    fontFamily: "Calibri, Arial, sans-serif",
+                    fontFamily: "var(--font-inter), sans-serif",
                     fontSize: "13px",
                     color: pkg.highlight ? "#C8BEAA" : "#444",
                     padding: "6px 0",
@@ -160,10 +160,10 @@ export default function AdvertisePage() {
           padding: "48px",
           textAlign: "center",
         }}>
-          <h3 style={{ fontFamily: "Georgia, serif", fontSize: "24px", color: BLACK, marginBottom: "12px" }}>
+          <h3 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "24px", color: BLACK, marginBottom: "12px" }}>
             Ready to discuss a package?
           </h3>
-          <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "15px", color: "#555", marginBottom: "28px", maxWidth: "500px", margin: "0 auto 28px" }}>
+          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "15px", color: "#555", marginBottom: "28px", maxWidth: "500px", margin: "0 auto 28px" }}>
             Contact Carlos directly to discuss options, pricing and availability. All enquiries
             handled personally and responded to within one working day.
           </p>
@@ -174,7 +174,7 @@ export default function AdvertisePage() {
               backgroundColor: GREEN,
               color: CREAM,
               padding: "14px 36px",
-              fontFamily: "Calibri, Arial, sans-serif",
+              fontFamily: "var(--font-inter), sans-serif",
               fontWeight: "bold",
               fontSize: "14px",
               letterSpacing: "0.05em",
@@ -192,7 +192,7 @@ export default function AdvertisePage() {
               border: `1px solid ${GREEN}`,
               color: GREEN,
               padding: "14px 36px",
-              fontFamily: "Calibri, Arial, sans-serif",
+              fontFamily: "var(--font-inter), sans-serif",
               fontWeight: "bold",
               fontSize: "14px",
               letterSpacing: "0.05em",

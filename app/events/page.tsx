@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   description: "UK furniture and upholstery industry events — trade shows, festivals, training days and open workshops listed by The Furniture Magazine.",
 }
 
-const GREEN  = "#2A4A35"
-const CREAM  = "#F2EBD9"
-const COPPER = "#B07040"
+const GREEN  = "#1A1A1A"
+const CREAM  = "#F5F1ED"
+const COPPER = "#8B7355"
 const BLACK  = "#1A1A1A"
-const BORDER = "#D4C9B0"
+const BORDER = "#E2DDD8"
 
 export default function EventsPage() {
   const events = getUpcomingEvents()
@@ -21,7 +21,7 @@ export default function EventsPage() {
       <div style={{ backgroundColor: GREEN, padding: "72px 24px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <p style={{
-            fontFamily: "Calibri, Arial, sans-serif",
+            fontFamily: "var(--font-inter), sans-serif",
             fontSize: "11px",
             letterSpacing: "0.15em",
             color: COPPER,
@@ -31,10 +31,10 @@ export default function EventsPage() {
           }}>
             What&rsquo;s On
           </p>
-          <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(32px, 5vw, 52px)", color: CREAM }}>
+          <h1 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "clamp(32px, 5vw, 52px)", color: CREAM }}>
             Industry Events
           </h1>
-          <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "16px", color: "#8BA895", marginTop: "12px", maxWidth: "580px" }}>
+          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "#8BA895", marginTop: "12px", maxWidth: "580px" }}>
             Trade shows, festivals, training days and open workshops relevant to UK furniture professionals.
             Free listings available — contact the editor.
           </p>
@@ -50,10 +50,10 @@ export default function EventsPage() {
             padding: "64px",
             textAlign: "center",
           }}>
-            <p style={{ fontFamily: "Georgia, serif", fontSize: "20px", color: BLACK, marginBottom: "12px" }}>
+            <p style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "20px", color: BLACK, marginBottom: "12px" }}>
               No upcoming events listed
             </p>
-            <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "15px", color: "#555" }}>
+            <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "15px", color: "#555" }}>
               Running an industry event? Contact us for a free listing.
             </p>
           </div>
@@ -79,7 +79,7 @@ export default function EventsPage() {
                       backgroundColor: COPPER,
                       color: "#fff",
                       fontSize: "10px",
-                      fontFamily: "Calibri, Arial, sans-serif",
+                      fontFamily: "var(--font-inter), sans-serif",
                       fontWeight: "bold",
                       letterSpacing: "0.1em",
                       padding: "3px 10px",
@@ -90,7 +90,7 @@ export default function EventsPage() {
                     </span>
                   )}
                   <h2 style={{
-                    fontFamily: "Georgia, serif",
+                    fontFamily: "var(--font-playfair), Georgia, serif",
                     fontSize: "26px",
                     color: event.featured ? CREAM : BLACK,
                     marginBottom: "8px",
@@ -101,7 +101,7 @@ export default function EventsPage() {
 
                   <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", marginBottom: "16px" }}>
                     <span style={{
-                      fontFamily: "Calibri, Arial, sans-serif",
+                      fontFamily: "var(--font-inter), sans-serif",
                       fontSize: "14px",
                       color: event.featured ? COPPER : COPPER,
                       fontWeight: "bold",
@@ -109,14 +109,14 @@ export default function EventsPage() {
                       {event.dateDisplay}
                     </span>
                     <span style={{
-                      fontFamily: "Calibri, Arial, sans-serif",
+                      fontFamily: "var(--font-inter), sans-serif",
                       fontSize: "14px",
                       color: event.featured ? "#8BA895" : "#777",
                     }}>
                       {event.location}
                     </span>
                     <span style={{
-                      fontFamily: "Calibri, Arial, sans-serif",
+                      fontFamily: "var(--font-inter), sans-serif",
                       fontSize: "14px",
                       color: event.featured ? "#8BA895" : "#999",
                     }}>
@@ -125,7 +125,7 @@ export default function EventsPage() {
                   </div>
 
                   <p style={{
-                    fontFamily: "Calibri, Arial, sans-serif",
+                    fontFamily: "var(--font-inter), sans-serif",
                     fontSize: "15px",
                     color: event.featured ? "#8BA895" : "#555",
                     lineHeight: 1.7,
@@ -145,7 +145,7 @@ export default function EventsPage() {
                       backgroundColor: event.featured ? COPPER : GREEN,
                       color: "#fff",
                       padding: "12px 24px",
-                      fontFamily: "Calibri, Arial, sans-serif",
+                      fontFamily: "var(--font-inter), sans-serif",
                       fontWeight: "bold",
                       fontSize: "13px",
                       letterSpacing: "0.05em",
@@ -170,10 +170,10 @@ export default function EventsPage() {
           backgroundColor: BORDER,
         }}>
           <div style={{ backgroundColor: "#E8DEC8", padding: "40px" }}>
-            <h3 style={{ fontFamily: "Georgia, serif", fontSize: "22px", color: BLACK, marginBottom: "12px" }}>
+            <h3 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "22px", color: BLACK, marginBottom: "12px" }}>
               List your event
             </h3>
-            <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "15px", color: "#555", lineHeight: 1.7, marginBottom: "24px" }}>
+            <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "15px", color: "#555", lineHeight: 1.7, marginBottom: "24px" }}>
               Running a trade show, training day, open workshop or industry festival?
               We list events relevant to UK furniture professionals, free of charge where appropriate.
             </p>
@@ -184,7 +184,7 @@ export default function EventsPage() {
                 backgroundColor: GREEN,
                 color: CREAM,
                 padding: "12px 24px",
-                fontFamily: "Calibri, Arial, sans-serif",
+                fontFamily: "var(--font-inter), sans-serif",
                 fontWeight: "bold",
                 fontSize: "13px",
                 letterSpacing: "0.05em",
@@ -196,10 +196,10 @@ export default function EventsPage() {
           </div>
 
           <div style={{ backgroundColor: BLACK, padding: "40px" }}>
-            <h3 style={{ fontFamily: "Georgia, serif", fontSize: "22px", color: CREAM, marginBottom: "12px" }}>
+            <h3 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "22px", color: CREAM, marginBottom: "12px" }}>
               Promote your event
             </h3>
-            <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "15px", color: "#888", lineHeight: 1.7, marginBottom: "24px" }}>
+            <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "15px", color: "#888", lineHeight: 1.7, marginBottom: "24px" }}>
               Featured event placements include newsletter coverage, dedicated editorial mention
               and LinkedIn promotion to our audience of active UK furniture professionals.
             </p>
@@ -210,7 +210,7 @@ export default function EventsPage() {
                 backgroundColor: COPPER,
                 color: "#fff",
                 padding: "12px 24px",
-                fontFamily: "Calibri, Arial, sans-serif",
+                fontFamily: "var(--font-inter), sans-serif",
                 fontWeight: "bold",
                 fontSize: "13px",
                 letterSpacing: "0.05em",

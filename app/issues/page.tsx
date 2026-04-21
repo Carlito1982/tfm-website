@@ -7,17 +7,17 @@ export const metadata: Metadata = {
   description: "Browse every issue of The Furniture Magazine — the UK trade publication for the furniture and upholstery industry.",
 }
 
-const GREEN  = "#2A4A35"
-const CREAM  = "#F2EBD9"
-const COPPER = "#B07040"
+const GREEN  = "#1A1A1A"
+const CREAM  = "#F5F1ED"
+const COPPER = "#8B7355"
 const BLACK  = "#1A1A1A"
-const BORDER = "#D4C9B0"
+const BORDER = "#E2DDD8"
 
 const categoryColour: Record<string, string> = {
-  "Data & Intelligence": "#2A4A35",
+  "Data & Intelligence": "#1A3A2A",
   "Craft & Technique":   "#6B4C2A",
-  "Industry News":       "#1A3A2A",
-  "Business Advice":     "#4A3A1A",
+  "Industry News":       "#1A2A3A",
+  "Business Advice":     "#3A2A1A",
 }
 
 const sorted = [...issues].sort(
@@ -31,7 +31,7 @@ export default function IssuesPage() {
       <div style={{ backgroundColor: GREEN, padding: "56px 24px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <p style={{
-            fontFamily: "Calibri, Arial, sans-serif",
+            fontFamily: "var(--font-inter), sans-serif",
             fontSize: "11px",
             letterSpacing: "0.15em",
             color: COPPER,
@@ -41,10 +41,10 @@ export default function IssuesPage() {
           }}>
             The Archive
           </p>
-          <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(32px, 5vw, 52px)", color: CREAM }}>
+          <h1 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "clamp(32px, 5vw, 52px)", color: CREAM }}>
             All Issues
           </h1>
-          <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "16px", color: "#8BA895", marginTop: "12px" }}>
+          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "#8BA895", marginTop: "12px" }}>
             Every issue, free to read. New edition every week.
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function IssuesPage() {
                   backgroundColor: categoryColour[issue.category] ?? COPPER,
                   color: "#fff",
                   fontSize: "10px",
-                  fontFamily: "Calibri, Arial, sans-serif",
+                  fontFamily: "var(--font-inter), sans-serif",
                   fontWeight: "bold",
                   letterSpacing: "0.08em",
                   padding: "3px 10px",
@@ -75,7 +75,7 @@ export default function IssuesPage() {
                   {issue.category}
                 </span>
                 <span style={{
-                  fontFamily: "Georgia, serif",
+                  fontFamily: "var(--font-playfair), Georgia, serif",
                   fontSize: "36px",
                   fontWeight: "bold",
                   color: BORDER,
@@ -86,7 +86,7 @@ export default function IssuesPage() {
               </div>
 
               <div style={{
-                fontFamily: "Calibri, Arial, sans-serif",
+                fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "11px",
                 color: "#888",
                 marginBottom: "10px",
@@ -96,7 +96,7 @@ export default function IssuesPage() {
               </div>
 
               <h2 style={{
-                fontFamily: "Georgia, serif",
+                fontFamily: "var(--font-playfair), Georgia, serif",
                 fontSize: "20px",
                 color: BLACK,
                 lineHeight: 1.3,
@@ -106,7 +106,7 @@ export default function IssuesPage() {
               </h2>
 
               <p style={{
-                fontFamily: "Calibri, Arial, sans-serif",
+                fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "14px",
                 color: "#555",
                 lineHeight: 1.6,
@@ -118,7 +118,7 @@ export default function IssuesPage() {
               <Link
                 href={issue.beehiivUrl || `/issues/${issue.slug}`}
                 style={{
-                  fontFamily: "Calibri, Arial, sans-serif",
+                  fontFamily: "var(--font-inter), sans-serif",
                   fontSize: "13px",
                   color: COPPER,
                   fontWeight: "bold",
@@ -140,10 +140,10 @@ export default function IssuesPage() {
           padding: "48px",
           textAlign: "center",
         }}>
-          <h3 style={{ fontFamily: "Georgia, serif", fontSize: "24px", color: BLACK, marginBottom: "12px" }}>
+          <h3 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "24px", color: BLACK, marginBottom: "12px" }}>
             Never miss an issue
           </h3>
-          <p style={{ fontFamily: "Calibri, Arial, sans-serif", fontSize: "15px", color: "#555", marginBottom: "28px" }}>
+          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "15px", color: "#555", marginBottom: "28px" }}>
             Subscribe free and receive every new issue directly in your inbox.
           </p>
           <Link
@@ -153,7 +153,7 @@ export default function IssuesPage() {
               backgroundColor: GREEN,
               color: CREAM,
               padding: "12px 32px",
-              fontFamily: "Calibri, Arial, sans-serif",
+              fontFamily: "var(--font-inter), sans-serif",
               fontWeight: "bold",
               fontSize: "13px",
               letterSpacing: "0.05em",

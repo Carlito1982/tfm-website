@@ -1,8 +1,13 @@
 import type { Metadata } from "next"
 import { Playfair_Display, Inter } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+
+// Replace with your real GA4 Measurement ID once created in Google Analytics
+// Create at: analytics.google.com → Admin → Create Property → Web stream
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? ""
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -54,6 +59,23 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className={`${playfair.variable} ${inter.variable}`}>
       <body style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+        {/* Google Analytics 4 — fires only when GA_ID is set */}
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}', { page_path: window.location.pathname });
+              `}
+            </Script>
+          </>
+        )}
         <Navbar />
         <main style={{ flex: 1 }}>{children}</main>
         <Footer />
