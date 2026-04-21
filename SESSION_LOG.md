@@ -41,13 +41,17 @@
 ### Also completed (end of session 3):
 - [x] GA4 fully live — `G-4GW3YBFHJW` added to Vercel as `NEXT_PUBLIC_GA_ID`, deployed to Production
 - [x] TFM_BIBLE.md and SESSION_LOG.md created and pushed to repo (version-controlled memory system)
+- [x] Job detail page params bug FIXED — Next.js 15 requires `params: Promise<{id}>` — was silently 404ing
+- [x] Job cards fully clickable — whole left column now a Link to `/jobs/[id]`; confirmed working in production
+- [x] Content distribution strategy clarified — TFM website is source of truth; Beehiiv/LinkedIn/Instagram all feed from it
 
 ### Pending (carry to next session):
 - [ ] Add beehiivUrl to Issue 1 in `data/issues.ts` after publishing on Beehiiv
+- [ ] Write Issue 1 newsletter in Beehiiv (use existing 8 articles as source material)
 - [ ] Write and post LinkedIn Company Page posts (3 posts drafted in TFM_BIBLE.md section 12)
 - [ ] Write personal LinkedIn launch post from Carlos Garcia (draft in TFM_BIBLE.md section 12)
-- [ ] Begin Issue 1 newsletter content (in Beehiiv)
-- [ ] Verify GA4 Realtime shows live users (open site in browser, check GA4 → Reports → Realtime)
+- [ ] Set up Instagram account for TFM (if not already done)
+- [ ] Verify GA4 Realtime shows live users (open site, check GA4 → Reports → Realtime)
 
 ---
 

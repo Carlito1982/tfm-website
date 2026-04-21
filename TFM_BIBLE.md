@@ -206,6 +206,8 @@ File: `data/issues.ts`
 - [x] Subscribe form — wired to Beehiiv API V2 via server-side route, with loading/success/error states
 - [x] Google Search Console verified + sitemap submitted
 - [x] **GA4 analytics LIVE** — Measurement ID `G-4GW3YBFHJW`, env var added to Vercel, deployed
+- [x] **Job detail pages FIXED** — Next.js 15 async params bug resolved; `/jobs/[id]` pages load correctly
+- [x] **Job cards fully clickable** — entire left column links to job detail page; Enquire button independent
 - [x] Editorial design palette consistent across ALL pages (ink/cream/copper, Playfair + Inter)
 - [x] Events page — 3 real events with external links
 - [x] About, Advertise, Contact, Issues pages — all updated to editorial palette
