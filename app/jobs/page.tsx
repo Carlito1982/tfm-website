@@ -450,9 +450,7 @@ export default async function JobsPage() {
                 candidates. Permanent and contract roles across the UK.
               </p>
               <a
-                href="https://www.thetalentbranch.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:carlos@thetalentbranch.com?subject=Candidate Registration — The Furniture Magazine&body=Hi Carlos,%0A%0AI'd like to register with The Talent Branch to be considered for roles in the furniture and upholstery industry.%0A%0AName:%0ALocation:%0ASkills / Experience:%0A%0AMany thanks"
                 style={{
                   display: "inline-block",
                   border: "1.5px solid #1A1A1A",
