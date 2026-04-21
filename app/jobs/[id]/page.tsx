@@ -201,12 +201,12 @@ export default async function JobDetailPage({ params }: Props) {
           >
             {/* Left — description + skills */}
             <div>
-              {description ? (
+              {description && description.length > 80 ? (
                 <div
                   style={{
                     fontFamily: "var(--font-inter), sans-serif",
-                    fontSize: "15px",
-                    lineHeight: 1.8,
+                    fontSize: "16px",
+                    lineHeight: 1.85,
                     color: "#2C2C2C",
                     whiteSpace: "pre-wrap",
                   }}
@@ -214,9 +214,49 @@ export default async function JobDetailPage({ params }: Props) {
                   {description}
                 </div>
               ) : (
-                <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "15px", color: "#9B9795" }}>
-                  Full job description available on enquiry.
-                </p>
+                <div>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-playfair), Georgia, serif",
+                      fontSize: "20px",
+                      color: "#1A1A1A",
+                      lineHeight: 1.4,
+                      marginBottom: "16px",
+                    }}
+                  >
+                    Full details available on enquiry.
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-inter), sans-serif",
+                      fontSize: "15px",
+                      color: "#6B6866",
+                      lineHeight: 1.8,
+                      marginBottom: "24px",
+                    }}
+                  >
+                    This role is managed exclusively by The Talent Branch. To receive the full job
+                    description, salary breakdown and employer details, get in touch directly — all
+                    enquiries are handled confidentially and responded to within one working day.
+                  </p>
+                  <a
+                    href={`mailto:carlos@thetalentbranch.com?subject=Full Details Request — ${encodeURIComponent(job.title)}&body=Hi Carlos,%0A%0ACould you send me the full details for the ${encodeURIComponent(job.title)} role (${encodeURIComponent(location)}) listed on The Furniture Magazine?%0A%0AThank you`}
+                    style={{
+                      display: "inline-block",
+                      backgroundColor: "#1A1A1A",
+                      color: "#F5F1ED",
+                      padding: "13px 28px",
+                      fontFamily: "var(--font-inter), sans-serif",
+                      fontWeight: 700,
+                      fontSize: "12px",
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                      textDecoration: "none",
+                    }}
+                  >
+                    Request Full Job Details
+                  </a>
+                </div>
               )}
 
               {job.skills_required && job.skills_required.length > 0 && (
