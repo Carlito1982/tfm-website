@@ -5,7 +5,7 @@ import { supabase, type SupabaseJob } from "@/lib/supabase"
 export const revalidate = 3600
 
 type Props = {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
 async function getJob(id: string): Promise<SupabaseJob | null> {
@@ -23,7 +23,8 @@ async function getJob(id: string): Promise<SupabaseJob | null> {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const job = await getJob(params.id)
+  const { id } = await params
+  const job = await getJob(id)
   if (!job) return { title: "Job Not Found" }
 
   const location = [job.location, job.postcode].filter(Boolean).join(", ") || "UK"
@@ -46,7 +47,8 @@ function capitalise(str: string): string {
 }
 
 export default async function JobDetailPage({ params }: Props) {
-  const job = await getJob(params.id)
+  const { id } = await params
+  const job = await getJob(id)
   if (!job) notFound()
 
   const location = [job.location, job.postcode].filter(Boolean).join(", ") || "Location on application"

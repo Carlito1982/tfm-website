@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { supabase, type SupabaseJob } from "@/lib/supabase"
 
 export const revalidate = 3600 // revalidate every hour
@@ -215,15 +216,25 @@ export default async function JobsPage() {
                     key={job.id}
                     style={{
                       backgroundColor: "#FAFAF8",
-                      padding: "28px 32px",
                       borderBottom: "1px solid #E2DDD8",
                       display: "grid",
                       gridTemplateColumns: "1fr auto",
                       gap: "24px",
                       alignItems: "center",
+                      position: "relative",
+                      transition: "background-color 0.15s ease",
                     }}
+                    className="job-card-row"
                   >
-                    <div>
+                    {/* Clickable left area — navigates to job detail */}
+                    <Link
+                      href={`/jobs/${job.id}`}
+                      style={{
+                        textDecoration: "none",
+                        display: "block",
+                        padding: "28px 0 28px 32px",
+                      }}
+                    >
                       {/* Badges */}
                       <div
                         style={{
@@ -273,8 +284,8 @@ export default async function JobsPage() {
                           fontSize: "clamp(18px, 2vw, 22px)",
                           fontWeight: 700,
                           color: "#1A1A1A",
-                          marginBottom: "6px",
                           lineHeight: 1.25,
+                          marginBottom: "6px",
                         }}
                       >
                         {job.title}
@@ -291,7 +302,7 @@ export default async function JobsPage() {
                       >
                         {[job.location, job.postcode].filter(Boolean).join(", ") ||
                           "Location on application"}
-                        &nbsp;·&nbsp;Confidential employer
+                        &nbsp;·&nbsp;Confidential employer · <span style={{ color: "#8B7355", fontWeight: 600 }}>View full details →</span>
                       </p>
 
                       {/* Salary */}
@@ -333,28 +344,29 @@ export default async function JobsPage() {
                           ))}
                         </div>
                       )}
-                    </div>
+                    </Link>
 
-                    {/* CTA */}
-                    <a
-                      href={`mailto:carlos@thetalentbranch.com?subject=Job Enquiry — ${encodeURIComponent(job.title)}&body=Hi Carlos,%0A%0AI'm interested in the ${encodeURIComponent(job.title)} vacancy (${encodeURIComponent(job.location ?? "")}) advertised on The Furniture Magazine.%0A%0APlease send me more details.%0A%0ARegards`}
-                      style={{
-                        display: "inline-block",
-                        backgroundColor: "#1A1A1A",
-                        color: "#F5F1ED",
-                        padding: "13px 24px",
-                        fontFamily: "var(--font-inter), sans-serif",
-                        fontWeight: 700,
-                        fontSize: "11px",
-                        letterSpacing: "0.09em",
-                        textTransform: "uppercase",
-                        textDecoration: "none",
-                        whiteSpace: "nowrap",
-                        flexShrink: 0,
-                      }}
-                    >
-                      Enquire
-                    </a>
+                    {/* CTA — independent of the card link */}
+                    <div style={{ padding: "28px 32px 28px 0", flexShrink: 0 }}>
+                      <a
+                        href={`mailto:carlos@thetalentbranch.com?subject=Job Enquiry — ${encodeURIComponent(job.title)}&body=Hi Carlos,%0A%0AI'm interested in the ${encodeURIComponent(job.title)} vacancy (${encodeURIComponent(job.location ?? "")}) advertised on The Furniture Magazine.%0A%0APlease send me more details.%0A%0ARegards`}
+                        style={{
+                          display: "inline-block",
+                          backgroundColor: "#1A1A1A",
+                          color: "#F5F1ED",
+                          padding: "13px 24px",
+                          fontFamily: "var(--font-inter), sans-serif",
+                          fontWeight: 700,
+                          fontSize: "11px",
+                          letterSpacing: "0.09em",
+                          textTransform: "uppercase",
+                          textDecoration: "none",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        Enquire
+                      </a>
+                    </div>
                   </div>
                 ))}
               </div>
