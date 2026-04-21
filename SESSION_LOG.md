@@ -6,6 +6,45 @@
 
 ---
 
+## SESSION 4 — 21 April 2026 (continuation)
+
+**Focus:** Supabase jobs data cleanup, Register button fix, thetalentbranch.com emergency recovery
+
+### Completed this session:
+
+**Supabase jobs data — direct database fixes**
+- Queried all 23 published jobs — found 7 "Senior Upholsterer — Speculative" rows with internal TTB notes exposed publicly
+- Unpublished all 7 speculative rows (`is_published = false`) — removed from public site immediately
+- Rewrote `published_description` for all 16 genuine live roles with proper job advert copy:
+  - Cabinet Maker (Esher) — bespoke joinery, workshop-based copy
+  - Senior Upholsterer (Esher) — traditional craft, deep buttoning, leather/fabric
+  - 6× Furniture Technician (Colchester, Dundee/Falkirk, London, Salisbury, Dartford, Reading) — field repair, no salary shown
+  - 8× Furniture Technician/Upholsterer (London SW1, London E1, Bristol, Guildford, Swindon, Carlisle/Lancaster, Reading RG1, Munster Ireland) — full copy with salary bands
+- All descriptions: anonymous employer, professional tone, proper requirements + offer sections, TTB attribution
+
+**Register with TTB button — fixed**
+- `app/jobs/page.tsx` and `app/jobs/[id]/page.tsx`: changed href from `https://www.thetalentbranch.com` (old broken site) to `mailto:carlos@thetalentbranch.com` with pre-filled subject + body template
+- Clicking "Register with TTB" now opens mail client pre-addressed for immediate candidate registration
+- Pushed to GitHub → Vercel auto-deployed
+
+**thetalentbranch.com — emergency recovery**
+- User reported site "all messed up" — entire site unstyled, raw HTML visible
+- Diagnosed: `/css/styles.css` returning 404 — file had gone missing from Netlify deployment
+- Root cause: Apr 18 deploy was a partial drag-and-drop (likely only `index.html` dropped, not full folder) — wiped the CSS
+- Fix: opened app.netlify.com, navigated to project deploys, previewed Apr 8 deploy (confirmed full styling intact), clicked "Publish deploy" to roll back
+- thetalentbranch.com now fully restored — dark navy, gold typography, all sections correct
+- Prevention note: always drag the ENTIRE `thetalentbranch_website_v11` folder to Netlify, never individual files
+
+### Pending (carry forward):
+- [ ] Add beehiivUrl to Issue 1 in `data/issues.ts` after publishing on Beehiiv
+- [ ] Write Issue 1 newsletter in Beehiiv
+- [ ] LinkedIn Company Page — post 3 drafted posts (in TFM_BIBLE.md section 12)
+- [ ] Personal LinkedIn launch post from Carlos Garcia
+- [ ] Set up TFM Instagram account
+- [ ] Verify GA4 Realtime shows live users
+
+---
+
 ## SESSION 3 — 21 April 2026
 
 **Focus:** Full site audit + build article pages + site-wide fixes

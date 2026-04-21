@@ -196,18 +196,20 @@ File: `data/issues.ts`
 
 ---
 
-## 10. WHAT WORKS (AS OF SESSION 3 — 21 Apr 2026)
+## 10. WHAT WORKS (AS OF SESSION 4 — 21 Apr 2026)
 
 - [x] Domain live and resolving
 - [x] Homepage — hero, featured article, latest articles grid, categories, live jobs widget (3 latest), subscribe form, about banner
 - [x] All 8 article pages — `/articles/[slug]` with full editorial body content, sidebar, related articles, subscribe CTA
 - [x] Jobs listing page — `/jobs` — all published jobs from Supabase, Google Jobs structured data (JobPosting schema)
 - [x] Individual job pages — `/jobs/[id]` — full description, sticky apply card, back link
+- [x] **Job descriptions — proper public copy** — all 16 live jobs have full anonymous job advert copy; 7 speculative/internal rows unpublished
+- [x] **Register with TTB button** — now opens pre-filled mailto: to carlos@thetalentbranch.com (not old thetalentbranch.com)
 - [x] Subscribe form — wired to Beehiiv API V2 via server-side route, with loading/success/error states
 - [x] Google Search Console verified + sitemap submitted
-- [x] **GA4 analytics LIVE** — Measurement ID `G-4GW3YBFHJW`, env var added to Vercel, deployed
-- [x] **Job detail pages FIXED** — Next.js 15 async params bug resolved; `/jobs/[id]` pages load correctly
-- [x] **Job cards fully clickable** — entire left column links to job detail page; Enquire button independent
+- [x] GA4 analytics LIVE — Measurement ID `G-4GW3YBFHJW`, env var added to Vercel, deployed
+- [x] Job detail pages FIXED — Next.js 15 async params bug resolved; `/jobs/[id]` pages load correctly
+- [x] Job cards fully clickable — entire left column links to job detail page; Enquire button independent
 - [x] Editorial design palette consistent across ALL pages (ink/cream/copper, Playfair + Inter)
 - [x] Events page — 3 real events with external links
 - [x] About, Advertise, Contact, Issues pages — all updated to editorial palette
@@ -288,4 +290,4 @@ When working on this project, always:
 
 ---
 
-*Last updated: 21 April 2026 | Session 3*
+*Last updated: 21 April 2026 | Session 4*
