@@ -47,7 +47,7 @@ All variables must be set in **Vercel dashboard → Settings → Environment Var
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | TTB anon key (already in Vercel) |
 | `BEEHIIV_API_KEY` | Set in Vercel — retrieved from Beehiiv API settings |
 | `BEEHIIV_PUBLICATION_ID` | `pub_69732c6e-450a-48ec-a5ec-8bf37839fba9` (API V2 format) |
-| `NEXT_PUBLIC_GA_ID` | **PENDING** — add `G-XXXXXXXXXX` from Google Analytics once created |
+| `NEXT_PUBLIC_GA_ID` | `G-4GW3YBFHJW` — add to Vercel env vars + redeploy to activate |
 
 > **GA4 setup steps:** analytics.google.com → Admin → Create Account → Create Web Property → get Measurement ID → add to Vercel → Redeploy
 
@@ -218,7 +218,7 @@ File: `data/issues.ts`
 
 | Priority | Task | Notes |
 |---|---|---|
-| HIGH | Add GA4 Measurement ID to Vercel | `NEXT_PUBLIC_GA_ID` = `G-XXXXXXXXXX` → get from analytics.google.com |
+| HIGH | Add GA4 Measurement ID to Vercel | `NEXT_PUBLIC_GA_ID` = `G-4GW3YBFHJW` → add to Vercel env vars → Redeploy |
 | HIGH | Add Beehiiv URLs to issues.ts | After publishing Issue 1 on Beehiiv, paste public URL into `data/issues.ts` |
 | MEDIUM | Write Issue 1 newsletter content | First edition — based on existing article content |
 | MEDIUM | Personal LinkedIn post from Carlos Garcia | Launch announcement from personal profile |
