@@ -1,3 +1,5 @@
+# ARCHIVED 16 Sep 2026 - history only. Current state: SELECT public.tfm_boot(); in Supabase. Do not append.
+
 # THE FURNITURE MAGAZINE — PROJECT BIBLE
 
 > **How to use this file:** At the start of every new Claude session, say:

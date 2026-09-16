@@ -1,3 +1,5 @@
+# ARCHIVED 16 Sep 2026 - history only. Current state: SELECT public.tfm_boot(); in Supabase. Do not append.
+
 # TFM SESSION LOG
 
 > This file is updated at the end of every working session.
