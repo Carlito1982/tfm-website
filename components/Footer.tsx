@@ -179,9 +179,13 @@ export default function Footer() {
                 marginBottom: "18px",
               }}
             >
-              The Furniture Magazine is published by The Talent Branch Ltd —
+              The Furniture Magazine is a trading name of The Talent Branch Ltd,
               the UK&rsquo;s specialist recruiter for the upholstery and
-              furniture industry.
+              furniture industry. Registered in England and Wales, company
+              number 09615777. Registered office: 23a High Street, Weaverham,
+              Northwich CW8 3HA. Articles are researched and drafted with the
+              help of AI tools and edited and fact-checked by a human editor
+              before publication.
             </p>
             <a
               href="https://www.thetalentbranch.com"
@@ -221,10 +225,10 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} The Furniture Magazine. Published by The Talent Branch Ltd.
           </p>
           <div style={{ display: "flex", gap: "20px" }}>
-            {["Privacy Policy", "Terms of Use", "Cookie Policy"].map((t) => (
+            {[["Privacy Policy", "/privacy"], ["Contact", "/contact"]].map(([t, href]) => (
               <Link
                 key={t}
-                href="/contact"
+                href={href}
                 style={{
                   fontSize: "12px",
                   color: "rgba(245,241,237,0.28)",

@@ -24,6 +24,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.thefurnituremagazine.com"),
+  alternates: { canonical: "./" },
   title: {
     default: "The Furniture Magazine — UK Trade Publication",
     template: "%s | The Furniture Magazine",

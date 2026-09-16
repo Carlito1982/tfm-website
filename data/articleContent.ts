@@ -22,7 +22,7 @@ export const articleContent: ArticleContent[] = [
     body: [
       {
         type: "p",
-        text: "There is a number that tells you almost everything you need to know about where the UK furniture trade is heading. In 2023, fewer than 400 people were enrolled in a recognised upholstery apprenticeship across the entire country. In the same year, industry estimates suggested that more than 1,200 experienced upholsterers retired or left the trade. That gap — roughly 800 people — is not being closed. It is widening.",
+        text: "There is a pattern that tells you almost everything you need to know about where the UK furniture trade is heading: more experienced upholsterers are leaving the trade each year than trained ones are entering it. No official body publishes a reliable count of upholstery apprentices, which is part of the problem, but every employer we speak to describes the same gap, and it is widening rather than closing.",
       },
       {
         type: "h2",
@@ -122,7 +122,7 @@ export const articleContent: ArticleContent[] = [
     body: [
       {
         type: "p",
-        text: "Ask ten different upholsterers what the job pays and you will get ten different answers. Ask their employers what the market rate is and you will get ten more. The UK furniture industry has never had a reliable, up-to-date salary benchmark — until now. Over the past twelve months, The Talent Branch has tracked live placements, active job postings and candidate registrations across the upholstery and furniture sector to build what we believe is the most accurate salary snapshot the UK trade has ever produced.",
+        text: "Ask ten different upholsterers what the job pays and you will get ten different answers. Ask their employers what the market rate is and you will get ten more. The UK furniture industry has never had a reliable, up-to-date salary benchmark. This report draws on advertised salaries across Reed, Indeed, Glassdoor and Talent.com for upholstery and furniture manufacturing roles, read alongside The Talent Branch's own placement experience, to give the trade a working benchmark.",
       },
       {
         type: "h2",
@@ -130,7 +130,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "The data in this report draws on three primary sources: confirmed placement salaries from The Talent Branch's recruitment activity between May 2025 and April 2026; live job posting analysis across Reed, Indeed and LinkedIn for upholstery and furniture manufacturing roles in the UK; and a direct candidate survey of 84 registered upholstery professionals asking them to self-report their current earnings. Where data points were sparse — particularly in senior and specialist roles — we have flagged this and applied wider confidence intervals.",
+        text: "The figures in this report draw on two sources: advertised salaries for upholstery and furniture manufacturing roles across Reed, Indeed, Glassdoor and Talent.com, and The Talent Branch's placement experience over the past twelve months. Advertised salaries are not the same as salaries paid, and where listings were sparse, particularly for senior and specialist roles, we say so and give a wider range.",
       },
       {
         type: "highlight",
@@ -212,7 +212,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "source",
-        text: "Sources: The Talent Branch placement data (May 2025–April 2026); Reed, Indeed and LinkedIn job posting analysis; The Talent Branch Candidate Survey (n=84, March 2026); ONS Annual Survey of Hours and Earnings 2024.",
+        text: "Sources: Reed.co.uk, Indeed UK, Glassdoor UK and Talent.com advertised salary data for upholstery and furniture roles (2025 to 2026); The Talent Branch placement experience; ONS Annual Survey of Hours and Earnings.",
       },
     ],
   },

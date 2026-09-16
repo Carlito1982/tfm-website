@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next"
 import { supabase } from "@/lib/supabase"
+import { articles } from "@/data/articles"
 
 export const revalidate = 3600
 
@@ -32,11 +33,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    { url: `${baseUrl}/issues`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
+    { url: `${baseUrl}/events`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.6 },
+    { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
+    { url: `${baseUrl}/privacy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.2 },
   ]
+
+  const articleRoutes: MetadataRoute.Sitemap = articles.map((a) => ({
+    url: `${baseUrl}/articles/${a.slug}`,
+    lastModified: new Date(a.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }))
 
   // Dynamic job pages
   const { data: jobs } = await supabase
-    .from("jobs")
+    .from("tfm_public_jobs")
     .select("id, published_at, updated_at")
     .eq("is_published", true)
     .order("published_at", { ascending: false })
@@ -48,5 +60,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }))
 
-  return [...staticRoutes, ...jobRoutes]
+  return [...staticRoutes, ...articleRoutes, ...jobRoutes]
 }

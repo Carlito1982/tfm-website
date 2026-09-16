@@ -9,6 +9,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        // Tracked advertiser links: thefurnituremagazine.com/go/<slug> -> Supabase edge function (logs the click, 302s on)
+        source: "/go/:slug",
+        destination: "https://ibysduxeugayotndbzaw.supabase.co/functions/v1/tfm-go/:slug",
+      },
+    ];
+  },
 };
 
 export default nextConfig;

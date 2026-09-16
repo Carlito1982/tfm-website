@@ -5,7 +5,7 @@ import { supabase, type SupabaseJob } from "@/lib/supabase"
 export const revalidate = 3600 // revalidate every hour
 
 export const metadata: Metadata = {
-  title: "Live UK Jobs | The Furniture Magazine",
+  title: "Live UK Jobs",
   description:
     "Live furniture and upholstery jobs across the UK — sourced by The Talent Branch, specialist recruiters for the furniture industry.",
 }

@@ -45,7 +45,7 @@ export default function IssuesPage() {
             All Issues
           </h1>
           <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "#8BA895", marginTop: "12px" }}>
-            Every issue, free to read. New edition every week.
+            Every issue, free to read. Issue 1 goes out on Tuesday 29 September 2026; the weekly brief follows every Tuesday and a long-form edition on the first Thursday of the month.
           </p>
         </div>
       </div>
@@ -58,6 +58,19 @@ export default function IssuesPage() {
           gap: "1px",
           backgroundColor: BORDER,
         }}>
+          {sorted.length === 0 && (
+            <article style={{ backgroundColor: CREAM, padding: "36px", gridColumn: "1 / -1" }}>
+              <h2 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "22px", color: BLACK, marginBottom: "12px" }}>
+                The first issue lands on 29 September
+              </h2>
+              <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "15px", color: "#555", lineHeight: 1.7, marginBottom: "18px" }}>
+                Issue 1 leads with the UK Furniture Salary Guide 2026 and a preview of the Festival of Upholstery. Subscribe below and it will be in your inbox at 7.30 on the morning it goes out. Until then, the articles on the home page are free to read.
+              </p>
+              <Link href="/#subscribe" style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "13px", color: COPPER, fontWeight: "bold", letterSpacing: "0.04em", textDecoration: "none" }}>
+                SUBSCRIBE FREE →
+              </Link>
+            </article>
+          )}
           {sorted.map((issue) => (
             <article key={issue.slug} style={{ backgroundColor: CREAM, padding: "36px" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "12px" }}>

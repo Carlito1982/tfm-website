@@ -16,7 +16,7 @@ export const articles: Article[] = [
     slug: "uk-furniture-skills-crisis-2026",
     title: "The UK Furniture Skills Crisis Is Getting Worse — Here Is What the Data Shows",
     excerpt:
-      "Fewer trained upholsterers are entering the trade each year than are retiring from it. Employers are waiting 3–6 months to fill roles that used to take four weeks. This is not a temporary problem.",
+      "Fewer trained upholsterers are entering the trade each year than are retiring from it. Employers tell us roles that once filled in weeks now stay open for months. This is not a temporary problem.",
     category: "Industry News",
     categoryClass: "tag-news",
     image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
@@ -29,7 +29,7 @@ export const articles: Article[] = [
     slug: "upholstery-salary-report-2026",
     title: "2026 UK Furniture Salary Report: What the Industry Is Actually Paying",
     excerpt:
-      "Entry-level to Head Upholsterer — we tracked live placements and job postings across the UK to build the most accurate salary snapshot the industry has ever had.",
+      "Entry-level to Head Upholsterer: advertised salaries across Reed, Indeed, Glassdoor and Talent.com, read alongside our own placement experience, to give the trade a working benchmark.",
     category: "Salary Data",
     categoryClass: "tag-salary",
     image: "https://images.unsplash.com/photo-1567538096621-38d2284b23ff?w=800&q=80",
