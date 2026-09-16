@@ -30,16 +30,11 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "The Talent Branch, the specialist furniture recruitment agency which publishes this magazine, tracks live vacancy data across the UK upholstery and furniture manufacturing sector. In 2022, the average time to fill an experienced upholsterer role was 28 days. By mid-2024, that had extended to between 12 and 18 weeks. Some employers in rural counties — Somerset, Norfolk, Lincolnshire — reported waiting more than six months without a single suitable applicant.",
+        text: "The Talent Branch, the specialist furniture recruitment agency which publishes this magazine, tracks live vacancy data across the UK upholstery and furniture manufacturing sector. Roles that once filled in a few weeks now routinely stay open for months, and employers in rural counties tell us they can go half a year without a single suitable applicant. We will publish precise time-to-fill figures once enough placements sit behind them to stand up; until then they belong in the anecdote column, not the data column.",
       },
       {
         type: "p",
         text: "The problem is not confined to upholstery. Cabinet makers, frame builders, cutting machinists and finishing technicians are all in short supply. But upholstery is where the numbers are most acute, partly because the apprenticeship infrastructure that once fed the trade was dismantled faster than anyone anticipated.",
-      },
-      {
-        type: "quote",
-        text: "We advertised for an experienced upholsterer for 22 weeks. We got three applications. Two couldn't do deep buttoning. One wanted a salary we couldn't stretch to. In the end we promoted from within and cross-trained someone from the cutting room.",
-        attribution: "Production Manager, Midlands bespoke sofa manufacturer",
       },
       {
         type: "h2",
@@ -47,7 +42,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "The Level 2 Upholstery Apprenticeship Standard was reviewed and updated in 2019, but uptake has remained stubbornly low. The British Furniture Confederation has consistently highlighted that furniture and furnishings apprenticeships receive a fraction of the funding and promotional attention given to construction trades, despite the sector employing around 110,000 people across the UK and contributing approximately £10 billion to the economy annually.",
+        text: "The Advanced Upholsterer apprenticeship (Level 3) was approved in September 2019, and a Level 2 Furniture Manufacturer standard with a modern upholstery option has existed since 2016, but uptake has stayed low. The British Furniture Confederation's Plan for Growth 2025 found that only 40% of furniture businesses employ apprentices, 45% find the current funding inadequate, and 57% expect skills shortages in the next five years. This is a manufacturing sector that FIRA puts at 72,000 employees and £10.8 billion of sales.",
       },
       {
         type: "p",
@@ -55,7 +50,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "highlight",
-        text: "The UK upholstery sector loses roughly 800 more experienced workers per year than it trains. At current trends, the skills gap will double by 2030.",
+        text: "Only 40% of furniture businesses employ an apprentice, and 57% expect skills shortages in the next five years. Source: British Furniture Confederation, Plan for Growth 2025.",
       },
       {
         type: "h2",
@@ -67,7 +62,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "Northern Ireland has a particularly severe shortage in specialist restoration and antique upholstery. Several workshops that have operated for generations are reportedly unable to find anyone to take over when the principal retires — a slow-motion closure that reflects a wider pattern.",
+        text: "Northern Ireland, where The Talent Branch recruits for furniture repair and restoration roles, is a case in point: specialist restoration upholsterers are among the hardest roles we fill anywhere in the UK, and small workshops with a retiring principal often have nobody to hand over to.",
       },
       {
         type: "h2",
@@ -83,7 +78,7 @@ export const articleContent: ArticleContent[] = [
           "Cross-training from adjacent trades: Firms are increasingly training frame builders and cutters in basic upholstery, building internal flexibility.",
           "Partnering directly with colleges: A small number of larger manufacturers have funded dedicated training programmes at local further education colleges, ensuring a pipeline of semi-skilled entry-level workers.",
           "Retaining older workers longer: Phased retirement arrangements and part-time senior roles are keeping experienced upholsterers in the workforce beyond traditional retirement age.",
-          "Structured wage progression: Businesses that publish clear pay bands — showing what a trainee can expect to earn in three, five and seven years — report higher application volumes than those that don't.",
+          "Structured wage progression: In our experience, adverts that state a pay band and a route to progress draw noticeably more applications than adverts that do not.",
         ],
       },
       {
@@ -92,7 +87,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "One factor that receives less attention than it should is pay. The national average for an experienced upholsterer in the UK is still below £32,000. In a competitive job market where logistics, construction and engineering roles are advertising at £35,000 to £45,000 for workers with comparable skill and experience, furniture businesses are asking people to choose a passion over a pay cheque.",
+        text: "One factor that receives less attention than it should is pay. The Office for National Statistics puts median full-time pay for upholsterers at £27,909 (Annual Survey of Hours and Earnings 2025, provisional), and Talent.com's advertised average is £27,560, with experienced roles reaching about £37,700. Set against what a skilled worker can earn in logistics, construction or engineering, furniture businesses are often asking people to choose a passion over a pay cheque.",
       },
       {
         type: "p",
@@ -104,7 +99,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "The British Furniture Confederation and the Furniture Makers' Company have both called for greater investment in furniture skills at a national level. A cross-industry taskforce has been working with the Institute for Apprenticeships and Technical Education (IfATE) on potential updates to furniture apprenticeship standards. Progress is slow.",
+        text: "The British Furniture Confederation and the Furniture Makers' Company have both called for greater investment in furniture skills at a national level. Skills England lists a new Upholstery Operative standard as in development, and from January 2026 government apprenticeship funding is being redirected towards Level 2 and Level 3 qualifications. Progress is slow.",
       },
       {
         type: "p",
@@ -112,7 +107,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "source",
-        text: "Sources: British Furniture Confederation Skills Survey 2024; ESFA Apprenticeship Starts Data 2022–23; The Talent Branch vacancy tracking data; IfATE Upholstery Apprenticeship Standard documentation.",
+        text: "Sources: British Furniture Confederation, Plan for Growth 2025; Skills England apprenticeship standards ST0656 (Advanced Upholsterer) and ST0203 (Furniture Manufacturer); FIRA Statistics Digest, January 2026; ONS Annual Survey of Hours and Earnings 2025 (provisional); The Talent Branch recruitment experience.",
       },
     ],
   },
@@ -134,7 +129,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "highlight",
-        text: "UK upholstery salaries have increased by an average of 9.4% since 2023, outpacing general manufacturing wage growth of 6.1% in the same period.",
+        text: "The Office for National Statistics puts median annual pay for upholsterers at £26,966 in 2025, up 11.7% on the year. Source: ASHE 2025, provisional.",
       },
       {
         type: "h2",
@@ -170,7 +165,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "Workshop leads and production heads with managerial responsibility are earning between £38,000 and £48,000 in most UK regions, with some London bespoke workshops reaching £50,000–£55,000 for the most experienced candidates. At this level, salary is strongly correlated with business size and the ability to manage workflows, train junior staff and communicate directly with clients.",
+        text: "Workshop leads and production heads with managerial responsibility are advertised at £38,000 to £48,000 in the listings we see, with a small number of London bespoke workshops going above £50,000 for the most experienced candidates. At this level, salary is strongly correlated with business size and the ability to manage workflows, train junior staff and communicate directly with clients.",
       },
       {
         type: "h3",
@@ -178,7 +173,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "The self-employed picture is more complex. Our candidate survey found that self-employed upholsterers report very wide income ranges — from under £20,000 (typically part-time or those still building a client base) to over £60,000 for well-established sole traders in high-demand urban areas. The median self-reported net income for full-time self-employed upholsterers in our survey was £34,500 — slightly above the employed senior tier, but with significantly higher variability.",
+        text: "The self-employed picture is harder to pin down because nobody publishes it. Self-employed upholsterers we place or speak to describe incomes from under £20,000 for part-time or early-stage businesses to well over £50,000 for established sole traders in busy urban areas. Treat any single figure with caution; the spread is the point.",
       },
       {
         type: "h2",
@@ -186,17 +181,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "Geography remains one of the strongest predictors of upholstery salary in the UK. London and the South East consistently sit 20–30% above the national average at every experience level. Northern England, Scotland, Wales and Northern Ireland tend to sit 10–15% below. The Midlands — historically the heartland of UK furniture manufacturing — sits close to the national average, though pockets of demand around High Wycombe and the traditional furniture belt push wages higher.",
-      },
-      {
-        type: "list",
-        items: [
-          "London / South East: 20–30% above national average",
-          "South West: 5–10% above national average",
-          "Midlands: at or slightly above national average",
-          "North of England: 5–10% below national average",
-          "Scotland, Wales, Northern Ireland: 10–15% below national average",
-        ],
+        text: "Geography remains one of the strongest predictors of upholstery salary in the UK. In the roles we see, London and the South East sit clearly above the national figure at every experience level; Scotland, Wales, Northern Ireland and the North of England generally sit below it; and the Midlands, historically the heartland of UK furniture manufacturing, sits close to it, with pockets of demand around High Wycombe and Long Eaton pushing wages higher. We will publish regional bands with percentages once the Salary Board has enough data points behind each region.",
       },
       {
         type: "h2",
@@ -204,7 +189,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "The single most consistent finding in our data is the relationship between salary and hiring success. Employers posting roles at or above the 60th percentile for their region and role type fill those positions in under six weeks on average. Employers posting below the median take three to five months — if they fill them at all.",
+        text: "The most consistent thing we see is the relationship between salary and hiring success. Roles advertised at the top of the range for their region fill in weeks. Roles advertised below it take months, if they fill at all.",
       },
       {
         type: "p",
@@ -250,7 +235,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "The foam must be prepared before you can mark any button positions. For traditional deep buttoning you need a firm foam — typically 1.8 density or higher — that will hold its shape under the tension of the pulled buttons. Using foam that is too soft produces buttons that sink too deeply and lose their definition over time.",
+        text: "The foam must be prepared before you can mark any button positions. For traditional deep buttoning you need a firm foam, a grade such as RX39/200 (39 kg/m³ density, 200 N hardness) or firmer, that will hold its shape under the tension of the pulled buttons. Using foam that is too soft produces buttons that sink too deeply and lose their definition over time.",
       },
       {
         type: "p",
@@ -310,7 +295,7 @@ export const articleContent: ArticleContent[] = [
         type: "list",
         items: [
           "Measuring from the fabric edge rather than the tack line: Always establish the tack line on both foam and fabric before measuring button positions.",
-          "Using foam that is too soft: A minimum of 1.8 density is recommended for traditional deep buttoning. Softer foam allows buttons to over-sink.",
+          "Using foam that is too soft: A firm grade of around 39 kg/m³ and 200 N (RX39/200 or firmer) is recommended for traditional deep buttoning. Softer foam allows buttons to over-sink.",
           "Tying too tight too early: Always use slip knots for the first pass and adjust all buttons before making permanent ties.",
           "Ignoring pleat direction: Inconsistent pleat direction makes diamonds appear uneven even when the grid is perfect.",
           "Not leaving enough fabric at the edges: Your tack line calculations must account for the fabric needed to pull around the frame edge cleanly.",
@@ -322,7 +307,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "source",
-        text: "Sources: Guild of Traditional Upholsterers technical guidance; Upholstery Society workshop documentation; practical input from registered upholstery professionals.",
+        text: "Sources: Guild of Traditional Upholsterers; UK foam grading conventions (density in kg/m³, hardness in Newtons, as published by UK foam suppliers); practical input from upholsterers registered with The Talent Branch. Technique reviewed by the editor.",
       },
     ],
   },
@@ -332,7 +317,7 @@ export const articleContent: ArticleContent[] = [
     body: [
       {
         type: "p",
-        text: "The most common financial mistake self-employed upholsterers make is not charging enough — and they make it consistently, across years and decades of otherwise successful businesses. Our candidate survey data suggests the average self-employed upholsterer in the UK is undercharging by somewhere between 25% and 35% relative to what the market would support and what their real costs require. That gap — often invisible until a business hits a wall — is the difference between a craft that sustains a comfortable living and one that slowly depletes the person doing it.",
+        text: "The most common financial mistake self-employed upholsterers make is not charging enough — and they make it consistently, across years and decades of otherwise successful businesses. In our experience most self-employed upholsterers charge well below what the market would support and what their real costs require; work through the numbers below and the gap is often a quarter or more. That gap — often invisible until a business hits a wall — is the difference between a craft that sustains a comfortable living and one that slowly depletes the person doing it.",
       },
       {
         type: "h2",
@@ -352,7 +337,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "The starting point for any pricing framework is knowing what an hour of your time actually costs your business — not what you want to earn, but what you must earn to cover your real costs and pay yourself fairly. For a typical sole-trader upholsterer in England in 2026, the calculation looks roughly like this:",
+        text: "The starting point for any pricing framework is knowing what an hour of your time actually costs your business — not what you want to earn, but what you must earn to cover your real costs and pay yourself fairly. For a typical sole-trader upholsterer in England in 2026, the calculation looks roughly like this. The figures are illustrative; substitute your own:",
       },
       {
         type: "list",
@@ -373,7 +358,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "highlight",
-        text: "Required hourly rate = Total required revenue ÷ billable hours = £49,700 ÷ 1,275 ≈ £39/hour minimum. Most self-employed upholsterers are charging £20–£28.",
+        text: "Required hourly rate = Total required revenue ÷ billable hours = £49,700 ÷ 1,275 ≈ £39/hour minimum. Many self-employed upholsterers we speak to are charging £20 to £28.",
       },
       {
         type: "h2",
@@ -416,11 +401,11 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "Rates should be reviewed at minimum annually, and whenever a material cost changes significantly (foam prices increased by more than 40% between 2021 and 2023; fabric and filling costs have continued to rise). A simple rule: if your supplier invoice for a standard job has increased, your quote price must increase by at least the same percentage. There is no sustainable model in which material costs rise and labour rates stay flat.",
+        text: "Rates should be reviewed at minimum annually, and whenever a material cost changes significantly (British furniture manufacturers reported compound rises of up to 100% on materials including foam between 2020 and 2022, and foam producers announced further increases of 12% to over 20% in spring 2026). A simple rule: if your supplier invoice for a standard job has increased, your quote price must increase by at least the same percentage. There is no sustainable model in which material costs rise and labour rates stay flat.",
       },
       {
         type: "source",
-        text: "Sources: The Talent Branch Candidate Survey 2026; Federation of Small Businesses sole trader cost data; HMRC self-assessment guidance; Furniture Makers' Company business skills resources.",
+        text: "Sources: HMRC self-assessment guidance; Furniture News, April 2022 (British Furniture Manufacturers on material cost rises); Interior Daily, April 2026 (foam price increases); The Talent Branch experience with self-employed upholsterers.",
       },
     ],
   },
@@ -434,19 +419,19 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "h2",
-        text: "Flexible Foam: Still Elevated, Stabilising",
+        text: "Flexible Foam: Elevated, and Rising Again",
       },
       {
         type: "p",
-        text: "Flexible polyurethane foam — the most widely used core material in domestic upholstery — saw dramatic price increases from 2021 through to mid-2023, driven by a combination of petrochemical supply disruptions, energy cost inflation at manufacturing facilities, and logistics pressures. UK foam prices roughly doubled between Q1 2021 and Q3 2023.",
+        text: "Flexible polyurethane foam, the most widely used core material in domestic upholstery, saw dramatic price increases from 2021 onwards, driven by petrochemical supply disruptions, energy costs at manufacturing plants and logistics pressures. In April 2022 the British Furniture Manufacturers association told Furniture News that compound price rises of up to 100% on materials including foam were not unusual.",
       },
       {
         type: "p",
-        text: "The good news is that since late 2023, prices have stabilised. As of Q1 2026, benchmark foam grades (HR40 and HR35, the most common seat grades) are approximately 15–20% above their 2020 baseline, but have shown no significant upward movement in the past 18 months. CMHR (Combustion Modified High Resilience) fire-rated foam, required for domestic upholstery under UK fire safety regulations, follows a similar pattern.",
+        text: "Prices did not fall back, and in 2026 they are rising again: foam producers announced increases ranging from 12% to more than 20% in the spring, citing raw material shortages, and UK sofa and mattress makers have described the increases as aggressive. CMHR (combustion modified high resilience) fire-rated foam, required for domestic upholstery under the UK furniture fire regulations, follows the same pattern.",
       },
       {
         type: "highlight",
-        text: "Flexible foam is approximately 15–20% above 2020 prices but has been stable since late 2023. Budget for the current price — don't revert to pre-2022 assumptions.",
+        text: "Foam producers announced increases of 12% to over 20% in spring 2026. Price every job from a current supplier quote, never from last year's list.",
       },
       {
         type: "h2",
@@ -454,7 +439,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "Kiln-dried softwood for furniture frames — primarily the 50mm × 25mm and 50mm × 50mm sections used in basic upholstery framing — spiked dramatically in 2021 and 2022 as global construction demand collided with supply disruptions. By 2024, this had substantially normalised. As of early 2026, standard construction-grade and joinery-grade timber is broadly in line with historical pricing trends, with year-on-year increases of around 2–4% — consistent with general producer price inflation.",
+        text: "Kiln-dried softwood for furniture frames, primarily the 50mm by 25mm and 50mm by 50mm sections used in basic upholstery framing, spiked in 2021 and 2022 as global construction demand collided with supply disruptions, then fell back. Timber Development UK's price index rose again from 107 to 130 in a demand bubble in the first half of 2025 and had eased to 125 by the autumn; going into 2026 it reports log prices across Scandinavia, the Baltics and Central Europe still high while weak UK construction demand pushes prices down.",
       },
       {
         type: "p",
@@ -466,11 +451,11 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "Elasticated webbing — the dominant support system in modern domestic upholstery — has tracked general polymer and elastomer price movements and sits approximately 8–12% above 2020 levels. Traditional jute webbing, used in period and restoration work, has seen higher increases due to reduced UK demand making supply less competitive; expect to pay 15–25% more than in 2020.",
+        text: "Elasticated webbing, the dominant support system in modern domestic upholstery, tracks polymer and elastomer prices; traditional jute webbing, used in period and restoration work, has become more expensive as falling UK demand leaves fewer suppliers competing. We have found no published UK index for either, so the only reliable figure is the one on your supplier's current price list.",
       },
       {
         type: "p",
-        text: "Coil springs and sinuous (zig-zag) wire springs have also tracked steel price movements. After significant increases in 2022, steel-based materials have partially retreated. Spring materials are currently around 10–15% above their 2020 baseline.",
+        text: "Coil springs and sinuous (zig-zag) wire springs track steel prices, which rose sharply in 2022 and have partially retreated since. Again, no published UK index exists for spring units; ask your supplier for a dated price.",
       },
       {
         type: "h2",
@@ -490,15 +475,15 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "The practical implication is straightforward: always price from current supplier invoices or recently confirmed pricing, not from memory or historical estimates. For jobs being quoted in spring 2026, the key positions are:",
+        text: "Across furniture manufacturing as a whole, the Office for National Statistics reports output prices up 2.1% year on year (August 2026) while input prices are up 4.2% (June 2026): costs are rising faster than selling prices. The practical implication is straightforward: always price from current supplier invoices or recently confirmed pricing, not from memory or historical estimates. For jobs being quoted in autumn 2026, the key positions are:",
       },
       {
         type: "list",
         items: [
-          "Foam (HR40, standard grades): check current trade price — budget around 15–20% above your 2020 baseline",
-          "Softwood timber (frame work): broadly normalised; standard pricing with modest annual inflation",
-          "Elasticated webbing: approximately 10% above 2020 baseline",
-          "Jute webbing and natural fibre materials: 15–25% above 2020",
+          "Foam (all grades): get a dated quote; producers announced 12% to 20%-plus increases in spring 2026",
+          "Softwood timber (frame work): off its mid-2025 peak but still above pre-2021 levels; check current price",
+          "Elasticated webbing: no published index; use your supplier's current list",
+          "Jute webbing and natural fibre materials: rising; confirm with supplier",
           "Standard synthetic fabric: modest increase on 2020",
           "Premium and natural fibre fabric: significant increases; confirm with supplier",
         ],
@@ -509,7 +494,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "source",
-        text: "Sources: UK producer price data (ONS PPI series); CPA (Construction Products Association) materials cost monitoring; trade supplier commentary collected Q1 2026; BMWA (British Woven and Knitted Fabrics Alliance) market reports.",
+        text: "Sources: ONS Producer Price Index, furniture output prices (series G75I, August 2026) and furniture input prices (series GHHF, June 2026); Timber Development UK, Market Review 2026; Furniture News, April 2022; Interior Daily, April 2026; supplier commentary collected by The Talent Branch.",
       },
     ],
   },
@@ -543,7 +528,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "highlight",
-        text: "In our experience, approximately 65% of sagging sofa seats are a webbing or sinuous spring problem — not a foam problem. The foam looks compressed because the platform underneath it has dropped.",
+        text: "In our experience most sagging sofa seats are a webbing or sinuous spring problem, not a foam problem. The foam looks compressed because the platform underneath it has dropped.",
       },
       {
         type: "h3",
@@ -592,7 +577,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "source",
-        text: "Sources: Upholstery Society technical training materials; Guild of Traditional Upholsterers workshop guidance; practical diagnostic input from working upholsterers registered with The Talent Branch.",
+        text: "Sources: Guild of Traditional Upholsterers; practical diagnostic input from working upholsterers registered with The Talent Branch. Technique reviewed by the editor.",
       },
     ],
   },
@@ -650,7 +635,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "The minimum requirement for ranking well: a complete profile with at least ten photographs, ten or more genuine reviews, regular updates (Google treats activity as a quality signal), and correct categorisation (Upholsterer; Furniture Repair Shop).",
+        text: "The minimum requirement for ranking well: a complete profile with photographs of finished work, genuine reviews (BrightLocal's 2026 survey found 97% of consumers read reviews for local businesses and 68% want to see four stars or more), regular updates, and correct categorisation (Upholsterer; Furniture Repair Shop).",
       },
       {
         type: "h2",
@@ -674,7 +659,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "source",
-        text: "Sources: The Talent Branch candidate and client survey data 2026; FIRA (Furniture Industry Research Association) self-employment survey; practical input from self-employed upholsterers registered with The Talent Branch.",
+        text: "Sources: BrightLocal, Local Consumer Review Survey 2026; practical input from self-employed upholsterers registered with The Talent Branch.",
       },
     ],
   },
@@ -724,7 +709,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "Professional leather colour kits (Renapur, Leather Magic, Uniters and others) provide a workable range of base colours and additives. Starting from a close base and adjusting is significantly more controllable than mixing from primaries.",
+        text: "Professional leather colourant ranges (Uniters, Leather Magic and others) provide a workable set of base colours and additives. Starting from a close base and adjusting is significantly more controllable than mixing from primaries.",
       },
       {
         type: "h3",
@@ -756,7 +741,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "Leather repair commands a genuine premium because of the skill barrier it represents. A scuff repair on a car seat that takes 45 minutes of skilled work typically prices between £80 and £150 depending on the degree of difficulty and location. Full seat recolouring on a three-seat sofa typically runs from £350 to £600. These rates are justifiable and the market supports them — the key is delivering a result that is genuinely invisible.",
+        text: "Leather repair commands a genuine premium because of the skill barrier it represents. Among the repairers we work with, a scuff repair on a car seat that takes 45 minutes of skilled work is quoted at £80 to £150 depending on difficulty and location, and full recolouring of a three-seat sofa from £350 to £600. These rates are justifiable and clients pay them; the key is delivering a result that is genuinely invisible.",
       },
       {
         type: "p",
@@ -764,7 +749,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "source",
-        text: "Sources: Leather Conservation Centre technical guidance; Leather Repair Academy course materials; Uniters Professional leather finishing documentation; practical input from upholsterers registered with The Talent Branch.",
+        text: "Sources: The Leather Conservation Centre, Northampton; manufacturers' product documentation (Uniters, Leather Magic); practical input from leather repair technicians and upholsterers registered with The Talent Branch.",
       },
     ],
   },

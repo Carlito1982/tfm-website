@@ -51,7 +51,7 @@ export const articles: Article[] = [
   },
   {
     slug: "pricing-guide-self-employed-upholsterers",
-    title: "Most Self-Employed Upholsterers Undercharge by 30%. Here Is How to Fix It",
+    title: "Most Self-Employed Upholsterers Undercharge. Here Is How to Fix It",
     excerpt:
       "Pricing by feel is not a business. A straightforward framework for calculating your real cost, setting your rate, and presenting quotes with confidence.",
     category: "Business Advice",
@@ -65,7 +65,7 @@ export const articles: Article[] = [
     slug: "uk-foam-material-costs-2026",
     title: "UK Material Costs in 2026: What Has Gone Up, What Has Stabilised",
     excerpt:
-      "Flexible foam remains substantially above 2022 levels. Standard timber has normalised. Here is the full picture — and what it means for your quotes.",
+      "Foam is rising again, timber has come off its 2025 spike, and producer prices are outrunning selling prices. Here is the full picture and what it means for your quotes.",
     category: "Industry News",
     categoryClass: "tag-news",
     image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
