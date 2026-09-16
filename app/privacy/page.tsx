@@ -44,12 +44,12 @@ export default function PrivacyPage() {
           When you contact us by email, enquire about a vacancy or an advertiser, or submit an event or a contribution, we keep your message and contact details for as long as needed to deal with it. The lawful basis is our legitimate interest in responding to you and running the publication.
         </p>
         <p style={p}>
-          The website uses Google Analytics to count visits and see which pages are read. Google Analytics sets cookies and processes a pseudonymous identifier and your IP address; we have IP anonymisation switched on and do not link analytics data to named individuals. We do not sell personal data and we do not use it for automated decisions about you.
+          The website uses Vercel Web Analytics to count visits and see which pages are read. It does not set cookies and does not store your IP address; it records a temporary, anonymous hash of the visit that cannot be linked to a named individual. We do not sell personal data and we do not use it for automated decisions about you.
         </p>
 
         <h2 style={h2}>Who processes it for us</h2>
         <p style={p}>
-          The newsletter is sent through beehiiv, which stores subscriber data on our behalf. Our website is hosted on Vercel and our records are held on Supabase, both under contracts that meet UK GDPR requirements. Email to and from us is handled by Google Workspace and ImprovMX. Some of these providers process data outside the UK under recognised safeguards such as the UK International Data Transfer Agreement or adequacy decisions.
+          The newsletter is sent through beehiiv, which stores subscriber data on our behalf. Our website is hosted on Vercel and our records are held on Supabase, both under contracts that meet UK GDPR requirements. Email to and from us is handled by Google Workspace. Some of these providers process data outside the UK under recognised safeguards such as the UK International Data Transfer Agreement or adequacy decisions.
         </p>
 
         <h2 style={h2}>Advertisers and tracked links</h2>
@@ -74,7 +74,7 @@ export default function PrivacyPage() {
 
         <h2 style={h2}>Cookies</h2>
         <p style={p}>
-          The site sets cookies needed for it to work and Google Analytics cookies for visit counting. No advertising cookies are set by this site. You can block analytics cookies in your browser settings or with the Google Analytics opt-out add-on, and the site will work normally.
+          The site sets only the cookies needed for it to work. Visit counting is cookieless, and no advertising or analytics cookies are set by this site.
         </p>
       </div>
     </div>
