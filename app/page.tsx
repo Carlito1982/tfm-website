@@ -40,7 +40,7 @@ export default async function HomePage() {
   const secondary = getSecondaryArticles()
 
   const { data: liveJobs } = await supabase
-    .from("jobs")
+    .from("tfm_public_jobs")
     .select("id, title, location, postcode, salary_min, salary_max, job_type, published_at")
     .eq("is_published", true)
     .order("published_at", { ascending: false })

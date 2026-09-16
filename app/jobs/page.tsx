@@ -81,7 +81,7 @@ function buildJobPostingSchema(job: SupabaseJob) {
 
 export default async function JobsPage() {
   const { data: jobs, error } = await supabase
-    .from("jobs")
+    .from("tfm_public_jobs")
     .select(
       "id, title, description, published_description, location, postcode, salary_min, salary_max, job_type, skills_required, status, is_published, published_at, created_at"
     )

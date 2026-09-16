@@ -10,7 +10,7 @@ type Props = {
 
 async function getJob(id: string): Promise<SupabaseJob | null> {
   const { data, error } = await supabase
-    .from("jobs")
+    .from("tfm_public_jobs")
     .select(
       "id, title, description, published_description, location, postcode, salary_min, salary_max, job_type, skills_required, status, is_published, published_at, created_at"
     )
