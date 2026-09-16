@@ -46,7 +46,7 @@ export const articleContent: ArticleContent[] = [
       },
       {
         type: "p",
-        text: "Part of the issue is structural. Most upholstery businesses in the UK are small — fewer than ten employees. The administrative burden of taking on an apprentice, managing ESFA funding claims and coordinating with a training provider can be prohibitive for a sole trader or micro-business. The businesses that most need to bring new talent through the door are often the least equipped to navigate the system.",
+        text: "Part of the issue is structural. Most furniture businesses in the UK are small: FIRA's January 2026 digest counts around 6,700 enterprises sharing 72,000 employees, an average of roughly eleven people each, and upholstery workshops sit at the smaller end. The administrative burden of taking on an apprentice, managing apprenticeship funding claims and coordinating with a training provider can be prohibitive for a sole trader or micro-business. The businesses that most need to bring new talent through the door are often the least equipped to navigate the system.",
       },
       {
         type: "highlight",
