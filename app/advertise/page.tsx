@@ -93,7 +93,8 @@ export default function AdvertisePage() {
         </h2>
         <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "#555", marginBottom: "40px" }}>
           All packages include placement across newsletter, website and LinkedIn unless otherwise stated.
-          Custom packages available on request.
+          Custom packages available on request. Until 31 October 2026, ten suppliers, one per category, can join the{" "}
+          <a href="/founding-partners" style={{ color: "#8B7355", textDecoration: "underline" }}>Founding Partner Programme</a>: twelve weekly issues and three monthly editions at no charge in exchange for tracked results.
         </p>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "1px", backgroundColor: BORDER }}>
