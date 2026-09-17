@@ -47,8 +47,7 @@ export default function IssuesPage() {
             All Issues
           </h1>
           <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "#8BA895", marginTop: "12px" }}>
-            Every issue, free to read. Issue 1 goes out on Tuesday 29 September 2026; the weekly brief follows every Tuesday and a long-form edition on the first Thursday of the month.
-          </p>
+            Every issue, free to read. Issue 1 launches this autumn; after that a short brief every fortnight and a longer edition from time to time.</p>
         </div>
       </div>
 

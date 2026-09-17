@@ -39,7 +39,7 @@ export const issueContents: IssueContents[] = [
       "Issue 001: advertised pay on 50 live vacancies against the ONS median, the year the sofa trade changed hands, what Hormuz is doing to freight, and the autumn diary.",
     opening: [
       "Welcome to the first issue of The Furniture Magazine.",
-      "This is a weekly brief for the people who make, repair and finish furniture in the UK, and for the businesses that employ them. It is short by design. Every Tuesday at 07:30 you will get the trade news that matters, one number worth knowing, one technique, the live jobs, and the diary. On the first Thursday of each month there is a longer edition.",
+      "This is a fortnightly brief for the people who make, repair and finish furniture in the UK, and for the businesses that employ them. It is short by design. Every issue brings the trade news that matters, one number worth knowing, one technique, the live jobs, and the diary, with a longer edition from time to time.",
       "Two rules govern everything printed here. Nothing is made up: every figure has a source, and the source is named. Paid content is always labelled as such. If you spot an error, email the editor and it will be corrected in the next issue.",
       "The Furniture Magazine is published by The Talent Branch, the upholstery and furniture recruitment business. That connection is confined to the Jobs section and the footer.",
     ],

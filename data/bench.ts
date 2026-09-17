@@ -22,7 +22,7 @@ export const benchVideos: BenchVideo[] = [
     videoUrl: "https://www.youtube.com/watch?v=TYzyK-K3098",
     description: [
       "Gilboys is a furniture restoration workshop in Devon that has been in business since the early 1990s and has 33,000 subscribers on YouTube. Its video on deep buttoning an antique Victorian chair has been watched 659,000 times, which says something about how many people want to see it done properly: the measuring, the pleating and the tying, in one sitting. Watch it for the way the pleats are set before any tension goes on.",
-      "Each week this slot carries one video from a working tradesperson showing a technique, a tool or a repair. The video is the maker's own and plays from their channel; we add the context. Send yours to editor@thefurnituremagazine.com.",
+      "Each issue this slot carries one video from a working tradesperson showing a technique, a tool or a repair. The video is the maker's own and plays from their channel; we add the context. Send yours to editor@thefurnituremagazine.com.",
     ],
     date: "2026-09-29",
     issue: 1,

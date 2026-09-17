@@ -12,7 +12,7 @@ export interface Issue {
 // Update this list when new issues are published.
 // Add Beehiiv post URL once Beehiiv is live.
 export const issues: Issue[] = [
-  // Issue 1 is scheduled for Tuesday 29 September 2026. Add the Beehiiv post URL once sent.
+  // Issue 1 date is internal only; never show a weekday publicly. Add the Beehiiv post URL once sent.
   {
     slug: "issue-001",
     issue: 1,

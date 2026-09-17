@@ -53,7 +53,7 @@ export default function Footer() {
               }}
             >
               The UK&rsquo;s dedicated trade publication for the furniture and
-              upholstery industry. Free. Weekly. Straight to the point.
+              upholstery industry. Free. Fortnightly. Straight to the point.
             </p>
             <div style={{ marginTop: "20px", display: "flex", gap: "16px" }}>
               <a

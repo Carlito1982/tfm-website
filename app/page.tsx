@@ -111,7 +111,7 @@ export default async function HomePage() {
                 letterSpacing: "0.06em",
               }}
             >
-              Issue 001 · Tuesday 29 September 2026
+              Issue 001 · Launching autumn 2026
             </span>
           </div>
 
@@ -200,7 +200,7 @@ export default async function HomePage() {
                 color: "rgba(245,241,237,0.5)",
               }}
             >
-              Free. Weekly. For UK furniture professionals.
+              Free. Fortnightly. For UK furniture professionals.
             </p>
           </div>
 
@@ -214,7 +214,7 @@ export default async function HomePage() {
                 marginTop: "10px",
               }}
             >
-              Free weekly. For furniture and upholstery trade professionals across the UK. No spam.
+              Free, every fortnight. For furniture and upholstery trade professionals across the UK. No spam.
             </p>
           </div>
         </div>

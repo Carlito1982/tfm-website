@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | The Furniture Magazine",
   },
   description:
-    "The UK's dedicated trade publication for the furniture and upholstery industry. Salary data, craft technique, industry news and business advice — free weekly newsletter.",
+    "The UK's dedicated trade publication for the furniture and upholstery industry. Salary data, craft technique, industry news and business advice — free fortnightly newsletter.",
   keywords: [
     "furniture industry UK",
     "upholstery trade magazine",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
         url: "/og-default.png",
         width: 1200,
         height: 630,
-        alt: "The Furniture Magazine, UK furniture industry intelligence, published weekly",
+        alt: "The Furniture Magazine, UK furniture industry intelligence",
       },
     ],
   },

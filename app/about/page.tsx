@@ -49,7 +49,7 @@ export default function AboutPage() {
           workshop managers and independent craftspeople who form the backbone of the trade.
         </p>
         <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "#444", lineHeight: 1.8, marginBottom: "20px" }}>
-          The Furniture Magazine exists to change that. Every week, we publish editorial content that
+          The Furniture Magazine exists to change that. In every issue, we publish editorial content that
           is genuinely useful to working professionals in the industry: salary data, craft and technique
           guides, business advice, hiring intelligence and news that affects the trade.
         </p>

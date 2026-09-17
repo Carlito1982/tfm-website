@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Founding Partner Programme",
-  description: "The one-page terms of The Furniture Magazine's Founding Partner Programme: ten supplier partners, one per category, twelve weekly issues and three monthly editions at no charge, with a monthly report built from the magazine's own tracking.",
+  description: "The one-page terms of The Furniture Magazine's Founding Partner Programme: ten supplier partners, one per category, twelve issues and three long-form editions at no charge, with a monthly report built from the magazine's own tracking.",
 }
 
 const INK    = "#1A1A1A"
@@ -34,7 +34,7 @@ export default function FoundingPartnersPage() {
 
       <div style={{ maxWidth: "760px", margin: "0 auto", padding: "48px 24px 80px" }}>
         <p style={p}>
-          The Furniture Magazine launches on Tuesday 29 September 2026 to a list built by invitation from The Talent Branch's network of more than 570 tradespeople and 180 furniture businesses. We do not quote readership figures we cannot evidence. Instead, ten suppliers, one per category, are offered a free term in exchange for the data that proves what a placement is worth.
+          The Furniture Magazine launches this autumn to a list built by invitation from The Talent Branch's network of more than 570 tradespeople and 180 furniture businesses. We do not quote readership figures we cannot evidence. Instead, ten suppliers, one per category, are offered a free term in exchange for the data that proves what a placement is worth.
         </p>
         <p style={p}>
           Categories: upholstery fabric, foam and fillings, machinery, tools and sundries, timber and board, finishing, training, software and services, events, publishing.
@@ -42,7 +42,7 @@ export default function FoundingPartnersPage() {
 
         <h2 style={h2}>What the partner receives</h2>
         <ul style={{ paddingLeft: "20px" }}>
-          <li style={li}>A placement in every weekly issue for twelve consecutive issues from the first issue after signing, and in the next three monthly editions: fifty words, one image, one tracked link and one promo code, labelled Advertisement at the top of the item.</li>
+          <li style={li}>A placement in every issue for twelve consecutive issues from the first issue after signing, and in the next three long-form editions: fifty words, one image, one tracked link and one promo code, labelled Advertisement at the top of the item.</li>
           <li style={li}>Category exclusivity for the term: no other company in the same category appears in the same issue.</li>
           <li style={li}>A monthly report on the first working day showing sends, opens, clicks on the partner link, enquiries received through the magazine, promo-code redemptions and cost per lead at rate-card price. The report is generated from the magazine's own tracking, not from screenshots.</li>
           <li style={li}>A review call at week six and at week twelve.</li>
@@ -66,7 +66,7 @@ export default function FoundingPartnersPage() {
             <tr><th style={th}>Placement</th><th style={th}>Published rate (current)</th><th style={th}>Founder rate after week twelve</th></tr>
           </thead>
           <tbody>
-            <tr><td style={td}>Weekly partner slot, per issue</td><td style={td}>£150</td><td style={td}>£112.50 (25% below the published rate for twelve months)</td></tr>
+            <tr><td style={td}>Partner slot, per issue</td><td style={td}>£150</td><td style={td}>£112.50 (25% below the published rate for twelve months)</td></tr>
             <tr><td style={td}>Monthly edition feature, per edition</td><td style={td}>Published with the full rate card</td><td style={td}>25% below the published rate for twelve months</td></tr>
             <tr><td style={td}>Job listing, 30 days</td><td style={td}>£95</td><td style={td}>£71.25</td></tr>
             <tr><td style={td}>Event promotion package</td><td style={td}>£200</td><td style={td}>£150</td></tr>

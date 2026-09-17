@@ -75,7 +75,7 @@ export default function AdPanel({ size = "standard" }: Props) {
             marginBottom: "12px",
           }}
         >
-          Ten places, one per category, for the first twelve weekly issues and three monthly editions.
+          Ten places, one per category, for the first twelve issues and three long-form editions.
         </p>
       )}
       <Link

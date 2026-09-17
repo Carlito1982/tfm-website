@@ -15,8 +15,8 @@ const packages = [
   {
     name: "Newsletter Sponsor",
     price: "From £150/issue",
-    description: "Your brand featured in the weekly newsletter. Includes branded section header, 50-word description and link. Sent to all subscribers.",
-    features: ["Top-of-issue placement", "Branded section header", "Direct link to your site", "Available weekly"],
+    description: "Your brand featured in the newsletter. Includes branded section header, 50-word description and link. Sent to all subscribers.",
+    features: ["Top-of-issue placement", "Branded section header", "Direct link to your site", "Available every issue"],
   },
   {
     name: "Job Listing",
@@ -75,7 +75,7 @@ export default function AdvertisePage() {
               { num: "571+", label: "Trade candidates in network" },
               { num: "187+", label: "Furniture companies in network" },
               { num: "UK-wide", label: "Coverage across all regions" },
-              { num: "Weekly", label: "Publication cadence" },
+              { num: "Fortnightly", label: "Publication cadence" },
             ].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "32px", fontWeight: "bold", color: COPPER }}>{s.num}</div>
@@ -94,7 +94,7 @@ export default function AdvertisePage() {
         <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "#555", marginBottom: "40px" }}>
           All packages include placement across newsletter, website and LinkedIn unless otherwise stated.
           Custom packages available on request. Until 31 October 2026, ten suppliers, one per category, can join the{" "}
-          <a href="/founding-partners" style={{ color: "#8B7355", textDecoration: "underline" }}>Founding Partner Programme</a>: twelve weekly issues and three monthly editions at no charge in exchange for tracked results.
+          <a href="/founding-partners" style={{ color: "#8B7355", textDecoration: "underline" }}>Founding Partner Programme</a>: twelve issues and three long-form editions at no charge in exchange for tracked results.
         </p>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "1px", backgroundColor: BORDER }}>

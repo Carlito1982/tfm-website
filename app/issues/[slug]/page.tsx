@@ -141,7 +141,7 @@ export default async function IssuePage({ params }: Props) {
             </p>
           )}
           <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "13px", color: "rgba(245,241,237,0.6)" }}>
-            Sent {formatDate(issue.date)} at 07:30
+            {issue.beehiivUrl ? `Sent ${formatDate(issue.date)}` : "Launching autumn 2026"}
             {issue.beehiivUrl && (
               <>
                 {" · "}
