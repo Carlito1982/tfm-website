@@ -411,8 +411,30 @@ export default async function ArticlePage({ params }: Props) {
 
   const content = getArticleContent(slug)
 
+  const parsed = Date.parse(article.date)
+  const published = isNaN(parsed) ? undefined : new Date(parsed).toISOString()
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: article.title,
+    description: article.excerpt,
+    image: [`https://www.thefurnituremagazine.com${article.image}`],
+    datePublished: published,
+    dateModified: published,
+    articleSection: article.category,
+    mainEntityOfPage: `https://www.thefurnituremagazine.com/articles/${article.slug}`,
+    author: { "@type": "Organization", name: "The Furniture Magazine", url: "https://www.thefurnituremagazine.com" },
+    publisher: {
+      "@type": "Organization",
+      name: "The Furniture Magazine",
+      url: "https://www.thefurnituremagazine.com",
+      logo: { "@type": "ImageObject", url: "https://www.thefurnituremagazine.com/og-default.png" },
+    },
+  }
+
   return (
     <div style={{ backgroundColor: CREAM }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* ── HERO IMAGE ──────────────────────────────────────────── */}
       <div style={{ position: "relative", width: "100%", height: "clamp(320px, 45vh, 520px)", overflow: "hidden", backgroundColor: INK }}>
