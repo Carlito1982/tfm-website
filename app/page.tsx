@@ -111,7 +111,7 @@ export default async function HomePage() {
                 letterSpacing: "0.06em",
               }}
             >
-              Issue No. 1 · April 2026
+              Issue 001 · Tuesday 29 September 2026
             </span>
           </div>
 

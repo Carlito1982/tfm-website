@@ -2,8 +2,8 @@ export type Article = {
   slug: string
   title: string
   excerpt: string
-  category: "Industry News" | "Craft & Technique" | "Salary Data" | "Business Advice"
-  categoryClass: "tag-news" | "tag-craft" | "tag-salary" | "tag-business"
+  category: "Industry News" | "Craft & Technique" | "Salary Data" | "Business Advice" | "Press Release" | "Books"
+  categoryClass: "tag-news" | "tag-craft" | "tag-salary" | "tag-business" | "tag-press" | "tag-books"
   image: string
   imageAlt: string
   readTime: string
@@ -12,6 +12,79 @@ export type Article = {
 }
 
 export const articles: Article[] = [
+  {
+    slug: "the-year-the-sofa-trade-changed-hands",
+    title: "The year the sofa trade changed hands",
+    excerpt:
+      "In six months the ownership of a large part of British upholstery and bed manufacturing has been rearranged, much of it through administrators' offices. This is the sequence, from the primary documents.",
+    category: "Industry News",
+    categoryClass: "tag-news",
+    image: "/og-default.png",
+    imageAlt: "The Furniture Magazine",
+    readTime: "4 min read",
+    date: "29 Sep 2026",
+    featured: true,
+  },
+  {
+    slug: "chair-upholstery-franco-marinelli",
+    title: "Chair Upholstery, by Franco Marinelli",
+    excerpt:
+      "The Crowood Press publishes Chair Upholstery: A modern guide to traditional techniques on 27 October. Seven chair projects take the reader from basic repairs to advanced work, by Master Upholsterer Franco Marinelli.",
+    category: "Books",
+    categoryClass: "tag-books",
+    image: "/images/chair-upholstery-cover.jpg",
+    imageAlt: "Cover of Chair Upholstery: A modern guide to traditional techniques, by Franco Marinelli, The Crowood Press",
+    readTime: "2 min read",
+    date: "29 Sep 2026",
+  },
+  {
+    slug: "nbf-consumer-bed-buying-survey-2026",
+    title: "Average mattress price fell 16% to £543 in a year, NBF survey finds",
+    excerpt:
+      "The National Bed Federation's 18th Consumer Bed-Buying Survey shows shoppers spending less, replacing sooner, buying online more, and a third choosing roll-up mattresses.",
+    category: "Press Release",
+    categoryClass: "tag-press",
+    image: "/og-default.png",
+    imageAlt: "The Furniture Magazine",
+    readTime: "3 min read",
+    date: "16 Sep 2026",
+  },
+  {
+    slug: "bfa-uk-furniture-market-review-2026",
+    title: "UK-made furniture holds 62% of the home market by value, BFA review finds",
+    excerpt:
+      "The British Furniture Association's UK Furniture Market Review, built on ONS and HMRC data, shows British manufacturers' share slipping from 65% in 2019 and a steep loss in wooden-frame upholstery.",
+    category: "Press Release",
+    categoryClass: "tag-press",
+    image: "/og-default.png",
+    imageAlt: "The Furniture Magazine",
+    readTime: "2 min read",
+    date: "16 Sep 2026",
+  },
+  {
+    slug: "digital-product-records-call-for-evidence-2026",
+    title: "Government wants the furniture trade's evidence on Digital Product Records by 21 September",
+    excerpt:
+      "FIRA is urging every furniture business to respond to a Government Call for Evidence that could decide how product safety, composition and end-of-life information is recorded and shared.",
+    category: "Press Release",
+    categoryClass: "tag-press",
+    image: "/og-default.png",
+    imageAlt: "The Furniture Magazine",
+    readTime: "3 min read",
+    date: "16 Sep 2026",
+  },
+  {
+    slug: "hlf-group-revenue-up-40-per-cent",
+    title: "HLF Group reports revenue up 40% and a £3.5m year ahead",
+    excerpt:
+      "HLF Group, the Blaydon contract furniture supplier to hotels, serviced apartments and holiday parks, says revenue is up 40% on the prior year and projects turnover of £3.5m over the next twelve months.",
+    category: "Press Release",
+    categoryClass: "tag-press",
+    image: "/og-default.png",
+    imageAlt: "The Furniture Magazine",
+    readTime: "1 min read",
+    date: "16 Sep 2026",
+  },
   {
     slug: "uk-furniture-skills-crisis-2026",
     title: "The UK Furniture Skills Crisis Is Getting Worse — Here Is What the Data Shows",
@@ -119,3 +192,6 @@ export const getLatestArticles = (count = 6): Article[] =>
 
 export const getSecondaryArticles = (): Article[] =>
   articles.slice(6, 8)
+
+export const getArticlesByCategory = (category: Article["category"]): Article[] =>
+  articles.filter((a) => a.category === category)

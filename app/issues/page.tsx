@@ -18,6 +18,8 @@ const categoryColour: Record<string, string> = {
   "Craft & Technique":   "#6B4C2A",
   "Industry News":       "#1A2A3A",
   "Business Advice":     "#3A2A1A",
+  "Press Release":       "#8B7355",
+  "Books":               "#4A6B5C",
 }
 
 const sorted = [...issues].sort(
@@ -129,7 +131,7 @@ export default function IssuesPage() {
               </p>
 
               <Link
-                href={issue.beehiivUrl || `/issues/${issue.slug}`}
+                href={`/issues/${issue.slug}`}
                 style={{
                   fontFamily: "var(--font-inter), sans-serif",
                   fontSize: "13px",

@@ -5,6 +5,8 @@ import { useState } from "react"
 
 const links = [
   { href: "/issues", label: "Issues" },
+  { href: "/bench", label: "Bench" },
+  { href: "/press-releases", label: "Press releases" },
   { href: "/jobs", label: "Jobs" },
   { href: "/events", label: "Events" },
   { href: "/advertise", label: "Advertise" },
@@ -70,7 +72,7 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <nav
-          style={{ display: "flex", gap: "32px", alignItems: "center" }}
+          style={{ display: "flex", gap: "24px", alignItems: "center" }}
           className="hidden md:flex"
         >
           {links.map((l) => (

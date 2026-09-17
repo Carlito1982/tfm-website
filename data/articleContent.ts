@@ -8,6 +8,9 @@ export type ContentBlock =
   | { type: "divider" }
   | { type: "highlight"; text: string }
   | { type: "source"; text: string }
+  | { type: "timeline"; items: { label: string; text: string }[] }
+  | { type: "link"; href: string; text: string }
+  | { type: "sources"; items: { label: string; url?: string }[] }
 
 export type ArticleContent = {
   slug: string
@@ -750,6 +753,293 @@ export const articleContent: ArticleContent[] = [
       {
         type: "source",
         text: "Sources: The Leather Conservation Centre, Northampton; manufacturers' product documentation (Uniters, Leather Magic); practical input from leather repair technicians and upholsterers registered with The Talent Branch.",
+      },
+    ],
+  },
+  {
+    slug: "the-year-the-sofa-trade-changed-hands",
+    author: "The Furniture Magazine",
+    body: [
+      {
+        type: "p",
+        text: "In six months the ownership of a large part of British upholstery and bed manufacturing has been rearranged, much of it through administrators' offices. This is the sequence, from the primary documents.",
+      },
+      {
+        type: "timeline",
+        items: [
+          {
+            label: "March",
+            text: "Interpath was appointed administrator of Westbridge Furniture in Holywell and Belfield Leisure in Ilkeston, both part of The Belfield Group, which had bought them out of a pre-pack only a year earlier. 291 of Westbridge's roughly 300 staff were made redundant and the creditors' shortfall across the two companies was later put at £19.6m.",
+          },
+          {
+            label: "April",
+            text: "Whitemeadow bought the Westbridge designs and IP for £150,000 and has been reintroducing the models since May.",
+          },
+          {
+            label: "May",
+            text: "PwC was appointed to Airsprung, the Trowbridge bed maker, with 71 of 202 jobs lost on the day; the administrators' report later put the group shortfall at £61.6m, including a £22.7m pension liability.",
+          },
+          {
+            label: "June",
+            text: "Howdens completed the £390m acquisition of DIY Kitchens.",
+          },
+          {
+            label: "July",
+            text: "NVM Private Equity sold Buoyant Upholstery of Nelson, 117 years old and more than 550 staff, to Ashwood Designs Group, which described the combined business as the UK's largest sofa manufacturing group. Also in July, John Lewis of Hungerford was sold by pre-pack for £100,000, with HMRC owed £1.9m.",
+          },
+          {
+            label: "August",
+            text: "Tetrad's management, with former owner Janus Cooper and a consortium of investors, bought the company out of Belfield, taking Clinchplain Foam and Fibre with it and ending Blandford Capital's involvement. Between 13 July and 25 August, Man Wah Holdings raised its stake in DFS from 4.1% to 8.1% in three stock exchange notifications; DFS reports full-year results on 24 September.",
+          },
+          {
+            label: "September",
+            text: "Headlam, the flooring distributor, entered administration with 154 jobs and 28 trade counters gone in the first week.",
+          },
+        ],
+      },
+      {
+        type: "p",
+        text: "The pattern is the same in each case: the designs and the order book survive, the factory and the jobs do not always. For anyone working in upholstery, the practical reading is that the employers with the widest range of work are now the groups that bought, not the ones that sold, and the people who know the Westbridge and Belfield ranges are worth more to Whitemeadow and Tetrad than they were in February.",
+      },
+      {
+        type: "source",
+        text: "Sources: Interpath, 24 March; Big Furniture Group, 13 May and 27 August; Furniture News, 16 April and 13 July; PwC, 1 May; Howden Joinery Group half year report (RNS), 23 July; bk plus, 15 July; DFS Furniture holdings notifications (RNS), 14 July, 30 July and 26 August; Furniture News, 1 September; The Furnishing Report, 9 September.",
+      },
+      {
+        type: "sources",
+        items: [
+          { label: "Interpath, administrators appointed to Westbridge Furniture and Belfield Leisure, 24 March 2026", url: "https://interpath.com/media-hub/articles/administrators-appointed-to-westbridge-furniture-limited-and-belfield-leisure-limited/" },
+          { label: "Big Furniture Group, creditors of Westbridge and Belfield face shortfall, 13 May 2026", url: "https://bigfurnituregroup.com/creditors-of-westbridge-and-belfield-face-shortfall-of-almost-20m/" },
+          { label: "Furniture News, Whitemeadow acquires rights to Westbridge lines, 16 April 2026", url: "https://furniturenews.net/news/whitemeadow-acquires-rights-to-westbridge-lines" },
+          { label: "PwC, Airsprung Group plc and Airsprung Furniture Limited in administration, 1 May 2026", url: "https://www.pwc.co.uk/press-room/press-releases/administrations/airsprung-group-plc-and-airsprung-furniture-limited---in-adminis.html" },
+          { label: "Interior Daily, creditors face major shortfall as UK bed maker enters administration, June 2026", url: "https://www.interiordaily.com/article/9849856/creditors-face-major-shortfall-as-uk-bed-maker-enters-administration/" },
+          { label: "Howden Joinery Group half year report (RNS), 23 July 2026", url: "https://www.investegate.co.uk/announcement/rns/howden-joinery-group--hwdn/half-year-report/9682948" },
+          { label: "Furniture News, Ashwood owner acquires Buoyant, 13 July 2026", url: "https://furniturenews.net/news/ashwood-owner-acquires-buoyant" },
+          { label: "bk plus, pre-pack sale of John Lewis of Hungerford, 15 July 2026", url: "https://bkplus.co.uk/bk-plus-secures-future-for-john-lewis-of-hungerford-brand-and-22-jobs-through-pre-pack-sale/" },
+          { label: "Big Furniture Group, Tetrad enters a new chapter under new ownership, 27 August 2026", url: "https://bigfurnituregroup.com/tetrad-enters-a-new-chapter-under-new-ownership/" },
+          { label: "DFS Furniture plc, holdings in company (RNS), 26 August 2026", url: "https://www.investegate.co.uk/announcement/rns/dfs-furniture--dfs/holding-s-in-company/9741737" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "hlf-group-revenue-up-40-per-cent",
+    author: "HLF Group",
+    body: [
+      {
+        type: "highlight",
+        text: "Press release, supplied by HLF Group.",
+      },
+      {
+        type: "p",
+        text: "HLF Group, the Blaydon contract furniture supplier to hotels, serviced apartments and holiday parks, says revenue is up 40% on the prior year and projects turnover of £3.5m over the next twelve months. The company has added an account manager, extra vehicles and a new North East warehouse; customers include Hoseasons, Landal, Parkdean Resorts and Center Parcs. Owner Rachel Conroy was named in Insider Media's North East 42 Under 42.",
+      },
+      {
+        type: "sources",
+        items: [
+          { label: "HLF Group press release, 15 September 2026", url: "https://www.thehlfgroup.com/" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "nbf-consumer-bed-buying-survey-2026",
+    author: "National Bed Federation",
+    body: [
+      {
+        type: "highlight",
+        text: "Press release, supplied by the National Bed Federation. Issued 9 September 2026. Edited for length; figures and quotes as issued. Source linked at the end.",
+      },
+      {
+        type: "p",
+        text: "The National Bed Federation's 18th annual Consumer Bed-Buying Survey, carried out by Censuswide in August 2026 among 1,000 adults who bought a mattress in the previous year, finds a clear squeeze on what people are prepared to spend.",
+      },
+      {
+        type: "p",
+        text: "The mean price paid for a mattress fell 16% year on year to £543. Nearly half of buyers paid under £400, against 40% in the previous survey, while the share spending £800 or more dropped from 28% to 20%.",
+      },
+      {
+        type: "quote",
+        text: "This is a clear indication of the challenges facing our members and bed retailers across the country.",
+        attribution: "Tristine Hargreaves, NBF Executive Director",
+      },
+      { type: "h3", text: "What people bought" },
+      {
+        type: "p",
+        text: "Mattresses bought on their own, rather than with a bedstead, rose to 64.5% of all purchases. Roll-up mattresses jumped to 33% of purchases from 23.5%, with uptake ranging from 22.5% among 25 to 34 year olds to nearly 40% among 45 to 54 year olds. Flat mattresses accounted for 32%, and mattress and bedstead combinations fell to 22%.",
+      },
+      { type: "h3", text: "How often they replace" },
+      {
+        type: "p",
+        text: "The average age of a mattress at replacement fell to 6.84 years from 7.28. More than three quarters were replaced before reaching ten years old. Younger buyers replace soonest: 56.5% of 16 to 24 year olds and 60% of 25 to 34 year olds had replaced within five years.",
+      },
+      { type: "h3", text: "Sustainability and price" },
+      {
+        type: "p",
+        text: "Seventy percent of respondents said they would pay more for a fully recyclable, sustainably designed mattress, at an average premium of 8%. The 25 to 34 age group was the most willing, at 81%.",
+      },
+      { type: "h3", text: "Where they bought" },
+      {
+        type: "p",
+        text: "Online purchases reached 55%, up from 52.5%, led by 45 to 54 year olds at 63% and 35 to 44 year olds at 60%.",
+      },
+      {
+        type: "p",
+        text: "Forty percent of buyers could not recall the brand of mattress they bought. The most recalled brands were Silentnight, Dreams and Emma.",
+      },
+      {
+        type: "p",
+        text: "NBF members can access the full survey data through the federation's Market Intelligence hub.",
+      },
+      {
+        type: "sources",
+        items: [
+          { label: "National Bed Federation, Latest NBF Research Confirms Squeeze on Consumer Spending, 9 September 2026", url: "https://www.bedfed.org.uk/latest-nbf-research-confirms-squeeze-on-consumer-spending/" },
+        ],
+      },
+      { type: "h3", text: "Editor's note" },
+      {
+        type: "p",
+        text: "What this means for makers: a 16% fall in the average price paid and a rise in roll-up purchases is pressure on margin and on construction choices for every UK bed manufacturer. The 8% premium that 70% of buyers say they would pay for a recyclable design is the one number in this survey that points the other way.",
+      },
+    ],
+  },
+  {
+    slug: "digital-product-records-call-for-evidence-2026",
+    author: "FIRA",
+    body: [
+      {
+        type: "highlight",
+        text: "Press release, supplied by FIRA. Issued 13 August 2026, with a further notice on 8 September 2026. Edited for length; meaning unchanged. Sources linked at the end.",
+      },
+      {
+        type: "p",
+        text: "The Department for Business, Innovation, Science and Trade is seeking input on Digital Product Records to shape future UK policy and to gauge the potential effects on businesses, consumers and supply chains.",
+      },
+      {
+        type: "p",
+        text: "The Call for Evidence asks whether a UK policy framework for Digital Product Records could streamline how product information is distributed while improving transparency and traceability for consumers and for market surveillance bodies.",
+      },
+      {
+        type: "p",
+        text: "A Digital Product Record could hold safety information, composition details, sustainability metrics and end-of-life guidance, including refurbishment, repair and reuse. The Government presents the measure as supporting product circularity and wider sustainability goals, and as part of a broader effort to digitalise compliance for businesses and consumers.",
+      },
+      {
+        type: "quote",
+        text: "We encourage all our Members to submit their own responses to ensure the views of the furniture sector are fully represented.",
+        attribution: "FIRA",
+      },
+      {
+        type: "p",
+        text: "The EU has already begun implementing a comparable requirement through Digital Product Passports under its Ecodesign for Sustainable Products Regulation.",
+      },
+      {
+        type: "p",
+        text: "Ahead of the deadline FIRA hosted a free webinar on 15 September with Chris Hayward, General Manager of FIRA, journalist Matthew Valentine as moderator, Joanna Knight, Chair of the FISP Steering Group, Tristine Hargreaves, Executive Director of the National Bed Federation, and Dr Dorothy Maxwell, Principal and Head of Sustainability at The Sustainable Business Group.",
+      },
+      {
+        type: "quote",
+        text: "Taking part in the UK government's Call for Evidence is an opportunity for our industry to shape policy that works for it.",
+        attribution: "Chris Hayward, General Manager, FIRA",
+      },
+      {
+        type: "p",
+        text: "Deadline for responses: 11:59 pm, Monday 21 September 2026. FIRA contact: John Hubbard, info@fira.co.uk.",
+      },
+      {
+        type: "link",
+        href: "https://www.gov.uk/government/calls-for-evidence/call-for-evidence-digital-product-record-policy",
+        text: "Respond to the Call for Evidence on gov.uk",
+      },
+      {
+        type: "sources",
+        items: [
+          { label: "FIRA, UK Government Industry Consultation on Digital Product Records, 13 August 2026", url: "https://www.fira.co.uk/news/article/uk-government-industry-consultation-on-digital-product-records" },
+          { label: "FIRA, Free Webinar: Digital Product Records, 8 September 2026", url: "https://www.fira.co.uk/news/article/free-webinar-digital-product-records-dpr-tuesday-15-september-215pm" },
+        ],
+      },
+      { type: "h3", text: "Editor's note" },
+      {
+        type: "p",
+        text: "If you make, repair or reupholster furniture and have never answered a Government consultation, this is the one to answer. The record that ends up attached to a sofa or a mattress will be filled in by the people who make it, and the questions asked now decide how much of that work lands on a small workshop.",
+      },
+    ],
+  },
+  {
+    slug: "bfa-uk-furniture-market-review-2026",
+    author: "British Furniture Association",
+    body: [
+      {
+        type: "highlight",
+        text: "Press release, supplied by the British Furniture Association. Issued 13 August 2026. Edited for length; figures and quotes as issued. Source linked at the end.",
+      },
+      {
+        type: "p",
+        text: "The British Furniture Association has published its UK Furniture Market Review, a report on market trends built from Government statistics.",
+      },
+      {
+        type: "p",
+        text: "By value, 62% of the UK domestic furniture market is UK-made, compared with 65% in 2019.",
+      },
+      {
+        type: "p",
+        text: "In the wooden upholstered seating market, the share held by UK-manufactured sales has fallen by more than 20 percentage points over the last decade.",
+      },
+      {
+        type: "p",
+        text: "Kitchen furniture accounts for almost half of all general furniture sales by value, and wooden kitchen furniture commands 89% of the UK market.",
+      },
+      {
+        type: "p",
+        text: "The analysis draws on data from the Office for National Statistics, HMRC, and average unit price data for UK-manufactured products.",
+      },
+      {
+        type: "quote",
+        text: "The UK Furniture Market Review is one of several industry reports that offers BFA members a detailed view of trends in the market.",
+        attribution: "Phil Spademan, Managing Director, BFA",
+      },
+      {
+        type: "p",
+        text: "He added: \"While the reporting we undertake is a useful tool for our members in aiding decision-making, it also feeds into our work as a trade body.\"",
+      },
+      {
+        type: "p",
+        text: "The review is available to BFA members. Media enquiries: Jane@Shepherd-PR.com",
+      },
+      {
+        type: "sources",
+        items: [
+          { label: "British Furniture Association, BFA analysis offers key insight to furniture market trends, 13 August 2026", url: "https://www.bfa.org.uk/news-and-blogs/bfa-analysis-offers-key-insight-to-furniture-market-trends/" },
+        ],
+      },
+      { type: "h3", text: "Editor's note" },
+      {
+        type: "p",
+        text: "The wooden-frame upholstery figure is the one for our readers. A 20-point fall in the UK-made share of that market over ten years is the background to every conversation about why upholstery wages have been slow to move.",
+      },
+    ],
+  },
+  {
+    slug: "chair-upholstery-franco-marinelli",
+    author: "The Furniture Magazine",
+    body: [
+      {
+        type: "p",
+        text: "The Crowood Press publishes Chair Upholstery: A modern guide to traditional techniques on 27 October (£24, 160 pages, paperback). Seven chair projects take the reader from basic repairs to advanced work, with each stage photographed, and the publisher pitches it at both beginners and upholsterers looking to extend their range.",
+      },
+      { type: "h3", text: "The author" },
+      {
+        type: "p",
+        text: "Franco Marinelli has worked as an upholsterer and university tutor in Italy and England. He is certified as a Master Upholsterer by City and Guilds and the Worshipful Company of Upholders, is a Fellow of the Association of Master Upholsterers, and holds the Freedom of the City of London and the Livery of the Worshipful Company of Upholders. A full review follows in our first monthly edition in November, with a written Q and A with the author.",
+      },
+      {
+        type: "link",
+        href: "https://www.crowood.com/book/chair-upholstery/",
+        text: "The book at The Crowood Press",
+      },
+      {
+        type: "source",
+        text: "Publisher details and author biography supplied by The Crowood Press, 17 September. Cover image reproduced with the publisher's permission.",
       },
     ],
   },

@@ -4,6 +4,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { articles } from "@/data/articles"
 import { getArticleContent, type ContentBlock } from "@/data/articleContent"
+import SideRail from "@/components/SideRail"
 
 // Design tokens
 const INK    = "#1A1A1A"
@@ -19,6 +20,8 @@ const categoryColour: Record<string, string> = {
   "Craft & Technique": "#6B4C2A",
   "Salary Data":     "#1A2A3A",
   "Business Advice": "#3A2A1A",
+  "Press Release":   "#8B7355",
+  "Books":           "#4A6B5C",
 }
 
 type Props = {
@@ -290,6 +293,112 @@ function renderBlock(block: ContentBlock, index: number) {
         </div>
       )
 
+    case "timeline":
+      return (
+        <div key={index} style={{ margin: "32px 0 40px" }}>
+          {block.items.map((item, i) => (
+            <div key={i} className="timeline-row">
+              <p
+                style={{
+                  fontFamily: "var(--font-playfair), Georgia, serif",
+                  fontSize: "20px",
+                  fontWeight: 400,
+                  color: COPPER,
+                  lineHeight: 1.3,
+                  margin: 0,
+                }}
+              >
+                {item.label}
+              </p>
+              <p
+                style={{
+                  fontFamily: "var(--font-inter), sans-serif",
+                  fontSize: "16px",
+                  lineHeight: 1.75,
+                  color: CHARCOAL,
+                  margin: 0,
+                }}
+              >
+                {item.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      )
+
+    case "link":
+      return (
+        <p key={index} style={{ margin: "0 0 20px" }}>
+          <a
+            href={block.href}
+            {...(block.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontSize: "15px",
+              fontWeight: 500,
+              color: COPPER,
+              textDecoration: "underline",
+              textUnderlineOffset: "3px",
+            }}
+          >
+            {block.text}
+          </a>
+        </p>
+      )
+
+    case "sources":
+      return (
+        <div
+          key={index}
+          style={{
+            marginTop: "40px",
+            paddingTop: "20px",
+            borderTop: `1px solid ${BORDER}`,
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontSize: "10px",
+              fontWeight: 500,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: MUTED,
+              marginBottom: "10px",
+            }}
+          >
+            Sources
+          </p>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            {block.items.map((item, i) => (
+              <li
+                key={i}
+                style={{
+                  fontFamily: "var(--font-inter), sans-serif",
+                  fontSize: "12px",
+                  color: MUTED,
+                  lineHeight: 1.6,
+                  marginBottom: "6px",
+                }}
+              >
+                {item.url ? (
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: COPPER, textDecoration: "underline", textUnderlineOffset: "2px" }}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  item.label
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+
     default:
       return null
   }
@@ -301,20 +410,18 @@ export default async function ArticlePage({ params }: Props) {
   if (!article) notFound()
 
   const content = getArticleContent(slug)
-  const related = articles.filter((a) => a.slug !== slug && a.category === article.category).slice(0, 2)
-  const moreArticles = articles.filter((a) => a.slug !== slug).slice(0, 3)
 
   return (
     <div style={{ backgroundColor: CREAM }}>
 
       {/* ── HERO IMAGE ──────────────────────────────────────────── */}
-      <div style={{ position: "relative", width: "100%", height: "clamp(320px, 45vh, 520px)", overflow: "hidden" }}>
+      <div style={{ position: "relative", width: "100%", height: "clamp(320px, 45vh, 520px)", overflow: "hidden", backgroundColor: INK }}>
         <Image
           src={article.image}
           alt={article.imageAlt}
           fill
           priority
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: article.category === "Books" ? "contain" : "cover", padding: article.category === "Books" ? "24px" : 0 }}
           sizes="100vw"
         />
         <div
@@ -417,18 +524,9 @@ export default async function ArticlePage({ params }: Props) {
         </div>
       </div>
 
-      {/* ── BODY + SIDEBAR ──────────────────────────────────────── */}
-      <div
-        style={{
-          maxWidth: "1160px",
-          margin: "0 auto",
-          padding: "56px 24px 80px",
-          display: "grid",
-          gridTemplateColumns: "1fr min(280px, 30%)",
-          gap: "64px",
-          alignItems: "start",
-        }}
-      >
+      {/* ── BODY + RAIL ─────────────────────────────────────────── */}
+      <div className="two-col">
+        <div className="two-col-main">
         {/* Article body */}
         <article>
           {content ? (
@@ -501,126 +599,9 @@ export default async function ArticlePage({ params }: Props) {
             </Link>
           </div>
         </article>
+        </div>
 
-        {/* Sidebar */}
-        <aside style={{ position: "sticky", top: "32px" }}>
-
-          {/* Jobs strip */}
-          <div
-            style={{
-              backgroundColor: SOFT,
-              border: `1px solid ${BORDER}`,
-              padding: "24px",
-              marginBottom: "28px",
-            }}
-          >
-            <p
-              style={{
-                fontFamily: "var(--font-inter), sans-serif",
-                fontSize: "10px",
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: COPPER,
-                marginBottom: "14px",
-              }}
-            >
-              Live Vacancies
-            </p>
-            <p
-              style={{
-                fontFamily: "var(--font-inter), sans-serif",
-                fontSize: "13px",
-                color: MUTED,
-                lineHeight: 1.55,
-                marginBottom: "16px",
-              }}
-            >
-              Browse open upholstery and furniture trade roles across the UK.
-            </p>
-            <Link
-              href="/jobs"
-              style={{
-                fontFamily: "var(--font-inter), sans-serif",
-                fontSize: "12px",
-                fontWeight: 600,
-                color: INK,
-                textDecoration: "none",
-                letterSpacing: "0.04em",
-              }}
-            >
-              View all vacancies →
-            </Link>
-          </div>
-
-          {/* Related articles */}
-          {(related.length > 0 ? related : moreArticles).length > 0 && (
-            <div
-              style={{
-                backgroundColor: SOFT,
-                border: `1px solid ${BORDER}`,
-                padding: "24px",
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: "var(--font-inter), sans-serif",
-                  fontSize: "10px",
-                  fontWeight: 700,
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  color: COPPER,
-                  marginBottom: "18px",
-                }}
-              >
-                {related.length > 0 ? "Related Articles" : "More Articles"}
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
-                {(related.length > 0 ? related : moreArticles).map((rel) => (
-                  <Link
-                    key={rel.slug}
-                    href={`/articles/${rel.slug}`}
-                    style={{ textDecoration: "none" }}
-                  >
-                    <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                      <div style={{ position: "relative", width: "60px", height: "48px", flexShrink: 0 }}>
-                        <Image
-                          src={rel.image}
-                          alt={rel.imageAlt}
-                          fill
-                          style={{ objectFit: "cover" }}
-                          sizes="60px"
-                        />
-                      </div>
-                      <div>
-                        <p
-                          style={{
-                            fontFamily: "var(--font-playfair), Georgia, serif",
-                            fontSize: "13px",
-                            color: INK,
-                            lineHeight: 1.4,
-                            margin: "0 0 4px",
-                          }}
-                        >
-                          {rel.title}
-                        </p>
-                        <span
-                          style={{
-                            fontFamily: "var(--font-inter), sans-serif",
-                            fontSize: "11px",
-                            color: MUTED,
-                          }}
-                        >
-                          {rel.readTime}
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-        </aside>
+        <SideRail />
       </div>
 
       {/* ── MORE ARTICLES ───────────────────────────────────────── */}
