@@ -72,7 +72,7 @@ export default function AdvertisePage() {
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "32px" }}>
             {[
-              { num: "571+", label: "Trade candidates in network" },
+              { num: "21,872+", label: "Trade candidates in network" },
               { num: "187+", label: "Furniture companies in network" },
               { num: "UK-wide", label: "Coverage across all regions" },
               { num: "Fortnightly", label: "Publication cadence" },

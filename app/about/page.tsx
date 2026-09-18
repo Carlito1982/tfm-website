@@ -66,7 +66,7 @@ export default function AboutPage() {
           The Furniture Magazine is published by The Talent Branch Ltd — the UK&rsquo;s specialist
           recruitment agency for the furniture and upholstery industry. This gives us something no
           other trade publication has: direct access to real salary, hiring and market data from
-          571 registered candidates and 187 furniture companies across the UK.
+          21,872 registered candidates and 187 furniture companies across the UK.
         </p>
         <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "#444", lineHeight: 1.8, marginBottom: "48px" }}>
           When we report on what upholsterers earn or where the skills shortages are, we are drawing
