@@ -2,40 +2,41 @@ import Image from "next/image"
 import Link from "next/link"
 import SubscribeForm from "@/components/SubscribeForm"
 import ArticleCard from "@/components/ArticleCard"
-import { getFeaturedArticle, getLatestArticles, getSecondaryArticles } from "@/data/articles"
+import { getHeroArticle, getStartHereArticles, getLatestArticles, getSecondaryArticles } from "@/data/articles"
 import { supabase, type SupabaseJob } from "@/lib/supabase"
 
 export const revalidate = 3600
 
 const categories = [
   {
-    label: "Industry News",
-    description: "Market moves, skills data and company news from across the UK trade.",
-    tagClass: "tag-news",
-    href: "/issues",
-  },
-  {
-    label: "Craft & Technique",
-    description: "Step-by-step guides written by and for working professionals.",
+    label: "The Bench",
+    description: "One technique, one tool or one material, explained by the person who uses it.",
     tagClass: "tag-craft",
     href: "/issues",
   },
   {
-    label: "Salary Data",
-    description: "Live benchmarks from UK placements and job market monitoring.",
-    tagClass: "tag-salary",
+    label: "The Piece",
+    description: "A single commission told properly: the brief, the material, the part that went wrong and what fixed it.",
+    tagClass: "tag-news",
     href: "/issues",
   },
   {
-    label: "Business Advice",
-    description: "Pricing, finding clients and running a furniture trade operation.",
+    label: "The Studio",
+    description: "Running a workshop. Pricing, finding the work, and what an hour at the bench is really worth.",
     tagClass: "tag-business",
+    href: "/issues",
+  },
+  {
+    label: "The Trade",
+    description: "News, pay benchmarks and the jobs that reach a small workshop, with every figure sourced.",
+    tagClass: "tag-salary",
     href: "/issues",
   },
 ]
 
 export default async function HomePage() {
-  const featured = getFeaturedArticle()
+  const featured = getHeroArticle()
+  const startHere = getStartHereArticles()
   const latest = getLatestArticles(6)
   const secondary = getSecondaryArticles()
 
@@ -111,7 +112,7 @@ export default async function HomePage() {
                 letterSpacing: "0.06em",
               }}
             >
-              Issue 001 · Launching autumn 2026
+              Issue 001 · Out 29 September
             </span>
           </div>
 
@@ -143,7 +144,7 @@ export default async function HomePage() {
           </p>
 
           <Link
-            href={`/issues`}
+            href={`/articles/${featured.slug}`}
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -159,7 +160,7 @@ export default async function HomePage() {
               textDecoration: "none",
             }}
           >
-            Read the Article →
+            Read it now →
           </Link>
         </div>
       </section>
@@ -217,6 +218,62 @@ export default async function HomePage() {
               Free, every fortnight. For bespoke makers, upholsterers, restorers, conservators and the designers who commission them. No spam.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* ── START HERE ───────────────────────────────────────────── */}
+      <section style={{ maxWidth: "1200px", margin: "0 auto", padding: "56px 28px 12px" }}>
+        <div style={{ marginBottom: "10px" }}>
+          <span
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontSize: "11px",
+              fontWeight: 600,
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+              color: "#8B7355",
+            }}
+          >
+            Start here
+          </span>
+        </div>
+        <h2
+          style={{
+            fontFamily: "var(--font-playfair), Georgia, serif",
+            fontSize: "clamp(20px, 2.8vw, 28px)",
+            fontWeight: 400,
+            color: "#1A1A1A",
+            maxWidth: "720px",
+            lineHeight: 1.25,
+            marginBottom: "10px",
+          }}
+        >
+          Three things worth your next ten minutes
+        </h2>
+        <p
+          style={{
+            fontFamily: "var(--font-inter), sans-serif",
+            fontSize: "16px",
+            color: "#6B6866",
+            lineHeight: 1.6,
+            maxWidth: "640px",
+            marginBottom: "30px",
+          }}
+        >
+          A technique you can use on the next job, the only published pay data in the UK
+          furniture trade, and five sources of work that actually fill an order book.
+        </p>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+            gap: "28px",
+          }}
+        >
+          {startHere.map((article) => (
+            <ArticleCard key={article.slug} article={article} />
+          ))}
         </div>
       </section>
 
@@ -284,7 +341,7 @@ export default async function HomePage() {
               textAlign: "center",
             }}
           >
-            What We Cover
+            Every issue, four sections
           </h2>
           <div
             style={{

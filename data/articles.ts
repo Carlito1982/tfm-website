@@ -184,6 +184,29 @@ export const articles: Article[] = [
   },
 ]
 
+// ---------------------------------------------------------------------------
+// Home page hero. Change this one line to swap the lead item on the front page.
+// Set to the Chair Upholstery hand-measurement feature once The Crowood Press
+// have given written permission; until then it is the pricing piece, which is
+// the strongest craft-and-workshop story we own outright.
+export const HERO_SLUG = "pricing-guide-self-employed-upholsterers"
+
+export const getHeroArticle = (): Article =>
+  articles.find((a) => a.slug === HERO_SLUG) ?? articles.find((a) => a.featured) ?? articles[0]
+
+// Three pieces that prove the value fast to a first-time visitor: one craft,
+// one piece of data nobody else in the UK publishes, one business.
+export const START_HERE_SLUGS = [
+  "deep-buttoning-technique-guide",
+  "upholstery-salary-report-2026",
+  "finding-clients-self-employed-upholsterer",
+]
+
+export const getStartHereArticles = (): Article[] =>
+  START_HERE_SLUGS.map((slug) => articles.find((a) => a.slug === slug)).filter(
+    (a): a is Article => Boolean(a)
+  )
+
 export const getFeaturedArticle = (): Article =>
   articles.find((a) => a.featured) ?? articles[0]
 
