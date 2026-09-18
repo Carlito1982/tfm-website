@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | The Furniture Magazine",
   },
   description:
-    "The UK's dedicated trade publication for the furniture and upholstery industry. Salary data, craft technique, industry news and business advice — free fortnightly newsletter.",
+    "Written for the people who bring furniture to life: bespoke upholsterers, cabinet makers, restorers, conservators and the designers who commission them. Technique, tools and materials, finished work worth studying, trade news and jobs. Free, every fortnight.",
   keywords: [
     "furniture industry UK",
     "upholstery trade magazine",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "furniture news",
     "cabinet making UK",
     "upholstery apprenticeship",
-    "furniture trade publication",
+    "bespoke furniture trade publication",
   ],
   openGraph: {
     type: "website",

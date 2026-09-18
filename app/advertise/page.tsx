@@ -28,7 +28,7 @@ const packages = [
   {
     name: "Event Promotion",
     price: "From £200",
-    description: "Feature your industry event — show, festival, trade day or training — to our audience of active furniture professionals. Includes dedicated feature piece.",
+    description: "Feature your event — show, festival, trade day or training — to our audience of bespoke makers, restorers and designers. Includes dedicated feature piece.",
     features: ["Newsletter feature", "Website events listing", "LinkedIn post", "Dedicated editorial mention"],
   },
   {
@@ -57,12 +57,12 @@ export default function AdvertisePage() {
             Partner With Us
           </p>
           <h1 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "clamp(32px, 5vw, 52px)", color: "#fff", lineHeight: 1.15 }}>
-            Reach the people who make UK furniture
+            Reach the people who bring furniture to life
           </h1>
           <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "17px", color: "#F2E0CC", marginTop: "20px", lineHeight: 1.7, maxWidth: "580px" }}>
-            The Furniture Magazine is the only UK trade publication written specifically for upholsterers,
-            cabinet makers, finishers, workshop owners and furniture manufacturers. Our audience is active,
-            trade-engaged and hard to reach through general media.
+            The Furniture Magazine is written for bespoke upholsterers, cabinet makers, restorers,
+            conservators and the designers who commission them: independent workshops and studios making
+            one-off and commissioned work. A specialist audience, hard to reach through general media.
           </p>
         </div>
       </div>

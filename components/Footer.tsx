@@ -52,8 +52,9 @@ export default function Footer() {
                 maxWidth: "240px",
               }}
             >
-              The UK&rsquo;s dedicated trade publication for the furniture and
-              upholstery industry. Free. Fortnightly. Straight to the point.
+              For the people who bring furniture to life: bespoke upholsterers,
+              cabinet makers, restorers, conservators and the designers who
+              commission them. Free, every fortnight.
             </p>
             <div style={{ marginTop: "20px", display: "flex", gap: "16px" }}>
               <a

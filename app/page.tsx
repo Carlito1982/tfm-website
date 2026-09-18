@@ -200,7 +200,7 @@ export default async function HomePage() {
                 color: "rgba(245,241,237,0.5)",
               }}
             >
-              Free. Fortnightly. For UK furniture professionals.
+              Free, every fortnight. For the bench and the studio.
             </p>
           </div>
 
@@ -214,7 +214,7 @@ export default async function HomePage() {
                 marginTop: "10px",
               }}
             >
-              Free, every fortnight. For furniture and upholstery trade professionals across the UK. No spam.
+              Free, every fortnight. For bespoke makers, upholsterers, restorers, conservators and the designers who commission them. No spam.
             </p>
           </div>
         </div>

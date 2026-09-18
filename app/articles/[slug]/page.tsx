@@ -600,7 +600,7 @@ export default async function ArticlePage({ params }: Props) {
                 marginBottom: "20px",
               }}
             >
-              Trade news, craft guides, salary data and business advice — delivered free to UK furniture professionals.
+              Technique, tools and materials, finished work worth studying, trade news and jobs — free to the bench and the studio.
             </p>
             <Link
               href="/#subscribe"

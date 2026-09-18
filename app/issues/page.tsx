@@ -4,7 +4,7 @@ import { issues } from "@/data/issues"
 
 export const metadata: Metadata = {
   title: "All Issues",
-  description: "Browse every issue of The Furniture Magazine — the UK trade publication for the furniture and upholstery industry.",
+  description: "Browse every issue of The Furniture Magazine — written for bespoke upholsterers, cabinet makers, restorers, conservators and the designers who commission them.",
 }
 
 const GREEN  = "#1A1A1A"

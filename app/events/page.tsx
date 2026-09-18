@@ -35,7 +35,7 @@ export default function EventsPage() {
             Industry Events
           </h1>
           <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "#8BA895", marginTop: "12px", maxWidth: "580px" }}>
-            Trade shows, festivals, training days and open workshops relevant to UK furniture professionals.
+            Trade shows, festivals, training days and open workshops for bespoke makers, restorers and the designers who commission them.
             Free listings available — contact the editor.
           </p>
         </div>
@@ -175,7 +175,7 @@ export default function EventsPage() {
             </h3>
             <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "15px", color: "#555", lineHeight: 1.7, marginBottom: "24px" }}>
               Running a trade show, training day, open workshop or industry festival?
-              We list events relevant to UK furniture professionals, free of charge where appropriate.
+              We list events for makers, restorers and designers, free of charge where appropriate.
             </p>
             <a
               href="mailto:carlos@thetalentbranch.com?subject=Event Listing — The Furniture Magazine"
@@ -201,7 +201,7 @@ export default function EventsPage() {
             </h3>
             <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "15px", color: "#888", lineHeight: 1.7, marginBottom: "24px" }}>
               Featured event placements include newsletter coverage, dedicated editorial mention
-              and LinkedIn promotion to our audience of active UK furniture professionals.
+              and LinkedIn promotion to our audience of bespoke makers, restorers and designers.
             </p>
             <a
               href="/advertise"

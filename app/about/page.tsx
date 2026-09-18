@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "About",
-  description: "The Furniture Magazine is the UK's dedicated trade publication for the furniture and upholstery industry, published by The Talent Branch.",
+  description: "Written for the people who bring furniture to life: bespoke upholsterers, cabinet makers, restorers, conservators and the designers who commission them. Published by The Talent Branch.",
 }
 
 const GREEN  = "#1A1A1A"
@@ -43,15 +43,15 @@ export default function AboutPage() {
           Why The Furniture Magazine exists
         </h2>
         <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "#444", lineHeight: 1.8, marginBottom: "20px" }}>
-          The UK furniture and upholstery industry is vast, skilled and underserved. Most trade coverage
-          focuses on consumer trends, luxury retail or high-end interior design. Very little is written
-          for the people who actually make the furniture — the upholsterers, cabinet makers, finishers,
-          workshop managers and independent craftspeople who form the backbone of the trade.
+          Britain still has thousands of workshops and studios making furniture one piece at a time.
+          Most trade coverage is written for volume retail: ranges, promotions and footfall. Very little
+          is written for the people who bring furniture to life — the bespoke upholsterers, cabinet makers,
+          restorers and conservators, and the designers who commission their work.
         </p>
         <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "#444", lineHeight: 1.8, marginBottom: "20px" }}>
-          The Furniture Magazine exists to change that. In every issue, we publish editorial content that
-          is genuinely useful to working professionals in the industry: salary data, craft and technique
-          guides, business advice, hiring intelligence and news that affects the trade.
+          The Furniture Magazine exists to change that. In every issue: a technique worth stealing,
+          inspirational stories from the bench and the studio, the tools and materials that earn their keep,
+          finished work worth studying, and the trade news and job opportunities that reach a small workshop.
         </p>
         <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "#444", lineHeight: 1.8, marginBottom: "48px" }}>
           It is free. Always.

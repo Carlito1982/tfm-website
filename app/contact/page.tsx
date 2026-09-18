@@ -142,7 +142,7 @@ export default function ContactPage() {
               },
               {
                 title: "You run an industry event",
-                body: "Trade shows, festivals, training days, open workshops — we list industry events relevant to UK furniture professionals. Featured listings available free of charge where appropriate.",
+                body: "Trade shows, festivals, training days, open workshops — we list events for bespoke makers, restorers and the designers who commission them. Featured listings available free of charge where appropriate.",
               },
               {
                 title: "You want to advertise",
