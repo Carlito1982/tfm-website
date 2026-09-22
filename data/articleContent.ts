@@ -20,6 +20,42 @@ export type ArticleContent = {
 
 export const articleContent: ArticleContent[] = [
   {
+    slug: "franco-marinelli-qa-chair-upholstery",
+    author: "Franco Marinelli",
+    body: [
+      { type: "p", text: "Franco Marinelli trained through City and Guilds and the Worshipful Company of Upholders, holds the Masters Upholder Certificate and has worked as an upholsterer and university tutor in Italy and England. Ahead of Chair Upholstery, published by The Crowood Press on 27 October, he answered eight questions for The Furniture Magazine on his own working methods, and in his own words." },
+      { type: "h3", text: "What made you write Chair Upholstery now, and who did you have in mind as the reader?" },
+      { type: "p", text: "After nearly fifty years in upholstery, I felt it was time to bring together the knowledge, techniques and standards behind good practice. My work as a craftsman, business owner, lecturer and mentor has allowed me to learn from skilled practitioners and pass that knowledge to the next generation. Students and colleagues had long encouraged me to write a book, and their words stayed with me. Traditional upholstery depends on accumulated experience, which can easily be diluted unless it is clearly documented." },
+      { type: "p", text: "Retirement gave me the distance and perspective to write without urgency, so the timing felt right. I wrote the book for committed beginners seeking a reliable foundation and practising upholsterers needing a trusted reference. My aim was to preserve traditional skills while making them accessible to modern readers. Above all, I hope the book strengthens appreciation of upholstery as a skilled profession and helps its techniques remain practised, understood and valued for years to come." },
+      { type: "h3", text: "The book is built around seven chair projects. How did you choose them, and in what order would you suggest a reader works through them?" },
+      { type: "p", text: "I chose the seven projects to cover the main forms and challenges an upholsterer is likely to encounter, from simple modern frames to fully traditional work involving springs, stitched edges and shaped backs. Each chair develops a distinct principle, and together they create a structured progression rather than a series of unrelated exercises." },
+      { type: "p", text: "Before beginning the projects, I strongly recommend studying the book's techniques section. A sound understanding of foundations, webbing, stuffing, stitching, spring tying and assessment makes the practical work easier and helps prevent mistakes caused by starting too quickly." },
+      { type: "p", text: "Once the fundamentals are secure, I suggest following the projects in the order presented. More experienced upholsterers can, of course, go directly to the project or technique most relevant to them and use the book as a reference." },
+      { type: "h3", text: "Which traditional technique is most at risk of being lost in UK workshops, and why does it matter?" },
+      { type: "p", text: "In my view, hand-stitched edges are the traditional technique most at risk. The work is slow, physically demanding and requires patience that can be difficult to sustain under modern commercial pressures. Yet it is fundamental. A stitched edge gives a chair its shape, durability and comfort, turning padding and fabric into a properly constructed seat, back or arm. As workshops seek to reduce time and cost, pre-formed materials and faster methods increasingly replace this process, leaving fewer upholsterers with the chance to learn how to build and shape an edge correctly by hand." },
+      { type: "p", text: "This matters because stitched edges distinguish upholstery as a structural craft rather than mere decoration. Without the technique, heritage furniture cannot be restored faithfully, and the skill, discipline and judgement behind traditional upholstery begin to disappear." },
+      { type: "h3", text: "Where do modern materials earn their place in a traditional job, and where do they not?" },
+      { type: "p", text: "Modern materials have a place when they improve safety, durability or practicality without changing the character of the work. Suitable foams, polyester fibres, fire-retardant barrier fabrics, synthetic webbing and certain adhesives can help meet regulations and everyday demands for hygiene, weight and reliability." },
+      { type: "p", text: "Modern materials are inappropriate when they compromise the authenticity or construction of a traditional antique. Replacing hair with foam or stitched edges with manufactured shortcuts changes the nature of the piece. For important or historically significant chairs, the original construction should guide the work, using compatible materials and reversible methods wherever possible. The key question is not whether a material is old or new, but whether it suits the chair, is used honestly and will perform well over time." },
+      { type: "h3", text: "Your training came through City and Guilds and the Worshipful Company of Upholders. What did that route give you that is hard for a new upholsterer to find today?" },
+      { type: "p", text: "My training was entirely workshop-based. At the bench, I worked on real commissions with real materials and solved the practical problems that arise when a customer is waiting for a chair. City and Guilds and the Worshipful Company of Upholders formally recognised my training, and I received the Masters Upholder Certificate, confirming the standard I had reached through years of disciplined practice." },
+      { type: "p", text: "What is harder for new upholsterers to find today is this combination of sustained workshop experience and structured recognition from established institutions. Short courses and online resources can be useful, but they do not always develop the judgement, hand skills and professional identity that come from prolonged practical training." },
+      { type: "h3", text: "What is the most common fault you find when you strip back a chair that someone else has upholstered?" },
+      { type: "p", text: "The fault I encounter most often is weak foundation work hidden beneath a presentable cover. The webbing may be uneven or poorly tensioned, the springs inadequately tied, and the fillings used to disguise an incorrect shape rather than build it properly. A chair is only as sound as the work beneath its fabric: poor foundations cause the seat to lose shape, become uncomfortable and fail too soon." },
+      { type: "p", text: "Another common problem is using foam where traditional materials are needed. Foam may conceal structural faults temporarily, but it cannot reproduce the resilience or sculpted form created by hair and stitched edges. Even on modern furniture designed for foam, I often find inadequate foundations that allow it to sag between the springs." },
+      { type: "h3", text: "Which one tool could you not work without, and what should someone look for when buying it?" },
+      { type: "p", text: "The one tool I could not work without is a regulator. It reaches where fingers cannot, allowing stuffing to be positioned, adjusted and refined precisely. When choosing one, look for strength, a smooth finish and comfortable balance; it should pass through stuffing without snagging and feel precise rather than heavy." },
+      { type: "p", text: "A well-balanced tack hammer is another essential. Choose one for balance, comfort and control rather than appearance, with a secure head and a handle that sits comfortably in the hand. That said, no upholsterer can rely on a single tool: the craft requires a basic kit of tack hammer, mallet, ripping chisel, web stretcher, lifters, scissors and a dependable set of needles." },
+      { type: "h3", text: "What advice would you give someone in their first year at the bench?" },
+      { type: "p", text: "Focus on learning the foundations properly rather than working too quickly. Your first year is about building habits that will support your whole career, not chasing speed. Give equal care to assessment, preparation and neatness, because the hidden work is as important as the finished surface. Study each chair before stripping it; the original construction can teach you a great deal." },
+      { type: "p", text: "Seek feedback from experienced upholsterers whenever possible. Ask questions, accept correction and investigate mistakes rather than hiding them. Build good habits from the start: speed will come with practice, but sound judgement and pride in your work must come first." },
+      { type: "divider" },
+      { type: "p", text: "Chair Upholstery: A modern guide to traditional techniques is published by The Crowood Press on 27 October. A full review follows in our first monthly edition on 5 November." },
+      { type: "link", href: "https://www.crowood.com/book/chair-upholstery/", text: "The book at The Crowood Press" },
+      { type: "source", text: "Answers supplied by Franco Marinelli in writing, 18 September 2026, in response to questions from The Furniture Magazine. Portrait and workshop photographs supplied by the author for this purpose." },
+    ],
+  },
+  {
     slug: "uk-furniture-skills-crisis-2026",
     author: "The Furniture Magazine",
     body: [
@@ -1030,7 +1066,12 @@ export const articleContent: ArticleContent[] = [
       { type: "h3", text: "The author" },
       {
         type: "p",
-        text: "Franco Marinelli has worked as an upholsterer and university tutor in Italy and England. He is certified as a Master Upholsterer by City and Guilds and the Worshipful Company of Upholders, is a Fellow of the Association of Master Upholsterers, and holds the Freedom of the City of London and the Livery of the Worshipful Company of Upholders. A full review follows in our first monthly edition in November, with a written Q and A with the author.",
+        text: "Franco Marinelli has worked as an upholsterer and university tutor in Italy and England. He is certified as a Master Upholsterer by City and Guilds and the Worshipful Company of Upholders, is a Fellow of the Association of Master Upholsterers, and holds the Freedom of the City of London and the Livery of the Worshipful Company of Upholders. He answered eight questions for The Furniture Magazine on stitched edges, modern materials and his own training; a full review follows in our first monthly edition in November.",
+      },
+      {
+        type: "link",
+        href: "/articles/franco-marinelli-qa-chair-upholstery",
+        text: "Read the Franco Marinelli Q and A",
       },
       {
         type: "link",

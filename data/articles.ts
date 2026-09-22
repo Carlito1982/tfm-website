@@ -38,6 +38,18 @@ export const articles: Article[] = [
     date: "29 Sep 2026",
   },
   {
+    slug: "franco-marinelli-qa-chair-upholstery",
+    title: "Franco Marinelli: \u201cA chair is only as sound as the work beneath its fabric\u201d",
+    excerpt:
+      "Ahead of Chair Upholstery, out on 27 October, Master Upholsterer Franco Marinelli answers eight questions on stitched edges, modern materials and the tool he could not work without.",
+    category: "Books",
+    categoryClass: "tag-books",
+    image: "/images/franco-marinelli-portrait.jpg",
+    imageAlt: "Franco Marinelli, author of Chair Upholstery, at his workbench",
+    readTime: "6 min read",
+    date: "29 Sep 2026",
+  },
+  {
     slug: "nbf-consumer-bed-buying-survey-2026",
     title: "Average mattress price fell 16% to £543 in a year, NBF survey finds",
     excerpt:
