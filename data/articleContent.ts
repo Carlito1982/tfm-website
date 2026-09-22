@@ -1043,6 +1043,114 @@ export const articleContent: ArticleContent[] = [
       },
     ],
   },
+  {
+    slug: "wood-awards-2026-furniture-shortlist",
+    author: "The Furniture Magazine",
+    body: [
+      {
+        type: "p",
+        text: "The Wood Awards has unveiled its 2026 shortlist for furniture and objects, fourteen entries across four categories, from a student bench to a mirror made from hazel stems. The furniture and objects jury is led by designer and maker Sebastian Cox RDI, alongside design consultant Caroline Till, curator Hugo Macdonald, woodworker Sophie Sellu and Ercol chairman Henry Tadros. Winners are announced on 25 November.",
+      },
+      { type: "h3", text: "Bespoke" },
+      {
+        type: "list",
+        items: [
+          "Portal of Seedlings, by Filippo Muzi Falconi",
+          "BespOak, by students and staff of the Design + Make course, Architectural Association",
+          "Kontur Series, by Anna Maria Øfstedal Eng",
+        ],
+      },
+      { type: "h3", text: "Production" },
+      {
+        type: "list",
+        items: [
+          "Black House Stools, by Ashen Co",
+          "Wattle Mirror, by Jacob Marks",
+          "Patchwork Pina Lamp, by Jacob Marks",
+          "Common Room, by Daniel Schofield Studio",
+        ],
+      },
+      { type: "h3", text: "Sculpted Objects" },
+      {
+        type: "list",
+        items: [
+          "Afterlife, by Zeller & Moye with Katie Paterson",
+          "Hollow Bodies, by Max Bainbridge",
+          "A Drop in Time, by Olly Fathers",
+        ],
+      },
+      { type: "h3", text: "Student" },
+      {
+        type: "list",
+        items: [
+          "Dagwood Bench, by Lewis Duckworth",
+          "Butterfly Shelf, by Jack Allfrey",
+          "The Ocean Screen, by Eleanor Pickin",
+          "Our Grandchildren's World, by Henry Chantler",
+        ],
+      },
+      {
+        type: "p",
+        text: "No images of the shortlisted pieces are cleared for reproduction here; we have asked the Wood Awards for credited images. The panel's full reasoning and further detail on each piece is on the Wood Awards site, linked below.",
+      },
+      {
+        type: "sources",
+        items: [
+          { label: "Wood Awards unveils 2026 shortlist of furniture, objects and buildings", url: "https://www.woodawards.com/wood-awards-unveils-2026-shortlist-of-furniture-objects-and-buildings/" },
+          { label: "Wood Awards, winners announcement 25 November 2026", url: "https://www.woodawards.com/" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "bfa-ai-summit-2026",
+    author: "British Furniture Association",
+    body: [
+      {
+        type: "highlight",
+        text: "Press release, supplied by the British Furniture Association via Shepherd PR. Wording as issued; nothing added or inferred.",
+      },
+      {
+        type: "p",
+        text: "The British Furniture Association (BFA) hosted a major sell-out event dedicated to exploring the opportunities and challenges of AI technology in furniture manufacturing, wholesale and retail. Experts from Google, Chick Digital, Autonomate, Push Group, Furniture Connect and ACID were on the agenda at the BFA AI Summit: Efficiency-Productivity-Possibility, sharing tailored advice for the industry to a packed room at Coventry Building Society Stadium.",
+      },
+      {
+        type: "p",
+        text: "The event gave delegates the chance to explore the technology as well as offering deeper insight into evaluating the potential benefits of AI and how to incorporate it into a business strategy with confidence.",
+      },
+      {
+        type: "quote",
+        text: "It is our mission, as the national trade body representing the interests of the UK furniture industry, to champion the success of British furniture manufacturers, suppliers and retailers by driving innovation and growth. The demand for an event of this type is evident. The BFA AI Summit was a sell-out event, attracting a wide range of delegates to hear from expert speakers and discuss practical applications for this new technology.",
+        attribution: "Phil Spademan, BFA Managing Director",
+      },
+      {
+        type: "p",
+        text: "Fatou Fall, a customer engineer at Google Cloud, opened the day with a session on designing the future of AI in furniture manufacturing and retail. Jamie Claret, CEO of Autonomate, followed on why most AI projects stall and how to build momentum that lasts, and Dids Macdonald of Anti-Copying in Design (ACID) closed the morning with a discussion of AI and intellectual property.",
+      },
+      {
+        type: "p",
+        text: "The afternoon opened with Steve Hyde, CEO and co-founder of Push Group, on the role of AI and automation in reaching customers and improving marketing. Pavir Patel of Furniture Connect ran a practical session on taking a product from supplier information to a live listing, and the day closed with Matt Chick, founder of Chick Digital, on where AI is heading next.",
+      },
+      {
+        type: "quote",
+        text: "AI is no longer a distant prospect. It is here now and our summit was designed to ensure all delegates were able to access the expert information and insight needed to plan for the future. Alongside networking with other forward-thinking businesses across the sector, the event provided practical and relevant discourse around AI, its uses in manufacturing and retail, and its potential implications for future decision-making.",
+        attribution: "Phil Spademan, BFA Managing Director",
+      },
+      {
+        type: "p",
+        text: "The BFA has represented the interests of the UK furniture industry for more than 75 years, with member benefits including discounts at the January Furniture Show, access to affinity services and help with regulatory cost avoidance.",
+      },
+      {
+        type: "source",
+        text: "Press release supplied by the British Furniture Association via Shepherd PR, 18 September 2026. Caption: Fatou Fall, customer engineer at Google Cloud, speaks at BFA's AI Summit. Credit: British Furniture Association.",
+      },
+      {
+        type: "link",
+        href: "https://www.bfa.org.uk/home/",
+        text: "British Furniture Association",
+      },
+    ],
+  },
 ]
 
 export function getArticleContent(slug: string): ArticleContent | undefined {

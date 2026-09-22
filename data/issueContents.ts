@@ -72,7 +72,7 @@ export const issueContents: IssueContents[] = [
         ],
       },
       {
-        label: "Number of the week",
+        label: "Number to know",
         items: [
           {
             title: "142.9",
@@ -95,7 +95,7 @@ export const issueContents: IssueContents[] = [
         ],
       },
       {
-        label: "Bench video of the week",
+        label: "Bench video",
         items: [
           {
             title: "How To Deep Button an Antique Victorian Chair, by Gilboys",

@@ -3,9 +3,9 @@ import Link from "next/link"
 import { getBenchVideos } from "@/data/bench"
 
 export const metadata: Metadata = {
-  title: "Bench Video of the Week",
+  title: "Bench Video",
   description:
-    "One video a week from a working tradesperson showing a technique, a tool or a repair. Each plays from the maker's own channel; The Furniture Magazine adds the context.",
+    "One video from a working maker in every issue, showing a technique, a tool or a repair. Each plays from the maker's own channel; The Furniture Magazine adds the context.",
 }
 
 const INK = "#1A1A1A"
@@ -38,10 +38,10 @@ export default function BenchIndexPage() {
             The Bench
           </p>
           <h1 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 400, color: CREAM }}>
-            Bench video of the week
+            Bench video
           </h1>
           <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "rgba(245,241,237,0.6)", marginTop: "12px", maxWidth: "640px", lineHeight: 1.6 }}>
-            One video a week from a working tradesperson showing a technique, a tool or a repair. Each is the maker&rsquo;s own and plays from their channel; we add the context. Send yours to editor@thefurnituremagazine.com.
+            One video from a working maker in every issue, showing a technique, a tool or a repair. Each is the maker&rsquo;s own and plays from their channel; we add the context. Send yours to editor@thefurnituremagazine.com.
           </p>
         </div>
       </div>

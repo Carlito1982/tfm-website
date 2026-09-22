@@ -1,0 +1,75 @@
+// STAGED CONTENT -- NOT IMPORTED ANYWHERE. This file cannot build or publish.
+// Built 22 Sep 2026 during the evening content push (job J5).
+//
+// Reason both pieces are staged rather than live: open item #80 (no written
+// licence yet from Kirsty Lockwood or Franco Marinelli/The Crowood Press for
+// Issue 001 material) and Kirsty's photo credit line, still outstanding as of
+// 22 Sep 2026. Nothing here is published until those are in hand and Carlos
+// says Approved.
+//
+// Franco Marinelli Q and A: NOT staged. His answers arrived as an attachment
+// (Questions and Answers.docx, Gmail thread 1a0afc2c5c95e038, message
+// 1a0b5b0cc2ce7d88, 18 Sep 2026) and this session has no tool that can open a
+// .docx attachment, so the text could not be read or transcribed tonight.
+// Someone with the file open (Carlos, or a session with a document-reading
+// tool) needs to paste the answers in before this can be built.
+
+import type { Article } from "@/data/articles"
+import type { ArticleContent } from "@/data/articleContent"
+
+export const stagedArticles: Article[] = [
+  {
+    slug: "festival-of-upholstery-2026-preview",
+    title: "Festival of Upholstery 2026: why the trade is heading to Birmingham",
+    excerpt:
+      "The Festival returns 2 and 3 October at the NCC and Motorcycle Museum, Birmingham. Organiser Kirsty Lockwood on the exhibitors, the sessions worth planning around, and what's new this year.",
+    category: "Industry News",
+    categoryClass: "tag-news",
+    image: "/og-default.png",
+    imageAlt: "The Furniture Magazine",
+    readTime: "3 min read",
+    date: "29 Sep 2026",
+  },
+]
+
+export const stagedArticleContent: ArticleContent[] = [
+  {
+    slug: "festival-of-upholstery-2026-preview",
+    author: "The Furniture Magazine",
+    body: [
+      {
+        type: "p",
+        text: "The Festival of Upholstery returns on 2 and 3 October 2026 at the National Conference Centre and Motorcycle Museum, Birmingham, and organiser Kirsty Lockwood says interest has ramped up significantly in the run-up.",
+      },
+      {
+        type: "p",
+        text: "Her case for making the trip is a simple one. It is a rare chance to step away from the bench and spend time with people who understand the job: to see techniques up close, discover new materials and suppliers, ask honest business questions and connect with the wider upholstery community. Birmingham was chosen for its transport links, and Lockwood notes that hotel prices for the night of the event have dropped significantly in the last couple of weeks.",
+      },
+      {
+        type: "p",
+        text: "The exhibitor list mixes major suppliers, including Martins, Livedale and Warwick, with specialist British manufacturers such as John Boyd Textiles, Isle Mill and Cable and Blake. The AMUSF, the Guild of Traditional Upholsterers, the Worshipful Company of Upholders, the British Furniture Association and SATRA will all be there, and accountants, marketing experts and business advisers will be on hand to take questions.",
+      },
+      {
+        type: "p",
+        text: "The session Lockwood is most looking forward to is Elsie Hutcheon's live demonstration on reusing existing upholstery, showing how to assess what is already inside a piece and retain materials where appropriate. Vanessa Butt will speak on sustainable materials in upholstery with real examples, and Rohan Blacker of Shplendid Sofas is also on the programme.",
+      },
+      {
+        type: "p",
+        text: "New this year is a much broader practical programme, with live demonstrations filmed close-up and projected onto a large screen. The awards from the AMUSF, the Guild of Traditional Upholsterers and the Worshipful Company of Upholders return, and the Upholders have again donated an adjustable bench, along with a compressor. The evening social is professionally organised this year, with a two-course meal, a stocked bar with plenty of non-alcoholic options and a live band, giving people more time to meet and talk beyond the exhibition itself.",
+      },
+      {
+        type: "p",
+        text: "Tickets and full details are at festivalofupholstery.co.uk. With only a week to go, the organisers strongly recommend booking soon.",
+      },
+      {
+        type: "source",
+        text: "Answers supplied by Kirsty Lockwood, Festival of Upholstery, by email, final wording approved 22 September 2026 (thread 19c77bf7ccc4bcc3, cc Catherine, hello@ivyupholstery.com). Photo credit line still outstanding -- do not publish until received.",
+      },
+      {
+        type: "link",
+        href: "https://www.festivalofupholstery.co.uk/",
+        text: "Festival of Upholstery",
+      },
+    ],
+  },
+]

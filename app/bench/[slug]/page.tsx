@@ -55,7 +55,7 @@ export default async function BenchVideoPage({ params }: Props) {
               marginBottom: "16px",
             }}
           >
-            Bench video of the week
+            Bench video
           </Link>
           <h1
             style={{

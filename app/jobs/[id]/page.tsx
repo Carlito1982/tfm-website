@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { notFound } from "next/navigation"
+import { permanentRedirect } from "next/navigation"
 import { supabase, type SupabaseJob } from "@/lib/supabase"
 
 export const revalidate = 3600
@@ -49,7 +49,9 @@ function capitalise(str: string): string {
 export default async function JobDetailPage({ params }: Props) {
   const { id } = await params
   const job = await getJob(id)
-  if (!job) notFound()
+  // Job expired/unpublished: 308-redirect to the live jobs list instead of a hard 404,
+  // so Google drops the stale URL from its index rather than repeatedly re-crawling a dead page.
+  if (!job) permanentRedirect("/jobs")
 
   const location = [job.location, job.postcode].filter(Boolean).join(", ") || "Location on application"
   const salary = formatSalary(job.salary_min, job.salary_max)

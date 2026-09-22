@@ -1,4 +1,4 @@
-// Bench video of the week. Every video is the maker's own and plays from their channel
+// Bench video. Every video is the maker's own and plays from their channel
 // through the official YouTube player. Nothing is downloaded or re-hosted.
 export interface BenchVideo {
   slug: string
@@ -14,17 +14,59 @@ export interface BenchVideo {
 
 export const benchVideos: BenchVideo[] = [
   {
-    slug: "gilboys-deep-buttoning-victorian-chair",
-    title: "How To Deep Button an Antique Victorian Chair",
+    slug: "alison-scott-upholstery-buttons",
+    title: "Introduction to Making Upholstery Buttons",
+    maker: "Alison Scott Upholstery",
+    channelCredit: "Video: Alison Scott Upholstery, YouTube",
+    youtubeId: "uvNSmp7G7zc",
+    videoUrl: "https://www.youtube.com/watch?v=uvNSmp7G7zc",
+    description: [
+      "Alison Scott has taught traditional upholstery for more than 35 years, through in-person classes and now a library of over 100 video tutorials at alisonscottupholstery.co.uk. This one covers a skill every upholsterer needs sooner or later: making your own covered buttons to match the top fabric, rather than relying on a pre-made set that never quite matches.",
+      "Each issue this slot carries one video from a working maker showing a technique, a tool or a repair. The video is the maker's own and plays from their channel; we add the context. Send yours to editor@thefurnituremagazine.com.",
+    ],
+    date: "2026-09-22",
+    issue: 1,
+  },
+  {
+    slug: "gilboys-french-polish",
+    title: "How to Strip and French Polish Wood Furniture",
     maker: "Gilboys",
     channelCredit: "Video: Gilboys, YouTube",
-    youtubeId: "TYzyK-K3098",
-    videoUrl: "https://www.youtube.com/watch?v=TYzyK-K3098",
+    youtubeId: "rQXP5OKM9ag",
+    videoUrl: "https://www.youtube.com/watch?v=rQXP5OKM9ag",
     description: [
-      "Gilboys is a furniture restoration workshop in Devon that has been in business since the early 1990s and has 33,000 subscribers on YouTube. Its video on deep buttoning an antique Victorian chair has been watched 659,000 times, which says something about how many people want to see it done properly: the measuring, the pleating and the tying, in one sitting. Watch it for the way the pleats are set before any tension goes on.",
-      "Each issue this slot carries one video from a working tradesperson showing a technique, a tool or a repair. The video is the maker's own and plays from their channel; we add the context. Send yours to editor@thefurnituremagazine.com.",
+      "Gilboys is a furniture restoration business in Dartington, Devon, running since the early 1990s; after thirty years of restoration work the team now also makes beeswax polish and leather conditioner from the same Devon workshop. This video takes a piece back to bare wood and builds up a French polish finish in stages, the slow way, with nothing skipped.",
+      "Each issue this slot carries one video from a working maker showing a technique, a tool or a repair. The video is the maker's own and plays from their channel; we add the context. Send yours to editor@thefurnituremagazine.com.",
     ],
-    date: "2026-09-29",
+    date: "2026-09-22",
+    issue: 1,
+  },
+  {
+    slug: "marc-fish-robinson-house-studio",
+    title: "Marc Fish Furniture Creation at Robinson House Studio",
+    maker: "Marc Fish",
+    channelCredit: "Video: Marc Fish, YouTube",
+    youtubeId: "jB4PmdQhTqk",
+    videoUrl: "https://www.youtube.com/watch?v=jB4PmdQhTqk",
+    description: [
+      "Marc Fish runs Robinson House Studio in Newhaven, East Sussex, where he makes sculptural, one-off furniture using micro stack-lamination with veneers, and trains makers on 50-week and 19-week courses alongside senior tutor Theo Cook. He holds a Bespoke Guild Mark from The Furniture Makers' Company. This video follows a piece from raw material through to a finished sculptural form.",
+      "Each issue this slot carries one video from a working maker showing a technique, a tool or a repair. The video is the maker's own and plays from their channel; we add the context. Send yours to editor@thefurnituremagazine.com.",
+    ],
+    date: "2026-09-22",
+    issue: 1,
+  },
+  {
+    slug: "mayfield-restorations-writing-bureau",
+    title: "Restoration of a 1930s Writing Bureau by Jentique Furniture",
+    maker: "Mayfield Restorations",
+    channelCredit: "Video: Mayfield Restorations, YouTube",
+    youtubeId: "5xAs62-Un_c",
+    videoUrl: "https://www.youtube.com/watch?v=5xAs62-Un_c",
+    description: [
+      "David runs Mayfield Restorations from a home workshop in the North West of England, sourcing vintage pieces and giving them a working life again; he is self-taught and shares the process as he learns it. This video takes a 1930s Jentique writing bureau through stripping, repair and refinishing.",
+      "Each issue this slot carries one video from a working maker showing a technique, a tool or a repair. The video is the maker's own and plays from their channel; we add the context. Send yours to editor@thefurnituremagazine.com.",
+    ],
+    date: "2026-09-22",
     issue: 1,
   },
 ]

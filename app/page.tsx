@@ -1,8 +1,8 @@
-import Image from "next/image"
 import Link from "next/link"
 import SubscribeForm from "@/components/SubscribeForm"
 import ArticleCard from "@/components/ArticleCard"
-import { getHeroArticle, getStartHereArticles, getLatestArticles, getSecondaryArticles } from "@/data/articles"
+import { getHeroArticle, getHeroPoolArticles, getStartHereArticles, getLatestArticles, getSecondaryArticles } from "@/data/articles"
+import HeroRotator from "@/components/HeroRotator"
 import { supabase, type SupabaseJob } from "@/lib/supabase"
 
 export const revalidate = 3600
@@ -53,117 +53,7 @@ export default async function HomePage() {
     <div style={{ backgroundColor: "#F5F1ED" }}>
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section
-        style={{
-          position: "relative",
-          width: "100%",
-          height: "clamp(460px, 60vh, 620px)",
-          overflow: "hidden",
-          backgroundColor: "#1A1A1A",
-        }}
-      >
-        <Image
-          src={featured.image}
-          alt={featured.imageAlt}
-          fill
-          priority
-          style={{ objectFit: "cover", opacity: 0.55 }}
-          sizes="100vw"
-        />
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(to right, rgba(26,26,26,0.90) 0%, rgba(26,26,26,0.50) 55%, rgba(26,26,26,0.10) 100%)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            right: 0,
-            maxWidth: "1200px",
-            margin: "0 auto",
-            padding: "0 28px 52px",
-          }}
-        >
-          <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-            <span
-              style={{
-                backgroundColor: "#8B7355",
-                color: "#fff",
-                fontSize: "10px",
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                padding: "4px 10px",
-                fontFamily: "var(--font-inter), sans-serif",
-              }}
-            >
-              {featured.category}
-            </span>
-            <span
-              style={{
-                color: "rgba(245,241,237,0.6)",
-                fontSize: "11px",
-                fontFamily: "var(--font-inter), sans-serif",
-                letterSpacing: "0.06em",
-              }}
-            >
-              Issue 001 · Out 29 September
-            </span>
-          </div>
-
-          <h1
-            style={{
-              fontFamily: "var(--font-playfair), Georgia, serif",
-              fontSize: "clamp(26px, 4vw, 46px)",
-              fontWeight: 700,
-              color: "#FFFFFF",
-              lineHeight: 1.2,
-              maxWidth: "640px",
-              marginBottom: "16px",
-            }}
-          >
-            {featured.title}
-          </h1>
-
-          <p
-            style={{
-              fontFamily: "var(--font-inter), sans-serif",
-              fontSize: "clamp(14px, 1.6vw, 16px)",
-              color: "rgba(245,241,237,0.78)",
-              lineHeight: 1.65,
-              maxWidth: "500px",
-              marginBottom: "28px",
-            }}
-          >
-            {featured.excerpt}
-          </p>
-
-          <Link
-            href={`/articles/${featured.slug}`}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px",
-              border: "1.5px solid rgba(245,241,237,0.7)",
-              color: "#F5F1ED",
-              padding: "10px 24px",
-              fontFamily: "var(--font-inter), sans-serif",
-              fontSize: "12px",
-              fontWeight: 600,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              textDecoration: "none",
-            }}
-          >
-            Read it now →
-          </Link>
-        </div>
-      </section>
+      <HeroRotator pool={getHeroPoolArticles()} initial={featured} />
 
       {/* ── SUBSCRIBE BAR ─────────────────────────────────────────── */}
       <section

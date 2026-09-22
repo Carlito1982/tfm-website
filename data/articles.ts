@@ -182,6 +182,30 @@ export const articles: Article[] = [
     readTime: "8 min read",
     date: "4 Apr 2026",
   },
+  {
+    slug: "wood-awards-2026-furniture-shortlist",
+    title: "The Wood Awards 2026 shortlist: the furniture to study",
+    excerpt:
+      "Fourteen furniture and objects entries make this year's shortlist, from a student bench to a mirror made from hazel stems. Winners announced 25 November.",
+    category: "Industry News",
+    categoryClass: "tag-news",
+    image: "/og-default.png",
+    imageAlt: "The Furniture Magazine",
+    readTime: "4 min read",
+    date: "22 Sep 2026",
+  },
+  {
+    slug: "bfa-ai-summit-2026",
+    title: "Industry turns out in force for BFA's AI Summit",
+    excerpt:
+      "The British Furniture Association's sell-out AI Summit at Coventry Building Society Stadium heard from Google Cloud, Autonomate, Push Group, Furniture Connect, Chick Digital and ACID.",
+    category: "Press Release",
+    categoryClass: "tag-press",
+    image: "/og-default.png",
+    imageAlt: "The Furniture Magazine",
+    readTime: "3 min read",
+    date: "22 Sep 2026",
+  },
 ]
 
 // ---------------------------------------------------------------------------
@@ -193,6 +217,22 @@ export const HERO_SLUG = "pricing-guide-self-employed-upholsterers"
 
 export const getHeroArticle = (): Article =>
   articles.find((a) => a.slug === HERO_SLUG) ?? articles.find((a) => a.featured) ?? articles[0]
+
+// Rotating hero pool (#99): curated, image-bearing, on-positioning pieces only.
+// Server always renders HERO_SLUG first (SEO, no-JS); HeroRotator advances
+// through this pool client-side on repeat visits. Retire-list pieces never
+// go in here, and nothing goes in with a date after today.
+export const HERO_POOL = [
+  "pricing-guide-self-employed-upholsterers",
+  "upholstery-salary-report-2026",
+  "deep-buttoning-technique-guide",
+  "wood-awards-2026-furniture-shortlist",
+]
+
+export const getHeroPoolArticles = (): Article[] =>
+  HERO_POOL.map((slug) => articles.find((a) => a.slug === slug)).filter(
+    (a): a is Article => Boolean(a)
+  )
 
 // Three pieces that prove the value fast to a first-time visitor: one craft,
 // one piece of data nobody else in the UK publishes, one business.

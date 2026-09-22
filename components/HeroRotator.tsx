@@ -1,0 +1,185 @@
+"use client"
+
+import { useEffect, useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import type { Article } from "@/data/articles"
+
+type Props = {
+  pool: Article[]
+  initial: Article
+}
+
+const STORAGE_KEY = "tfm-hero-rotator-index"
+
+function isPastOrToday(dateStr: string): boolean {
+  try {
+    const d = new Date(dateStr)
+    if (isNaN(d.getTime())) return true
+    const today = new Date()
+    today.setHours(23, 59, 59, 999)
+    return d.getTime() <= today.getTime()
+  } catch {
+    return true
+  }
+}
+
+export default function HeroRotator({ pool, initial }: Props) {
+  const [current, setCurrent] = useState<Article>(initial)
+  const [visible, setVisible] = useState(true)
+
+  useEffect(() => {
+    const eligible = pool.filter((a) => isPastOrToday(a.date))
+    if (eligible.length < 2) return
+
+    let lastIndex = -1
+    try {
+      const stored = window.localStorage.getItem(STORAGE_KEY)
+      if (stored !== null) lastIndex = parseInt(stored, 10)
+      if (isNaN(lastIndex)) lastIndex = -1
+    } catch {
+      lastIndex = -1
+    }
+
+    const currentIndex = eligible.findIndex((a) => a.slug === initial.slug)
+    let nextIndex = (currentIndex >= 0 ? currentIndex : lastIndex) + 1
+    if (nextIndex >= eligible.length) nextIndex = 0
+    // Never show the same item twice running.
+    if (eligible[nextIndex]?.slug === initial.slug && eligible.length > 1) {
+      nextIndex = (nextIndex + 1) % eligible.length
+    }
+
+    const next = eligible[nextIndex]
+    if (!next || next.slug === initial.slug) return
+
+    try {
+      window.localStorage.setItem(STORAGE_KEY, String(nextIndex))
+    } catch {
+      // localStorage unavailable (private browsing, blocked site data): skip persistence, still rotate for this view.
+    }
+
+    setVisible(false)
+    const t = setTimeout(() => {
+      setCurrent(next)
+      setVisible(true)
+    }, 220)
+    return () => clearTimeout(t)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  return (
+    <section
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "clamp(460px, 60vh, 620px)",
+        overflow: "hidden",
+        backgroundColor: "#1A1A1A",
+      }}
+    >
+      <div style={{ opacity: visible ? 1 : 0, transition: "opacity 220ms ease", height: "100%" }}>
+        <Image
+          src={current.image}
+          alt={current.imageAlt}
+          fill
+          priority
+          style={{ objectFit: "cover", opacity: 0.55 }}
+          sizes="100vw"
+        />
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to right, rgba(26,26,26,0.90) 0%, rgba(26,26,26,0.50) 55%, rgba(26,26,26,0.10) 100%)",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            maxWidth: "1200px",
+            margin: "0 auto",
+            padding: "0 28px 52px",
+          }}
+        >
+          <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
+            <span
+              style={{
+                backgroundColor: "#8B7355",
+                color: "#fff",
+                fontSize: "10px",
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                padding: "4px 10px",
+                fontFamily: "var(--font-inter), sans-serif",
+              }}
+            >
+              {current.category}
+            </span>
+            <span
+              style={{
+                color: "rgba(245,241,237,0.6)",
+                fontSize: "11px",
+                fontFamily: "var(--font-inter), sans-serif",
+                letterSpacing: "0.06em",
+              }}
+            >
+              Issue 001 · Out 29 September
+            </span>
+          </div>
+
+          <h1
+            style={{
+              fontFamily: "var(--font-playfair), Georgia, serif",
+              fontSize: "clamp(26px, 4vw, 46px)",
+              fontWeight: 700,
+              color: "#FFFFFF",
+              lineHeight: 1.2,
+              maxWidth: "640px",
+              marginBottom: "16px",
+            }}
+          >
+            {current.title}
+          </h1>
+
+          <p
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontSize: "clamp(14px, 1.6vw, 16px)",
+              color: "rgba(245,241,237,0.78)",
+              lineHeight: 1.65,
+              maxWidth: "500px",
+              marginBottom: "28px",
+            }}
+          >
+            {current.excerpt}
+          </p>
+
+          <Link
+            href={`/articles/${current.slug}`}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              border: "1.5px solid rgba(245,241,237,0.7)",
+              color: "#F5F1ED",
+              padding: "10px 24px",
+              fontFamily: "var(--font-inter), sans-serif",
+              fontSize: "12px",
+              fontWeight: 600,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+            }}
+          >
+            Read it now →
+          </Link>
+        </div>
+      </div>
+    </section>
+  )
+}
