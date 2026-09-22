@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import SubscribeForm from "@/components/SubscribeForm"
 import ArticleCard from "@/components/ArticleCard"
@@ -6,6 +7,16 @@ import HeroRotator from "@/components/HeroRotator"
 import { supabase, type SupabaseJob } from "@/lib/supabase"
 
 export const revalidate = 3600
+
+// Explicit homepage canonical. The layout's relative "./" resolves to /index on
+// Vercel's prerendered homepage (it does not locally), so the root is set here.
+// alternates replaces the layout's, so the RSS link is repeated.
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://www.thefurnituremagazine.com/",
+    types: { "application/rss+xml": "https://www.thefurnituremagazine.com/feed.xml" },
+  },
+}
 
 const categories = [
   {

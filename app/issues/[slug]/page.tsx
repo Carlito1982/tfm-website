@@ -31,6 +31,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+// Re-render hourly so the noindex on future-dated pages lifts on the day, without a redeploy.
+export const revalidate = 3600
+
 export function generateStaticParams() {
   return issues.map((i) => ({ slug: i.slug }))
 }
