@@ -150,8 +150,8 @@ export default async function HomePage() {
             marginBottom: "30px",
           }}
         >
-          A technique you can use on the next job, the only published pay data in the UK
-          furniture trade, and five sources of work that actually fill an order book.
+          A technique you can use on the next job, pay data from live UK vacancies,
+          and five sources of work that actually fill an order book.
         </p>
 
         <div
@@ -501,8 +501,8 @@ export default async function HomePage() {
             }}
           >
             The Furniture Magazine is published by The Talent Branch — the UK&rsquo;s specialist
-            recruitment agency for the upholstery and furniture industry. With 21,872 candidates
-            and 187 companies in our network, we have a closer view of this industry than anyone else.
+            recruitment agency for the upholstery and furniture industry. The Talent Branch&rsquo;s
+            network spans 21,872 candidates and 187 companies.
           </p>
           <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
             <Link

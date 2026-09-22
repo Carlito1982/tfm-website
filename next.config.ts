@@ -9,6 +9,16 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        // /index has no route of its own; canonical is the root. 308 so search engines drop it.
+        source: "/index",
+        destination: "/",
+        permanent: true,
+      },
+    ];
+  },
   async rewrites() {
     return [
       {

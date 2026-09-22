@@ -5,6 +5,8 @@ import { notFound } from "next/navigation"
 import { articles } from "@/data/articles"
 import { getArticleContent, type ContentBlock } from "@/data/articleContent"
 import SideRail from "@/components/SideRail"
+import { absoluteImageUrl, jsonLdHtml } from "@/lib/jsonLd"
+import { isFutureDate } from "@/lib/publishDate"
 
 // Design tokens
 const INK    = "#1A1A1A"
@@ -35,6 +37,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: article.title,
     description: article.excerpt,
+    // Not yet live: page exists so contributors and Carlos can preview it, but it
+    // must not be indexed or shown as a search result until its own date arrives.
+    ...(isFutureDate(article.date) ? { robots: { index: false, follow: false } } : {}),
     openGraph: {
       title: article.title,
       description: article.excerpt,
@@ -418,7 +423,7 @@ export default async function ArticlePage({ params }: Props) {
     "@type": "NewsArticle",
     headline: article.title,
     description: article.excerpt,
-    image: [`https://www.thefurnituremagazine.com${article.image}`],
+    image: [absoluteImageUrl(article.image)],
     datePublished: published,
     dateModified: published,
     articleSection: article.category,
@@ -434,7 +439,7 @@ export default async function ArticlePage({ params }: Props) {
 
   return (
     <div style={{ backgroundColor: CREAM }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdHtml(jsonLd)} />
 
       {/* ── HERO IMAGE ──────────────────────────────────────────── */}
       <div style={{ position: "relative", width: "100%", height: "clamp(320px, 45vh, 520px)", overflow: "hidden", backgroundColor: INK }}>

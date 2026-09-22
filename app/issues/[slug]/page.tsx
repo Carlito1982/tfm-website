@@ -5,6 +5,7 @@ import { issues } from "@/data/issues"
 import { getIssueContents, type IssueItem, type IssueLink } from "@/data/issueContents"
 import SideRail from "@/components/SideRail"
 import AdPanel from "@/components/AdPanel"
+import { isFutureDate } from "@/lib/publishDate"
 
 const INK = "#1A1A1A"
 const CHARCOAL = "#2C2C2C"
@@ -25,6 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: issue.title,
     description: issue.excerpt,
+    // Not sent yet: keep the page reachable directly but out of search until it sends.
+    ...(isFutureDate(issue.date) ? { robots: { index: false, follow: false } } : {}),
   }
 }
 

@@ -3,6 +3,7 @@ import { supabase } from "@/lib/supabase"
 import { articles } from "@/data/articles"
 import { issues } from "@/data/issues"
 import { benchVideos } from "@/data/bench"
+import { isFutureDate } from "@/lib/publishDate"
 
 export const revalidate = 3600
 
@@ -44,19 +45,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/privacy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.2 },
   ]
 
-  const articleRoutes: MetadataRoute.Sitemap = articles.map((a) => ({
-    url: `${baseUrl}/articles/${a.slug}`,
-    lastModified: new Date(a.date),
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }))
+  const articleRoutes: MetadataRoute.Sitemap = articles
+    .filter((a) => !isFutureDate(a.date))
+    .map((a) => ({
+      url: `${baseUrl}/articles/${a.slug}`,
+      lastModified: new Date(a.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    }))
 
-  const issueRoutes: MetadataRoute.Sitemap = issues.map((i) => ({
-    url: `${baseUrl}/issues/${i.slug}`,
-    lastModified: new Date(i.date),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }))
+  const issueRoutes: MetadataRoute.Sitemap = issues
+    .filter((i) => !isFutureDate(i.date))
+    .map((i) => ({
+      url: `${baseUrl}/issues/${i.slug}`,
+      lastModified: new Date(i.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }))
 
   const benchRoutes: MetadataRoute.Sitemap = benchVideos.map((v) => ({
     url: `${baseUrl}/bench/${v.slug}`,

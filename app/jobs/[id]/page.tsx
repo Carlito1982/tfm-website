@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { permanentRedirect } from "next/navigation"
 import { supabase, type SupabaseJob } from "@/lib/supabase"
+import { jsonLdHtml } from "@/lib/jsonLd"
+import { formatSalary } from "@/lib/formatSalary"
 
 export const revalidate = 3600
 
@@ -33,13 +35,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${job.title} — ${location}`,
     description: `${job.title} vacancy in ${location}. Managed by The Talent Branch, specialist recruiters for the furniture and upholstery industry.`,
   }
-}
-
-function formatSalary(min: number | null, max: number | null): string {
-  if (!min && !max) return "Salary on application"
-  if (min && max) return `£${min.toLocaleString("en-GB")} – £${max.toLocaleString("en-GB")}`
-  if (min) return `From £${min.toLocaleString("en-GB")}`
-  return `Up to £${max!.toLocaleString("en-GB")}`
 }
 
 function capitalise(str: string): string {
@@ -116,7 +111,7 @@ export default async function JobDetailPage({ params }: Props) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={jsonLdHtml(structuredData)}
       />
 
       <div style={{ backgroundColor: "#F5F1ED", minHeight: "100vh" }}>

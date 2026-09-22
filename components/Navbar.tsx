@@ -113,13 +113,12 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden"
+          className="md:hidden flex"
           style={{
             background: "none",
             border: "none",
             cursor: "pointer",
             padding: "4px",
-            display: "flex",
             flexDirection: "column",
             gap: "5px",
           }}
