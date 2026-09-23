@@ -70,6 +70,20 @@ export const articles: Article[] = [
     date: "23 Sep 2026",
   },
   {
+    slug: "festival-of-upholstery-2026-preview",
+    title: "Festival of Upholstery 2026: why the trade is heading to Birmingham",
+    excerpt:
+      "The Festival of Upholstery returns on 2 and 3 October at the National Conference Centre and Motorcycle Museum, Birmingham, with a broader practical programme, live demonstrations on a big screen and the trade awards.",
+    category: "Industry News",
+    categoryClass: "tag-news",
+    section: "The Trade",
+    cover: "2 to 3 October",
+    image: "/covers/festival-of-upholstery-2026-preview.png",
+    imageAlt: "Festival of Upholstery 2026",
+    readTime: "3 min read",
+    date: "23 Sep 2026",
+  },
+  {
     slug: "decorex-2026-preview",
     title: "Decorex 2026: Making Spaces returns to Olympia",
     excerpt: "The interiors show runs at Olympia, London, from 11 to 14 October, with more than 280 exhibiting brands, 48 talks sessions and the maker-led Making Spaces feature back for 2026.",

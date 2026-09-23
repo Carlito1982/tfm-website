@@ -10,7 +10,7 @@ const PAPER = "#FAFAF8"
 // Founding Partner copy, from issue_001_content.py (PARTNER, PARTNER_LINK).
 export const PARTNER_TITLE = "Founding Partner slot"
 export const PARTNER_TEXT =
-  "This space is reserved for the ten Founding Partners of The Furniture Magazine: one fabric house, one foam converter, one machinery supplier, one tools and sundries supplier, one timber merchant, one finishing brand, one training provider, one software or services firm, one event and one publisher. Founding Partners appear here in every issue for the first twelve weeks and three monthly editions, and receive a monthly report of the clicks and enquiries their placement produced. Details at the link below."
+  "This space is reserved for the ten Founding Partners of The Furniture Magazine: one fabric house, one foam converter, one machinery supplier, one tools and sundries supplier, one timber merchant, one finishing brand, one training provider, one software or services firm, one event and one publisher. Founding Partners appear here in every issue for the first twelve issues and three long-form editions, and receive a monthly report of the clicks and enquiries their placement produced. Details at the link below."
 export const PARTNER_LINK_TEXT = "Founding Partner Programme: the one-page terms"
 
 type Props = {

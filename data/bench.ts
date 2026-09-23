@@ -75,7 +75,7 @@ export const benchVideos: BenchVideo[] = [
     youtubeId: "rQXP5OKM9ag",
     videoUrl: "https://www.youtube.com/watch?v=rQXP5OKM9ag",
     description: [
-      "Gilboys is a furniture restoration business in Dartington, Devon, running since the early 1990s; after thirty years of restoration work the team now also makes beeswax polish and leather conditioner from the same Devon workshop. This video takes a piece back to bare wood and builds up a French polish finish in stages, the slow way, with nothing skipped.",
+      "Gilboys makes furniture polishes at its workshop in Dartington, Devon, where it also runs a dedicated YouTube studio producing restoration videos; the business no longer takes on restoration work itself. This video takes a piece back to bare wood and builds up a French polish finish in stages, the slow way, with nothing skipped.",
       "Each issue this slot carries one video from a working maker showing a technique, a tool or a repair. The video is the maker's own and plays from their channel; we add the context. Send yours to editor@thefurnituremagazine.com.",
     ],
     date: "2026-09-22",

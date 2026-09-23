@@ -207,7 +207,7 @@ export const issueContents: IssueContents[] = [
           {
             title: "Chair Upholstery, by Franco Marinelli",
             text: [
-              "The Crowood Press publishes Chair Upholstery: A modern guide to traditional techniques on 27 October (£24, 160 pages, paperback). Seven chair projects, each stage photographed, by Master Upholsterer Franco Marinelli. Full review and a Q and A with the author in the November monthly edition.",
+              "The Crowood Press publishes Chair Upholstery: A modern guide to traditional techniques on 27 October (£24, 160 pages, paperback). Seven chair projects, each stage photographed, by Master Upholsterer Franco Marinelli. A Q and A with the author runs in this issue; a full review follows after publication.",
             ],
             link: { href: "/articles/chair-upholstery-franco-marinelli", text: "The book and the author" },
           },

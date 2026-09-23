@@ -424,7 +424,7 @@ export const articleContent: ArticleContent[] = [
       { type: "p", text: "Focus on learning the foundations properly rather than working too quickly. Your first year is about building habits that will support your whole career, not chasing speed. Give equal care to assessment, preparation and neatness, because the hidden work is as important as the finished surface. Study each chair before stripping it; the original construction can teach you a great deal." },
       { type: "p", text: "Seek feedback from experienced upholsterers whenever possible. Ask questions, accept correction and investigate mistakes rather than hiding them. Build good habits from the start: speed will come with practice, but sound judgement and pride in your work must come first." },
       { type: "divider" },
-      { type: "p", text: "Chair Upholstery: A modern guide to traditional techniques is published by The Crowood Press on 27 October. A full review follows in our first monthly edition on 5 November." },
+      { type: "p", text: "Chair Upholstery: A modern guide to traditional techniques is published by The Crowood Press on 27 October. A full review follows after publication." },
       { type: "link", href: "https://www.crowood.com/book/chair-upholstery/", text: "The book at The Crowood Press" },
       { type: "source", text: "Answers supplied by Franco Marinelli in writing, 18 September 2026, in response to questions from The Furniture Magazine. Portrait and workshop photographs supplied by the author for this purpose." },
     ],
@@ -1440,7 +1440,7 @@ export const articleContent: ArticleContent[] = [
       { type: "h3", text: "The author" },
       {
         type: "p",
-        text: "Franco Marinelli has worked as an upholsterer and university tutor in Italy and England. He is certified as a Master Upholsterer by City and Guilds and the Worshipful Company of Upholders, is a Fellow of the Association of Master Upholsterers, and holds the Freedom of the City of London and the Livery of the Worshipful Company of Upholders. He answered eight questions for The Furniture Magazine on stitched edges, modern materials and his own training; a full review follows in our first monthly edition in November.",
+        text: "Franco Marinelli has worked as an upholsterer and university tutor in Italy and England. He is certified as a Master Upholsterer by City and Guilds and the Worshipful Company of Upholders, is a Fellow of the Association of Master Upholsterers, and holds the Freedom of the City of London and the Livery of the Worshipful Company of Upholders. He answered eight questions for The Furniture Magazine on stitched edges, modern materials and his own training; a full review follows after publication.",
       },
       {
         type: "link",
@@ -1515,6 +1515,20 @@ export const articleContent: ArticleContent[] = [
           { label: "Wood Awards, winners announcement 25 November 2026", url: "https://www.woodawards.com/" },
         ],
       },
+    ],
+  },
+  {
+    slug: "festival-of-upholstery-2026-preview",
+    author: "The Furniture Magazine",
+    body: [
+      { type: "p", text: "The Festival of Upholstery returns on 2 and 3 October 2026 at the National Conference Centre and Motorcycle Museum, Birmingham, and organiser Kirsty Lockwood says interest has ramped up significantly in the run-up." },
+      { type: "p", text: "Her case for making the trip is a simple one. It is a rare chance to step away from the bench and spend time with people who understand the job: to see techniques up close, discover new materials and suppliers, ask honest business questions and connect with the wider upholstery community. Birmingham was chosen for its transport links, and Lockwood notes that hotel prices for the night of the event have dropped significantly in the last couple of weeks." },
+      { type: "p", text: "The exhibitor list mixes major suppliers, including Martins, Livedale and Warwick, with specialist British manufacturers such as John Boyd Textiles, Isle Mill and Cable and Blake. The AMUSF, the Guild of Traditional Upholsterers, the Worshipful Company of Upholders, the British Furniture Association and SATRA will all be there, and accountants, marketing experts and business advisers will be on hand to take questions." },
+      { type: "p", text: "The session Lockwood is most looking forward to is Elsie Hutcheon's live demonstration on reusing existing upholstery, showing how to assess what is already inside a piece and retain materials where appropriate. Vanessa Butt will speak on sustainable materials in upholstery with real examples, and Rohan Blacker of Schplendid Sofas is also on the programme." },
+      { type: "p", text: "New this year is a much broader practical programme, with live demonstrations filmed close-up and projected onto a large screen. The awards from the AMUSF, the Guild of Traditional Upholsterers and the Worshipful Company of Upholders return, and the Upholders have again donated an adjustable bench, along with a compressor. The evening social is professionally organised this year, with a two-course meal, a stocked bar with plenty of non-alcoholic options and a live band, giving people more time to meet and talk beyond the exhibition itself." },
+      { type: "p", text: "Tickets and full details are at festivalofupholstery.co.uk. With only days to go, the organisers strongly recommend booking soon." },
+      { type: "link", href: "https://www.thefurnituremagazine.com/go/festival-of-upholstery-2026", text: "Festival of Upholstery: tickets and details" },
+      { type: "source", text: "Built from answers supplied in writing by Kirsty Lockwood, organiser, 22 September 2026; text approved by the organisers on 23 September 2026. This preview is editorial and was not paid for." },
     ],
   },
   {

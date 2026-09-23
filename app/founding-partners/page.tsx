@@ -67,7 +67,7 @@ export default function FoundingPartnersPage() {
           </thead>
           <tbody>
             <tr><td style={td}>Partner slot, per issue</td><td style={td}>£150</td><td style={td}>£112.50 (25% below the published rate for twelve months)</td></tr>
-            <tr><td style={td}>Monthly edition feature, per edition</td><td style={td}>Published with the full rate card</td><td style={td}>25% below the published rate for twelve months</td></tr>
+            <tr><td style={td}>Long-form edition feature, per edition</td><td style={td}>Published with the full rate card</td><td style={td}>25% below the published rate for twelve months</td></tr>
             <tr><td style={td}>Job listing, 30 days</td><td style={td}>£95</td><td style={td}>£71.25</td></tr>
             <tr><td style={td}>Event promotion package</td><td style={td}>£200</td><td style={td}>£150</td></tr>
           </tbody>
