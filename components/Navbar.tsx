@@ -4,13 +4,13 @@ import Link from "next/link"
 import { useState } from "react"
 
 const links = [
-  { href: "/issues", label: "Issues" },
+  { href: "/articles", label: "Articles" },
   { href: "/bench", label: "Bench" },
-  { href: "/press-releases", label: "Press releases" },
+  { href: "/issues", label: "Issues" },
+  { href: "/tools/rate-calculator", label: "Rate calculator" },
   { href: "/jobs", label: "Jobs" },
   { href: "/events", label: "Events" },
   { href: "/advertise", label: "Advertise" },
-  { href: "/about", label: "About" },
 ]
 
 export default function Navbar() {
@@ -72,8 +72,8 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <nav
-          style={{ display: "flex", gap: "24px", alignItems: "center" }}
-          className="hidden md:flex"
+          style={{ gap: "22px", alignItems: "center" }}
+          className="hidden lg:flex"
         >
           {links.map((l) => (
             <Link
@@ -113,7 +113,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden flex"
+          className="lg:hidden flex"
           style={{
             background: "none",
             border: "none",

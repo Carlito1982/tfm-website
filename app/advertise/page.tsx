@@ -95,7 +95,7 @@ export default function AdvertisePage() {
           <a href="/founding-partners" style={{ color: "#8B7355", textDecoration: "underline" }}>Founding Partner Programme</a>: twelve issues and three long-form editions at no charge in exchange for tracked results.
         </p>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "1px", backgroundColor: BORDER }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(260px, 100%), 1fr))", gap: "1px", backgroundColor: BORDER }}>
           {packages.map((pkg) => (
             <div
               key={pkg.name}

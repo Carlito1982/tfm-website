@@ -64,13 +64,12 @@ export default function AboutPage() {
         </h2>
         <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "#444", lineHeight: 1.8, marginBottom: "20px" }}>
           The Furniture Magazine is published by The Talent Branch Ltd — the UK&rsquo;s specialist
-          recruitment agency for the furniture and upholstery industry. This gives us something no
-          other trade publication has: direct access to real salary, hiring and market data from
-          21,872 registered candidates and 187 furniture companies across the UK.
+          recruitment agency for the furniture and upholstery industry. That gives us direct sight of
+          the live vacancies it recruits for across the UK, and the pay those employers advertise.
         </p>
         <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "#444", lineHeight: 1.8, marginBottom: "48px" }}>
-          When we report on what upholsterers earn or where the skills shortages are, we are drawing
-          on placement records and direct employer briefings — not surveys or estimates.
+          When we report on what upholsterers are being offered, we set advertised pay on those live
+          vacancies against the official ONS figures, and we say which is which.
         </p>
 
         <div style={{ height: "1px", backgroundColor: BORDER, marginBottom: "48px" }} />

@@ -371,7 +371,7 @@ export default async function JobsPage() {
             style={{
               marginTop: "56px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))",
               gap: "2px",
               backgroundColor: "#E2DDD8",
             }}

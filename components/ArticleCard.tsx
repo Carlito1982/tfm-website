@@ -1,6 +1,6 @@
-import Image from "next/image"
 import Link from "next/link"
 import type { Article } from "@/data/articles"
+import ArticleVisual from "@/components/ArticleVisual"
 
 type Props = {
   article: Article
@@ -26,13 +26,7 @@ export default function ArticleCard({ article, size = "standard" }: Props) {
           }}
         >
           <div style={{ flexShrink: 0, width: "140px", height: "100px", position: "relative" }}>
-            <Image
-              src={article.image}
-              alt={article.imageAlt}
-              fill
-              style={{ objectFit: "cover" }}
-              sizes="140px"
-            />
+            <ArticleVisual article={article} sizes="140px" />
           </div>
           <div style={{ padding: "12px 16px 12px 0", display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <span className={`category-tag ${article.categoryClass}`} style={{ marginBottom: "8px" }}>
@@ -89,11 +83,9 @@ export default function ArticleCard({ article, size = "standard" }: Props) {
             flexShrink: 0,
           }}
         >
-          <Image
-            src={article.image}
-            alt={article.imageAlt}
-            fill
-            style={{ objectFit: "cover", transition: "transform 0.4s ease" }}
+          <ArticleVisual
+            article={article}
+            imageStyle={{ transition: "transform 0.4s ease" }}
             sizes={isLarge ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 100vw, 33vw"}
           />
         </div>

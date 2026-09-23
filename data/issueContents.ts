@@ -98,11 +98,11 @@ export const issueContents: IssueContents[] = [
         label: "Bench video",
         items: [
           {
-            title: "How To Deep Button an Antique Victorian Chair, by Gilboys",
+            title: "Introduction to Making Upholstery Buttons, by Alison Scott Upholstery",
             text: [
-              "Gilboys is a furniture restoration workshop in Devon that has been in business since the early 1990s. Watch it for the way the pleats are set before any tension goes on.",
+              "Alison Scott has taught traditional upholstery for more than 35 years. This one covers making your own covered buttons to match the top fabric, rather than relying on a pre-made set that never quite matches.",
             ],
-            link: { href: "/bench/gilboys-deep-buttoning-victorian-chair", text: "Watch the video" },
+            link: { href: "/bench/alison-scott-upholstery-buttons", text: "Watch the video" },
           },
         ],
       },

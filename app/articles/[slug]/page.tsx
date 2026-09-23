@@ -1,12 +1,12 @@
 import type { Metadata } from "next"
-import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { articles } from "@/data/articles"
+import { articles, getRelatedArticles } from "@/data/articles"
 import { getArticleContent, type ContentBlock } from "@/data/articleContent"
 import SideRail from "@/components/SideRail"
 import { absoluteImageUrl, jsonLdHtml } from "@/lib/jsonLd"
 import { isFutureDate } from "@/lib/publishDate"
+import ArticleVisual from "@/components/ArticleVisual"
 
 // Design tokens
 const INK    = "#1A1A1A"
@@ -265,6 +265,31 @@ function renderBlock(block: ContentBlock, index: number) {
         </div>
       )
 
+    case "brief":
+      return (
+        <div key={index} className="tfm-callout" style={{ margin: "0 0 36px" }}>
+          <p className="tfm-callout__kicker">In brief</p>
+          <ul style={{ margin: 0, paddingLeft: 18 }}>
+            {block.items.map((item, i) => (
+              <li key={i} className="tfm-callout__body" style={{ marginBottom: 6 }}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      )
+
+    case "stat":
+      return (
+        <div key={index} style={{ margin: "36px 0", padding: "28px 0", borderTop: `2px solid ${INK}`, borderBottom: `1px solid ${BORDER}` }}>
+          <p style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontStyle: "italic", fontSize: "clamp(48px, 8vw, 76px)", lineHeight: 1, color: INK, margin: 0 }}>
+            {block.value}
+          </p>
+          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: CHARCOAL, lineHeight: 1.6, marginTop: 12 }}>{block.label}</p>
+          {block.source && (
+            <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "12px", color: "#6B6866", marginTop: 6 }}>Source: {block.source}</p>
+          )}
+        </div>
+      )
+
     case "divider":
       return (
         <hr
@@ -446,12 +471,11 @@ export default async function ArticlePage({ params }: Props) {
 
       {/* ── HERO IMAGE ──────────────────────────────────────────── */}
       <div style={{ position: "relative", width: "100%", height: "clamp(320px, 45vh, 520px)", overflow: "hidden", backgroundColor: INK }}>
-        <Image
-          src={article.image}
-          alt={article.imageAlt}
-          fill
+        <ArticleVisual
+          article={article}
+          variant="hero"
           priority
-          style={{ objectFit: article.category === "Books" ? "contain" : "cover", padding: article.category === "Books" ? "24px" : 0 }}
+          imageStyle={{ objectFit: article.category === "Books" ? "contain" : "cover", padding: article.category === "Books" ? "24px" : 0 }}
           sizes="100vw"
         />
         <div
@@ -560,7 +584,21 @@ export default async function ArticlePage({ params }: Props) {
         {/* Article body */}
         <article>
           {content ? (
-            content.body.map((block, i) => renderBlock(block, i))
+            content.body.flatMap((block, i) => {
+              const out = [renderBlock(block, i)]
+              // One compact subscribe box part-way through longer pieces.
+              if (content.body.length >= 10 && i === Math.floor(content.body.length * 0.45)) {
+                out.push(
+                  <div key="mid-subscribe" className="tfm-callout tfm-callout--dark" style={{ margin: "40px 0" }}>
+                    <p className="tfm-callout__kicker">Free, every fortnight</p>
+                    <p className="tfm-callout__title">Get the next issue in your inbox</p>
+                    <p className="tfm-callout__body" style={{ marginBottom: 16 }}>Technique, finished work, trade news and live jobs, for the bench and the studio.</p>
+                    <Link href="/#subscribe" className="tfm-button">Subscribe free</Link>
+                  </div>
+                )
+              }
+              return out
+            })
           ) : (
             <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "17px", color: CHARCOAL, lineHeight: 1.8 }}>
               Full article coming soon. Subscribe to be notified when this issue publishes.
@@ -648,7 +686,7 @@ export default async function ArticlePage({ params }: Props) {
               Keep Reading
             </h2>
             <Link
-              href="/"
+              href="/articles"
               style={{
                 fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "12px",
@@ -658,19 +696,17 @@ export default async function ArticlePage({ params }: Props) {
                 letterSpacing: "0.04em",
               }}
             >
-              ALL ARTICLES →
+              ALL ARTICLES
             </Link>
           </div>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fill, minmax(min(260px, 100%), 1fr))",
               gap: "24px",
             }}
           >
-            {articles
-              .filter((a) => a.slug !== slug)
-              .slice(0, 3)
+            {getRelatedArticles(article)
               .map((a) => (
                 <Link key={a.slug} href={`/articles/${a.slug}`} style={{ textDecoration: "none" }}>
                   <div
@@ -681,7 +717,7 @@ export default async function ArticlePage({ params }: Props) {
                     }}
                   >
                     <div style={{ position: "relative", height: "160px" }}>
-                      <Image src={a.image} alt={a.imageAlt} fill style={{ objectFit: "cover" }} sizes="300px" />
+                      <ArticleVisual article={a} sizes="300px" />
                     </div>
                     <div style={{ padding: "18px" }}>
                       <p

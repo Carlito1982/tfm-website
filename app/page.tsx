@@ -2,7 +2,10 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import SubscribeForm from "@/components/SubscribeForm"
 import ArticleCard from "@/components/ArticleCard"
-import { getHeroArticle, getHeroPoolArticles, getStartHereArticles, getLatestArticles, getSecondaryArticles } from "@/data/articles"
+import { getHeroArticle, getHeroPoolArticles, getStartHereArticles, getLatestArticles, getSecondaryArticles, SECTIONS } from "@/data/articles"
+import { getBenchVideos } from "@/data/bench"
+import BenchCard from "@/components/BenchCard"
+import HomeFeatureBoxes from "@/components/HomeFeatureBoxes"
 import HeroRotator from "@/components/HeroRotator"
 import { supabase, type SupabaseJob } from "@/lib/supabase"
 
@@ -18,38 +21,20 @@ export const metadata: Metadata = {
   },
 }
 
-const categories = [
-  {
-    label: "The Bench",
-    description: "One technique, one tool or one material, explained by the person who uses it.",
-    tagClass: "tag-craft",
-    href: "/issues",
-  },
-  {
-    label: "The Piece",
-    description: "A single commission told properly: the brief, the material, the part that went wrong and what fixed it.",
-    tagClass: "tag-news",
-    href: "/issues",
-  },
-  {
-    label: "The Studio",
-    description: "Running a workshop. Pricing, finding the work, and what an hour at the bench is really worth.",
-    tagClass: "tag-business",
-    href: "/issues",
-  },
-  {
-    label: "The Trade",
-    description: "News, pay benchmarks and the jobs that reach a small workshop, with every figure sourced.",
-    tagClass: "tag-salary",
-    href: "/issues",
-  },
-]
+const SECTION_TAGS = ["tag-craft", "tag-news", "tag-business", "tag-salary"]
+const categories = SECTIONS.map((sec, i) => ({
+  label: sec.name,
+  description: sec.description,
+  tagClass: SECTION_TAGS[i],
+  href: sec.href,
+}))
 
 export default async function HomePage() {
   const featured = getHeroArticle()
   const startHere = getStartHereArticles()
   const latest = getLatestArticles(6)
   const secondary = getSecondaryArticles()
+  const bench = getBenchVideos().slice(0, 3)
 
   const { data: liveJobs } = await supabase
     .from("tfm_public_jobs")
@@ -168,7 +153,7 @@ export default async function HomePage() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(300px, 100%), 1fr))",
             gap: "28px",
           }}
         >
@@ -177,6 +162,9 @@ export default async function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* ── FEATURE BOXES: Issue 001 + rate calculator ───────────── */}
+      <HomeFeatureBoxes />
 
       {/* ── LATEST STORIES ───────────────────────────────────────── */}
       <section style={{ maxWidth: "1200px", margin: "0 auto", padding: "60px 28px 44px" }}>
@@ -201,7 +189,7 @@ export default async function HomePage() {
             Latest Stories
           </h2>
           <Link
-            href="/issues"
+            href="/articles"
             style={{
               fontFamily: "var(--font-inter), sans-serif",
               fontSize: "12px",
@@ -212,14 +200,14 @@ export default async function HomePage() {
               textDecoration: "none",
             }}
           >
-            All Issues →
+            All articles
           </Link>
         </div>
 
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(300px, 100%), 1fr))",
             gap: "28px",
           }}
         >
@@ -228,6 +216,27 @@ export default async function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* ── FROM THE BENCH ───────────────────────────────────────── */}
+      {bench.length > 0 && (
+        <section style={{ backgroundColor: "#141414", padding: "56px 28px" }}>
+          <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", borderBottom: "2px solid #F5F1ED", paddingBottom: 14, marginBottom: 28 }}>
+              <h2 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "clamp(20px, 2.8vw, 26px)", fontWeight: 700, color: "#F5F1ED" }}>
+                From the Bench
+              </h2>
+              <Link href="/bench" style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: 12, fontWeight: 600, color: "#B8977A", letterSpacing: "0.07em", textTransform: "uppercase", textDecoration: "none" }}>
+                All Bench videos
+              </Link>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(280px, 100%), 1fr))", gap: 24 }}>
+              {bench.map((v) => (
+                <BenchCard key={v.slug} video={v} dark />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── WHAT WE COVER ────────────────────────────────────────── */}
       <section style={{ backgroundColor: "#1A1A1A", padding: "52px 28px" }}>
@@ -271,7 +280,7 @@ export default async function HomePage() {
                   style={{
                     fontFamily: "var(--font-inter), sans-serif",
                     fontSize: "13px",
-                    color: "rgba(245,241,237,0.50)",
+                    color: "rgba(245,241,237,0.72)",
                     lineHeight: 1.6,
                   }}
                 >
@@ -304,13 +313,13 @@ export default async function HomePage() {
                 color: "#1A1A1A",
               }}
             >
-              Also in This Issue
+              More to read
             </h2>
           </div>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(400px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fill, minmax(min(400px, 100%), 1fr))",
               gap: "28px",
             }}
           >
@@ -512,8 +521,8 @@ export default async function HomePage() {
             }}
           >
             The Furniture Magazine is published by The Talent Branch — the UK&rsquo;s specialist
-            recruitment agency for the upholstery and furniture industry. The Talent Branch&rsquo;s
-            network spans 21,872 candidates and 187 companies.
+            recruitment agency for the upholstery and furniture industry, so every job listed here is a
+            live vacancy it is recruiting for.
           </p>
           <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
             <Link

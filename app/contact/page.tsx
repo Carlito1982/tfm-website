@@ -49,7 +49,7 @@ export default function ContactPage() {
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "64px 24px" }}>
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
           gap: "56px",
         }}>
           {/* Left: contact details */}

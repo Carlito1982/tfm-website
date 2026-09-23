@@ -1,9 +1,9 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import Image from "next/image"
+import { useCallback, useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import type { Article } from "@/data/articles"
+import ArticleVisual from "@/components/ArticleVisual"
 
 type Props = {
   pool: Article[]
@@ -27,48 +27,71 @@ function isPastOrToday(dateStr: string): boolean {
 export default function HeroRotator({ pool, initial }: Props) {
   const [current, setCurrent] = useState<Article>(initial)
   const [visible, setVisible] = useState(true)
+  const [eligible, setEligible] = useState<Article[]>([])
+  const [paused, setPaused] = useState(false)
+  const [reduced, setReduced] = useState(false)
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  useEffect(() => {
-    const eligible = pool.filter((a) => isPastOrToday(a.date))
-    if (eligible.length < 2) return
-
-    let lastIndex = -1
+  const show = useCallback((list: Article[], index: number) => {
+    const next = list[index]
+    if (!next) return
     try {
-      const stored = window.localStorage.getItem(STORAGE_KEY)
-      if (stored !== null) lastIndex = parseInt(stored, 10)
-      if (isNaN(lastIndex)) lastIndex = -1
+      window.localStorage.setItem(STORAGE_KEY, String(index))
     } catch {
-      lastIndex = -1
+      // storage unavailable: rotate without remembering
     }
-
-    const currentIndex = eligible.findIndex((a) => a.slug === initial.slug)
-    let nextIndex = (currentIndex >= 0 ? currentIndex : lastIndex) + 1
-    if (nextIndex >= eligible.length) nextIndex = 0
-    // Never show the same item twice running.
-    if (eligible[nextIndex]?.slug === initial.slug && eligible.length > 1) {
-      nextIndex = (nextIndex + 1) % eligible.length
-    }
-
-    const next = eligible[nextIndex]
-    if (!next || next.slug === initial.slug) return
-
-    try {
-      window.localStorage.setItem(STORAGE_KEY, String(nextIndex))
-    } catch {
-      // localStorage unavailable (private browsing, blocked site data): skip persistence, still rotate for this view.
-    }
-
     setVisible(false)
-    const t = setTimeout(() => {
+    if (timer.current) clearTimeout(timer.current)
+    timer.current = setTimeout(() => {
       setCurrent(next)
       setVisible(true)
     }, 220)
-    return () => clearTimeout(t)
+  }, [])
+
+  // On arrival, move on from the story shown last visit so a returning reader sees something new.
+  useEffect(() => {
+    const list = pool.filter((a) => isPastOrToday(a.date))
+    setEligible(list)
+    try {
+      setReduced(window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+    } catch {
+      setReduced(false)
+    }
+    if (list.length < 2) return
+    let last = -1
+    try {
+      const stored = window.localStorage.getItem(STORAGE_KEY)
+      if (stored !== null) last = parseInt(stored, 10)
+      if (isNaN(last)) last = -1
+    } catch {
+      last = -1
+    }
+    let start = (last + 1) % list.length
+    if (list[start]?.slug === initial.slug) start = (start + 1) % list.length
+    show(list, start)
+    return () => {
+      if (timer.current) clearTimeout(timer.current)
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const index = eligible.findIndex((a) => a.slug === current.slug)
+
+  // Then keep turning every seven seconds, unless the reader is hovering, has focus in the hero, or prefers reduced motion.
+  useEffect(() => {
+    if (eligible.length < 2 || paused || reduced) return
+    const t = setInterval(() => show(eligible, (Math.max(index, 0) + 1) % eligible.length), 7000)
+    return () => clearInterval(t)
+  }, [eligible, index, paused, reduced, show])
+
   return (
     <section
+      aria-roledescription="carousel"
+      aria-label="Featured stories"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
       style={{
         position: "relative",
         width: "100%",
@@ -78,14 +101,7 @@ export default function HeroRotator({ pool, initial }: Props) {
       }}
     >
       <div style={{ opacity: visible ? 1 : 0, transition: "opacity 220ms ease", height: "100%" }}>
-        <Image
-          src={current.image}
-          alt={current.imageAlt}
-          fill
-          priority
-          style={{ objectFit: "cover", opacity: 0.55 }}
-          sizes="100vw"
-        />
+        <ArticleVisual article={current} variant="hero" priority imageStyle={{ opacity: 0.55 }} sizes="100vw" />
         <div
           style={{
             position: "absolute",
@@ -180,6 +196,20 @@ export default function HeroRotator({ pool, initial }: Props) {
           </Link>
         </div>
       </div>
+      {eligible.length > 1 && (
+        <div className="hero-dots" role="group" aria-label="Choose a featured story">
+          {eligible.map((a, n) => (
+            <button
+              key={a.slug}
+              type="button"
+              aria-label={`Story ${n + 1} of ${eligible.length}: ${a.title}`}
+              aria-current={n === index ? "true" : undefined}
+              className={`hero-dot${n === index ? " is-active" : ""}`}
+              onClick={() => show(eligible, n)}
+            />
+          ))}
+        </div>
+      )}
     </section>
   )
 }

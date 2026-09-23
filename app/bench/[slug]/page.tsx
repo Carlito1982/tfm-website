@@ -71,7 +71,7 @@ export default async function BenchVideoPage({ params }: Props) {
             {video.title}
           </h1>
           <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "13px", color: "rgba(245,241,237,0.6)" }}>
-            {video.maker} · Issue {String(video.issue).padStart(3, "0")} · {formatDate(video.date)}
+            {video.maker}{video.issue ? ` · Issue ${String(video.issue).padStart(3, "0")}` : ""} · {formatDate(video.date)}
           </p>
         </div>
       </div>

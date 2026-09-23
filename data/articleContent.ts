@@ -11,6 +11,10 @@ export type ContentBlock =
   | { type: "timeline"; items: { label: string; text: string }[] }
   | { type: "link"; href: string; text: string }
   | { type: "sources"; items: { label: string; url?: string }[] }
+  // "In brief" box at the top of a piece: three or four sentences, each taken from the piece itself.
+  | { type: "brief"; items: string[] }
+  // A key number, shown large, with its source named underneath.
+  | { type: "stat"; value: string; label: string; source?: string }
 
 export type ArticleContent = {
   slug: string
@@ -19,6 +23,376 @@ export type ArticleContent = {
 }
 
 export const articleContent: ArticleContent[] = [
+  {
+    slug: "uk-upholstery-workforce-ons-2026",
+    author: "The Furniture Magazine",
+    body: [
+      {
+        "type": "brief",
+        "items": [
+          "About 12,800 people worked as upholsterers in the UK in the year to March 2026, and 36,100 as furniture makers and other craft woodworkers.",
+          "6,100 upholsterers (about 48%) and 20,100 furniture makers (about 56%) are self-employed.",
+          "About 41% of upholsterers are 55 or older; about 48% of furniture makers are 50 or older.",
+          "81% of the UK's 6,600 furniture manufacturing businesses employ fewer than ten people."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "The Office for National Statistics' Annual Population Survey estimates that 12,800 people in the UK worked as upholsterers in the year to March 2026, and 36,100 as furniture makers and other craft woodworkers. These are survey estimates with wide margins. ONS publishes a confidence range of plus or minus 4,400 for upholsterers and 7,400 for furniture makers, so a small change from one period to the next should not be read as a trend."
+      },
+      {
+        "type": "stat",
+        "value": "6,100",
+        "label": "upholsterers in the UK are self-employed, out of 12,800 in work.",
+        "source": "ONS Annual Population Survey, April 2025 to March 2026"
+      },
+      {
+        "type": "h2",
+        "text": "Half the trade works for itself"
+      },
+      {
+        "type": "p",
+        "text": "Of the 12,800 upholsterers, 6,600 are employees and 6,100 are self-employed, about 48%. Among furniture makers the self-employed are the majority: 20,100 of 36,100, about 56%."
+      },
+      {
+        "type": "h2",
+        "text": "An older workforce"
+      },
+      {
+        "type": "p",
+        "text": "An ONS breakdown of the same survey by age puts 5,184 upholsterers at 55 or older, about 41% of the total. Among furniture makers, 17,283 are 50 or older, about 48%, and 12,342 are 55 or older, about 34%. Some age bands for upholsterers are too small for ONS to publish, so the share over 50 cannot be given."
+      },
+      {
+        "type": "p",
+        "text": "Women make up about 27% of upholsterers, 3,441 of 12,755 in the age and sex breakdown, and about 17% of furniture makers, 6,092 of 36,061."
+      },
+      {
+        "type": "h2",
+        "text": "Small firms, and a Yorkshire heartland"
+      },
+      {
+        "type": "p",
+        "text": "The UK has 6,600 furniture manufacturing businesses, and 5,365 of them, about 81%, employ fewer than ten people, according to ONS UK Business Counts for 2025. The largest group is other furniture, with 3,925 businesses, followed by kitchen furniture with 1,595 and office and shop furniture with 825."
+      },
+      {
+        "type": "p",
+        "text": "Furniture manufacturing employs about 73,000 people in Great Britain, according to the Business Register and Employment Survey for 2024. Yorkshire and The Humber accounts for 20,000 of those jobs, about 27%, more than any other region. The North West is next with 10,000. These are jobs in furniture manufacturing businesses of every kind, not only upholsterers and makers."
+      },
+      {
+        "type": "h2",
+        "text": "Pay"
+      },
+      {
+        "type": "p",
+        "text": "The Annual Survey of Hours and Earnings, provisional for 2025, gives a median gross annual pay of £26,966 for all employee upholsterers and £27,909 for those working full-time. It covers employees only, so the self-employed half of the trade is not in it."
+      },
+      {
+        "type": "highlight",
+        "text": "Put together, the figures describe a trade carried largely by small workshops and the self-employed, with four in ten of its upholsterers aged 55 or over."
+      },
+      {
+        "type": "source",
+        "text": "Percentages are our own calculation from the published ONS figures. Occupations are SOC 2020 unit groups 5411 Upholsterers and 5442 Furniture makers and other craft woodworkers."
+      },
+      {
+        "type": "sources",
+        "items": [
+          {
+            "label": "ONS Annual Population Survey via Nomis: employment and self-employment by occupation, April 2025 to March 2026",
+            "url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_218_1.data.csv?geography=2092957697,2092957698,2092957699&date=latest,2025-12&c_sex=0&jtype=0&ftpt=0&etype=0,1,2&soc2020_full=275,289&measure=1,3&measures=20100,20701"
+          },
+          {
+            "label": "ONS: 4-digit occupation by age, sex and region, UK, April 2025 to March 2026 (user requested data 3501)",
+            "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/adhocs/35014digitoccupationalcodingsocbyagehighestqualificationsex4digitindustrysicanditl3regionukapril2025tomarch2026"
+          },
+          {
+            "label": "ONS UK Business Counts via Nomis: furniture manufacturing enterprises by size, 2025",
+            "url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_142_1.data.csv?geography=2092957697&date=latest&industry=146800671,138415133,138415134,138415135,138415141&employment_sizeband=0,10,20,30,40&legal_status=0&measures=20100"
+          },
+          {
+            "label": "ONS Business Register and Employment Survey via Nomis: furniture manufacturing employment by region, 2024",
+            "url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_189_1.data.csv?geography=2092957697,2092957698,TYPE480&date=latest&industry=146800671&employment_status=1,4&measure=1&measures=20100"
+          },
+          {
+            "label": "ONS Annual Survey of Hours and Earnings, Table 14, 2025 provisional",
+            "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/occupation4digitsoc2010ashetable14"
+          }
+        ]
+      }
+    ],
+  },
+  {
+    slug: "worldskills-shanghai-2026-cabinet-making-team-uk",
+    author: "The Furniture Magazine",
+    body: [
+      {
+        "type": "brief",
+        "items": [
+          "Stanley Mackintosh, trained at Rycotewood Furniture Centre and employed by Bill Cleyndert and Company, is Team UK's competitor in Cabinet Making.",
+          "Jamie Matthews, trained at Northern Regional College and employed by Mivan, competes in Joinery.",
+          "Competition runs from 23 to 26 September. Medals are awarded at the closing ceremony on 27 September."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "The 48th WorldSkills Competition opened in Shanghai on 22 September, and two of Team UK's competitors work in wood: Stanley Mackintosh in Cabinet Making and Jamie Matthews in Joinery. WorldSkills UK lists 28 competitors representing Team UK across 25 skill competitions. Competition runs from 23 to 26 September at the National Exhibition and Convention Center, and medals are awarded at the closing ceremony at the Shanghai World Expo Cultural Center on 27 September."
+      },
+      {
+        "type": "h2",
+        "text": "Stanley Mackintosh, Cabinet Making"
+      },
+      {
+        "type": "p",
+        "text": "Stanley trained at Rycotewood Furniture Centre, part of Activate Learning, and works for Bill Cleyndert and Company. According to Activate Learning, he began a Level 2 Furniture Manufacturer apprenticeship in 2024 and has been studying a Level 3 apprenticeship in Bespoke Furniture Making at Rycotewood. His WorldSkills UK profile records that he has since qualified with a distinction. His training manager for the competition is Christian Notley MBE of WorldSkills UK."
+      },
+      {
+        "type": "h2",
+        "text": "Jamie Matthews, Joinery"
+      },
+      {
+        "type": "p",
+        "text": "Jamie Matthews, from Ballyclare in Northern Ireland, trained at Northern Regional College and works for Mivan. When his selection was announced in April he told The Irish News: “I'm really proud to have been selected to represent the UK at WorldSkills in Shanghai.”"
+      },
+      {
+        "type": "h2",
+        "text": "How cabinet making is judged"
+      },
+      {
+        "type": "p",
+        "text": "WorldSkills describes Cabinetmaking as working in wood to create high quality furniture and units, showing skill and an aesthetic understanding of design and finish. Its occupational standard for the previous competition, Lyon 2024, weighted the marks like this, with up to five percent variation allowed:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Selecting and preparing materials: 25%",
+          "Joining and assembly: 25%",
+          "Working with drawings: 15%",
+          "Preparation of surfaces and finishing: 15%",
+          "Work organization and management: 10%",
+          "Communication and interpersonal skills: 5%",
+          "Problem solving, innovation and creativity: 5%"
+        ]
+      },
+      {
+        "type": "stat",
+        "value": "50%",
+        "label": "of the marks in the Lyon 2024 Cabinetmaking standard went on selecting and preparing materials, and on joining and assembly.",
+        "source": "WorldSkills Occupational Standard, Cabinetmaking, Lyon 2024"
+      },
+      {
+        "type": "p",
+        "text": "We will report the result after the closing ceremony."
+      },
+      {
+        "type": "sources",
+        "items": [
+          {
+            "label": "WorldSkills UK: Shanghai 2026",
+            "url": "https://www.worldskillsuk.org/skills/international-competition/shanghai-2026/"
+          },
+          {
+            "label": "WorldSkills UK: Team UK",
+            "url": "https://www.worldskillsuk.org/skills/international-competition/team-uk/"
+          },
+          {
+            "label": "WorldSkills UK: Stanley's story",
+            "url": "https://www.worldskillsuk.org/success-stories/stanley-teamuk/"
+          },
+          {
+            "label": "WorldSkills: stage set for WorldSkills Shanghai 2026",
+            "url": "https://worldskills.org/media/news/stage-set-worldskills-shanghai-2026"
+          },
+          {
+            "label": "FE News: Activate Learning release on Rycotewood's WorldSkills competitor",
+            "url": "https://www.fenews.co.uk/education/rycotewood-furniture-centre-student-selected-to-represent-the-uk-at-the-global-skills-olympics-in-shanghai/"
+          },
+          {
+            "label": "The Irish News: Mivan apprentice Jamie selected for WorldSkills",
+            "url": "https://www.irishnews.com/news/business/mivan-apprentice-jamie-is-selected-to-represent-uk-at-worldskills-in-shanghai-GWCW5GLNXJGUTODGKX64Z7FPMY/"
+          },
+          {
+            "label": "WorldSkills: Cabinetmaking skill",
+            "url": "https://worldskills.org/skills/id/236/"
+          },
+          {
+            "label": "WorldSkills Occupational Standard, Cabinetmaking, Lyon 2024",
+            "url": "https://worldskills.org/what/projects/wsos/2024/events/579/skills/1704/"
+          }
+        ]
+      }
+    ],
+  },
+  {
+    slug: "heritage-crafts-red-list-furniture-crafts",
+    author: "The Furniture Magazine",
+    body: [
+      {
+        "type": "brief",
+        "items": [
+          "Basketwork furniture making, Fair Isle chair making and rattan furniture making are critically endangered in the 2025 Red List.",
+          "Orkney chair making, coach trimming, passementerie and woodgraining and marbling are endangered.",
+          "Upholstery, French polishing, marquetry, chair making and chair seating are rated currently viable.",
+          "Steve Farrell, a bespoke furniture upholsterer, has a 2026 Heritage Crafts bursary to train in leatherwork."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Heritage Crafts publishes the Red List of Endangered Crafts, which rates how likely each traditional craft in the UK is to survive. The latest edition, published in May 2025, puts three furniture crafts in its critically endangered category."
+      },
+      {
+        "type": "h2",
+        "text": "Critically endangered"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Basketwork furniture making",
+          "Fair Isle chair making",
+          "Rattan furniture making"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Rattan furniture making is one of 12 crafts added to the critically endangered category in 2025. Horsehair weaving and horse collar making are also critically endangered."
+      },
+      {
+        "type": "h2",
+        "text": "Endangered"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Orkney chair making",
+          "Coach trimming",
+          "Composition picture frame making",
+          "Lacquerwork (lacquer, japanning and coromandel)",
+          "Woodgraining and marbling",
+          "Passementerie"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Rated viable"
+      },
+      {
+        "type": "p",
+        "text": "Several of the core furniture trades are rated currently viable and so are not on the Red List itself: chair making, chair seating, upholstery and soft furnishing, French polishing, marquetry, gilding, wood turning, pole lathe turning and wood carving. Heritage Crafts reports that no craft has become extinct in the UK since 2023."
+      },
+      {
+        "type": "h2",
+        "text": "A bursary for a former upholsterer"
+      },
+      {
+        "type": "p",
+        "text": "Among 20 training bursaries Heritage Crafts announced on 29 May 2026 is one for Steve Farrell of Carmarthenshire. After 22 years in the Royal Electrical and Mechanical Engineers he turned to bespoke furniture upholstery. His bursary, funded by the Royal British Legion, pays for a part-time foundation course at the Walsall Leather Skills Centre, with tools, leather and travel. Heritage Crafts bursaries provide up to £4,000 each."
+      },
+      {
+        "type": "h2",
+        "text": "Emerging Upholsterer of the Year"
+      },
+      {
+        "type": "p",
+        "text": "The Heritage Crafts Awards include an Emerging Upholsterer of the Year Award worth £1,000. Nominations for 2026 have closed, and the winners' reception is at Goldsmiths' Hall in London on 23 November."
+      },
+      {
+        "type": "sources",
+        "items": [
+          {
+            "label": "Heritage Crafts: Red List of Endangered Crafts 2025 (report)",
+            "url": "https://heritagecrafts.org.uk/wp-content/uploads/2025/05/Red-List-2025-publication.pdf"
+          },
+          {
+            "label": "Heritage Crafts: Red List 2025 news release",
+            "url": "https://heritagecrafts.org.uk/wp-content/uploads/2025/05/NEWS-RELEASE-Red-List-of-Endangered-Crafts-2025-v2.pdf"
+          },
+          {
+            "label": "Heritage Crafts: 20 new training bursaries awarded, 29 May 2026",
+            "url": "https://heritagecrafts.org.uk/our-stories/20-new-training-bursaries-2026/"
+          },
+          {
+            "label": "Heritage Crafts Awards",
+            "url": "https://heritagecrafts.org.uk/opportunities/awards/"
+          }
+        ]
+      }
+    ],
+  },
+  {
+    slug: "decorex-2026-preview",
+    author: "The Furniture Magazine",
+    body: [
+      {
+        "type": "brief",
+        "items": [
+          "Olympia, London, 11 to 14 October 2026.",
+          "More than 280 exhibiting brands and 48 talks sessions, according to the organiser.",
+          "Making Spaces, the feature on makers, returns with workshops. The full workshop programme is still to be announced."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Decorex, the interiors show, runs at Olympia, London, from 11 to 14 October 2026. Doors are open 10.00 to 18.00 on the first three days and 10.00 to 17.00 on the last. The organiser puts its audience at more than 12,500 design professionals and lists more than 280 exhibiting brands and 48 talks sessions."
+      },
+      {
+        "type": "h2",
+        "text": "Making Spaces"
+      },
+      {
+        "type": "p",
+        "text": "Making Spaces, the show's feature on makers, returns for 2026. It includes workshops in which artisans share the techniques and knowledge behind their craft. Decorex says the full workshop programme is coming soon, and we will list it when it is published. The Sustainability Space, powered by The Green Room, is also back."
+      },
+      {
+        "type": "h2",
+        "text": "Talks"
+      },
+      {
+        "type": "p",
+        "text": "Design talks run in the Decorex Talks Theatre in partnership with Lick. Speakers named so far include Russell Sage of Russell Sage Studio, Anna Burles of Run For The Hills, Tori Murphy, Roisin Lafferty, Suzy Hoodless of Suzy Hoodless Studio and Tiffany Duggan of Studio Duggan."
+      },
+      {
+        "type": "h2",
+        "text": "Tickets"
+      },
+      {
+        "type": "p",
+        "text": "Tickets are sold by type: trade £28 plus VAT, consumer £43 plus VAT, manufacturer £60 plus VAT, student £15 plus VAT and VIP £75 plus VAT. Decorex says that if a supplier buys a trade pass, it will ask them to upgrade to the manufacturer ticket."
+      },
+      {
+        "type": "p",
+        "text": "For makers who work to designers' briefs, it is a chance to see many of those designers in one place."
+      },
+      {
+        "type": "link",
+        "href": "https://www.decorex.com/visit/your-ticket/",
+        "text": "Decorex tickets and registration"
+      },
+      {
+        "type": "sources",
+        "items": [
+          {
+            "label": "Decorex",
+            "url": "https://www.decorex.com/"
+          },
+          {
+            "label": "Decorex: features",
+            "url": "https://www.decorex.com/visit/features/"
+          },
+          {
+            "label": "Decorex: why visit",
+            "url": "https://www.decorex.com/visit/why-visit/"
+          },
+          {
+            "label": "Decorex: talks programme",
+            "url": "https://www.decorex.com/talks-programme/agenda1/"
+          },
+          {
+            "label": "Decorex: tickets",
+            "url": "https://www.decorex.com/visit/your-ticket/"
+          }
+        ]
+      }
+    ],
+  },
   {
     slug: "franco-marinelli-qa-chair-upholstery",
     author: "Franco Marinelli",

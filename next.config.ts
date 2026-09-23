@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
+      {
+        // YouTube-supplied video thumbnails for Bench cards (hard rule 13)
+        protocol: "https",
+        hostname: "i.ytimg.com",
+      },
     ],
   },
   async redirects() {

@@ -46,7 +46,7 @@ export default function PressReleasesPage() {
             No press releases published yet.
           </p>
         ) : (
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "28px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(300px, 100%), 1fr))", gap: "28px" }}>
             {releases.map((article) => (
               <ArticleCard key={article.slug} article={article} />
             ))}

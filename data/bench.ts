@@ -9,10 +9,50 @@ export interface BenchVideo {
   videoUrl: string
   description: string[]
   date: string
-  issue: number
+  // Only set once the video has actually run in a sent issue.
+  issue?: number
 }
 
 export const benchVideos: BenchVideo[] = [
+  {
+    slug: "facelift-interiors-hand-stitched-footstool-corners",
+    title: "Hand stitching the corners of a footstool",
+    maker: "FaceLift Interiors",
+    channelCredit: "Video: FaceLiftInteriors, YouTube",
+    youtubeId: "XlAoA622BvI",
+    videoUrl: "https://www.youtube.com/watch?v=XlAoA622BvI",
+    description: [
+      "FaceLift Interiors is a family business in Croxley Green, Hertfordshire, with more than a decade of experience making high-end bespoke furniture and reupholstering it. In this video they reupholster a footstool and hand stitch the corners, with no sewing machine.",
+      "Each issue this slot carries one video from a working maker showing a technique, a tool or a repair. The video is the maker's own and plays from their channel; we add the context. Send yours to editor@thefurnituremagazine.com.",
+    ],
+    date: "2026-09-23",
+  },
+  {
+    slug: "blake-bespoke-hand-cut-dovetails",
+    title: "Hand cut dovetails for a drawer",
+    maker: "Blake Bespoke Furniture",
+    channelCredit: "Video: Blake, YouTube",
+    youtubeId: "29shLMh4_k8",
+    videoUrl: "https://www.youtube.com/watch?v=29shLMh4_k8",
+    description: [
+      "Blake Fewster is an award-winning cabinet maker in Somerset who lectured at Bridgwater College before setting up his own business in 2010. This short film shows how the workshop completes its hand cut dovetailed drawers.",
+      "Each issue this slot carries one video from a working maker showing a technique, a tool or a repair. The video is the maker's own and plays from their channel; we add the context. Send yours to editor@thefurnituremagazine.com.",
+    ],
+    date: "2026-09-23",
+  },
+  {
+    slug: "hoskins-rush-seat-spindleback-chair",
+    title: "Weaving a rush seat",
+    maker: "Andrew and Mark Hoskins",
+    channelCredit: "Video: AandM Hoskins, YouTube",
+    youtubeId: "YbNOJC1U1wQ",
+    videoUrl: "https://www.youtube.com/watch?v=YbNOJC1U1wQ",
+    description: [
+      "Andrew and Mark Hoskins run a two-man furniture repair, restoration and conservation workshop in Cambridge, with experience gained at London workshops including Spink Restoration. Here Andrew restores an antique spindleback chair with a hand-woven rush seat.",
+      "Each issue this slot carries one video from a working maker showing a technique, a tool or a repair. The video is the maker's own and plays from their channel; we add the context. Send yours to editor@thefurnituremagazine.com.",
+    ],
+    date: "2026-09-23",
+  },
   {
     slug: "alison-scott-upholstery-buttons",
     title: "Introduction to Making Upholstery Buttons",

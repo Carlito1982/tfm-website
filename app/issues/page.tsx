@@ -55,7 +55,7 @@ export default function IssuesPage() {
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "56px 24px" }}>
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fill, minmax(min(320px, 100%), 1fr))",
           gap: "1px",
           backgroundColor: BORDER,
         }}>
