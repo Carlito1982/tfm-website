@@ -22,6 +22,12 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        // Rate calculator withdrawn 23 Sep 2026; send any old links home.
+        source: "/tools/:path*",
+        destination: "/",
+        permanent: false,
+      },
     ];
   },
   async rewrites() {

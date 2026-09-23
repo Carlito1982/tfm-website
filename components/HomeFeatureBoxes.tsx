@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-// Two highlighted boxes under Start Here: the first issue, and the rate calculator.
+// Two highlighted boxes under Start Here: the first issue, and the ONS workforce figures.
 // Issue wording follows cadence rule 15: no weekday, no send time.
 export default function HomeFeatureBoxes() {
   return (
@@ -18,14 +18,14 @@ export default function HomeFeatureBoxes() {
           </div>
         </div>
         <div className="tfm-callout" style={{ display: "flex", flexDirection: "column" }}>
-          <p className="tfm-callout__kicker">Tool</p>
-          <p className="tfm-callout__title">What should you charge an hour?</p>
+          <p className="tfm-callout__kicker">The trade in numbers</p>
+          <p className="tfm-callout__title">Nearly half of the UK&rsquo;s upholsterers are self-employed</p>
           <p className="tfm-callout__body" style={{ flex: 1 }}>
-            Put in the income you want to take home, what the workshop costs to run and the hours you can actually bill.
-            The rate calculator shows the hourly rate that covers all three, and what a job should cost.
+            About 12,800 people work as upholsterers in the UK and 36,100 as furniture makers. Four in ten upholsterers are 55
+            or older. What the official figures say about the trade.
           </p>
           <div style={{ marginTop: 20 }}>
-            <Link href="/tools/rate-calculator" className="tfm-button tfm-button--outline">Work out your rate</Link>
+            <Link href="/articles/uk-upholstery-workforce-ons-2026" className="tfm-button tfm-button--outline">Read the figures</Link>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { articles, getRelatedArticles } from "@/data/articles"
+import { articles, getRelatedArticles, hasPhoto } from "@/data/articles"
 import { getArticleContent, type ContentBlock } from "@/data/articleContent"
 import SideRail from "@/components/SideRail"
 import { absoluteImageUrl, jsonLdHtml } from "@/lib/jsonLd"
@@ -469,49 +469,37 @@ export default async function ArticlePage({ params }: Props) {
     <div style={{ backgroundColor: CREAM }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdHtml(jsonLd)} />
 
-      {/* ── HERO IMAGE ──────────────────────────────────────────── */}
-      <div style={{ position: "relative", width: "100%", height: "clamp(320px, 45vh, 520px)", overflow: "hidden", backgroundColor: INK }}>
-        <ArticleVisual
-          article={article}
-          variant="hero"
-          priority
-          imageStyle={{ objectFit: article.category === "Books" ? "contain" : "cover", padding: article.category === "Books" ? "24px" : 0 }}
-          sizes="100vw"
-        />
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.65) 100%)",
-          }}
-        />
-        {/* Category + back nav over image */}
-        <div
-          style={{
-            position: "absolute",
-            top: "24px",
-            left: "24px",
-            right: "24px",
-          }}
-        >
-          <Link
-            href="/"
+      {/* ── HERO IMAGE (only when the piece has a photograph) ─────── */}
+      {hasPhoto(article) && (
+        <figure style={{ margin: 0 }}>
+          <div
             style={{
-              fontFamily: "var(--font-inter), sans-serif",
-              fontSize: "12px",
-              color: "rgba(255,255,255,0.75)",
-              textDecoration: "none",
-              letterSpacing: "0.05em",
+              position: "relative",
+              width: "100%",
+              height: "clamp(320px, 48vh, 540px)",
+              overflow: "hidden",
+              backgroundColor: article.imageFit === "contain" ? "#ECE6DE" : INK,
             }}
           >
-            ← THE FURNITURE MAGAZINE
-          </Link>
-        </div>
-      </div>
+            <ArticleVisual article={article} priority sizes="100vw" />
+            {article.imageFit !== "contain" && (
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%)" }} />
+            )}
+          </div>
+          {article.imageCredit && (
+            <figcaption style={{ backgroundColor: "#ECE6DE", padding: "0 24px 12px", textAlign: "right", fontFamily: "var(--font-inter), sans-serif", fontSize: "11px", color: "#6B6866" }}>
+              {article.imageCredit}
+            </figcaption>
+          )}
+        </figure>
+      )}
 
       {/* ── ARTICLE HEADER ──────────────────────────────────────── */}
       <div style={{ backgroundColor: INK, padding: "48px 24px 40px" }}>
         <div style={{ maxWidth: "780px", margin: "0 auto" }}>
+          <Link href="/articles" style={{ display: "inline-block", marginBottom: 22, fontFamily: "var(--font-inter), sans-serif", fontSize: 12, color: "rgba(245,241,237,0.7)", textDecoration: "none", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+            All articles
+          </Link>
           <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "20px" }}>
             <span
               style={{
@@ -716,9 +704,13 @@ export default async function ArticlePage({ params }: Props) {
                       overflow: "hidden",
                     }}
                   >
-                    <div style={{ position: "relative", height: "160px" }}>
-                      <ArticleVisual article={a} sizes="300px" />
-                    </div>
+                    {hasPhoto(a) ? (
+                      <div style={{ position: "relative", height: "160px", backgroundColor: "#ECE6DE" }}>
+                        <ArticleVisual article={a} sizes="300px" />
+                      </div>
+                    ) : (
+                      <div style={{ height: 3, backgroundColor: INK }} />
+                    )}
                     <div style={{ padding: "18px" }}>
                       <p
                         style={{

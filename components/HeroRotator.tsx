@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react"
 import Link from "next/link"
-import type { Article } from "@/data/articles"
+import { hasPhoto, type Article } from "@/data/articles"
 import ArticleVisual from "@/components/ArticleVisual"
 
 type Props = {
@@ -101,16 +101,13 @@ export default function HeroRotator({ pool, initial }: Props) {
       }}
     >
       <div style={{ opacity: visible ? 1 : 0, transition: "opacity 220ms ease", height: "100%" }}>
-        <ArticleVisual article={current} variant="hero" priority imageStyle={{ opacity: 0.55 }} sizes="100vw" />
+        {hasPhoto(current) && (
+          <div className="hero-media">
+            <ArticleVisual article={current} priority sizes="(max-width: 700px) 100vw, 46vw" />
+          </div>
+        )}
         <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(to right, rgba(26,26,26,0.90) 0%, rgba(26,26,26,0.50) 55%, rgba(26,26,26,0.10) 100%)",
-          }}
-        />
-        <div
+          className={hasPhoto(current) ? "hero-text" : undefined}
           style={{
             position: "absolute",
             bottom: 0,
@@ -162,7 +159,7 @@ export default function HeroRotator({ pool, initial }: Props) {
             {current.title}
           </h1>
 
-          <p
+          <p className="hero-excerpt"
             style={{
               fontFamily: "var(--font-inter), sans-serif",
               fontSize: "clamp(14px, 1.6vw, 16px)",

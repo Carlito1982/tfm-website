@@ -1,5 +1,5 @@
 import Link from "next/link"
-import type { Article } from "@/data/articles"
+import { hasPhoto, type Article } from "@/data/articles"
 import ArticleVisual from "@/components/ArticleVisual"
 
 type Props = {
@@ -7,53 +7,52 @@ type Props = {
   size?: "standard" | "large" | "horizontal"
 }
 
-export default function ArticleCard({ article, size = "standard" }: Props) {
-  const isLarge = size === "large"
-  const isHorizontal = size === "horizontal"
+// A key figure is shown on text-only cards only when the cover line is a number (£543, 62%, +40%).
+const figure = (a: Article) => (a.cover && /\d/.test(a.cover) ? a.cover : null)
 
-  if (isHorizontal) {
+function Meta({ article }: { article: Article }) {
+  return (
+    <div className="card-meta">
+      <span>{article.date}</span>
+      <span aria-hidden="true">·</span>
+      <span>{article.readTime}</span>
+    </div>
+  )
+}
+
+export default function ArticleCard({ article, size = "standard" }: Props) {
+  const photo = hasPhoto(article)
+  const isLarge = size === "large"
+
+  if (size === "horizontal") {
     return (
       <Link href={`/articles/${article.slug}`} style={{ textDecoration: "none" }}>
-        <div
-          className="article-card"
-          style={{
-            display: "flex",
-            gap: "20px",
-            backgroundColor: "#FAFAF8",
-            borderRadius: "4px",
-            overflow: "hidden",
-            cursor: "pointer",
-          }}
-        >
-          <div style={{ flexShrink: 0, width: "140px", height: "100px", position: "relative" }}>
-            <ArticleVisual article={article} sizes="140px" />
-          </div>
-          <div style={{ padding: "12px 16px 12px 0", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <span className={`category-tag ${article.categoryClass}`} style={{ marginBottom: "8px" }}>
-              {article.category}
-            </span>
-            <h3
-              className="card-headline"
-              style={{
-                fontFamily: "var(--font-playfair), Georgia, serif",
-                fontSize: "15px",
-                fontWeight: 600,
-                color: "#1A1A1A",
-                lineHeight: 1.35,
-                transition: "color 0.2s ease",
-              }}
-            >
-              {article.title}
-            </h3>
-            <div style={{ display: "flex", gap: "12px", marginTop: "8px" }}>
-              <span style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "11px", color: "#9B9795" }}>
-                {article.date}
-              </span>
-              <span style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "11px", color: "#9B9795" }}>
-                {article.readTime}
-              </span>
+        <div className="article-card card-h">
+          {photo && (
+            <div className="card-h__img">
+              <ArticleVisual article={article} sizes="140px" />
             </div>
+          )}
+          <div className="card-h__body">
+            <span className="card-section">{article.section}</span>
+            <h3 className="card-headline card-h__title">{article.title}</h3>
+            <Meta article={article} />
           </div>
+        </div>
+      </Link>
+    )
+  }
+
+  if (!photo) {
+    const fig = figure(article)
+    return (
+      <Link href={`/articles/${article.slug}`} style={{ textDecoration: "none" }}>
+        <div className={`article-card card-text${isLarge ? " card-text--large" : ""}`}>
+          <span className="card-section">{article.section}</span>
+          {fig && <p className="card-figure">{fig}</p>}
+          <h3 className="card-headline card-text__title">{article.title}</h3>
+          <p className="card-excerpt">{article.excerpt}</p>
+          <Meta article={article} />
         </div>
       </Link>
     )
@@ -61,111 +60,19 @@ export default function ArticleCard({ article, size = "standard" }: Props) {
 
   return (
     <Link href={`/articles/${article.slug}`} style={{ textDecoration: "none" }}>
-      <div
-        className="article-card"
-        style={{
-          backgroundColor: "#FAFAF8",
-          borderRadius: "4px",
-          overflow: "hidden",
-          cursor: "pointer",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        {/* Image */}
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            paddingTop: isLarge ? "52%" : "60%",
-            overflow: "hidden",
-            flexShrink: 0,
-          }}
-        >
+      <div className="article-card card-photo">
+        <div className="card-photo__img" style={{ paddingTop: isLarge ? "56%" : "62%" }}>
           <ArticleVisual
             article={article}
             imageStyle={{ transition: "transform 0.4s ease" }}
             sizes={isLarge ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 100vw, 33vw"}
           />
         </div>
-
-        {/* Content */}
-        <div
-          style={{
-            padding: isLarge ? "24px" : "18px",
-            display: "flex",
-            flexDirection: "column",
-            flex: 1,
-          }}
-        >
-          <span className={`category-tag ${article.categoryClass}`} style={{ marginBottom: "12px" }}>
-            {article.category}
-          </span>
-
-          <h3
-            className="card-headline"
-            style={{
-              fontFamily: "var(--font-playfair), Georgia, serif",
-              fontSize: isLarge ? "22px" : "17px",
-              fontWeight: 700,
-              color: "#1A1A1A",
-              lineHeight: 1.3,
-              marginBottom: "10px",
-              transition: "color 0.2s ease",
-            }}
-          >
-            {article.title}
-          </h3>
-
-          <p
-            style={{
-              fontFamily: "var(--font-inter), sans-serif",
-              fontSize: isLarge ? "15px" : "13px",
-              color: "#6B6866",
-              lineHeight: 1.65,
-              marginBottom: "16px",
-              flex: 1,
-              display: "-webkit-box",
-              WebkitLineClamp: isLarge ? 4 : 3,
-              WebkitBoxOrient: "vertical",
-              overflow: "hidden",
-            }}
-          >
-            {article.excerpt}
-          </p>
-
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "12px",
-              paddingTop: "14px",
-              borderTop: "1px solid #E2DDD8",
-              marginTop: "auto",
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "var(--font-inter), sans-serif",
-                fontSize: "11px",
-                color: "#9B9795",
-                letterSpacing: "0.02em",
-              }}
-            >
-              {article.date}
-            </span>
-            <span style={{ color: "#D4CFC9", fontSize: "11px" }}>·</span>
-            <span
-              style={{
-                fontFamily: "var(--font-inter), sans-serif",
-                fontSize: "11px",
-                color: "#9B9795",
-              }}
-            >
-              {article.readTime}
-            </span>
-          </div>
+        <div className="card-photo__body">
+          <span className="card-section">{article.section}</span>
+          <h3 className="card-headline" style={{ fontSize: isLarge ? 22 : 18 }}>{article.title}</h3>
+          <p className="card-excerpt">{article.excerpt}</p>
+          <Meta article={article} />
         </div>
       </div>
     </Link>

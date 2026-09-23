@@ -7,7 +7,7 @@ const links = [
   { href: "/articles", label: "Articles" },
   { href: "/bench", label: "Bench" },
   { href: "/issues", label: "Issues" },
-  { href: "/tools/rate-calculator", label: "Rate calculator" },
+  { href: "/about", label: "About" },
   { href: "/jobs", label: "Jobs" },
   { href: "/events", label: "Events" },
   { href: "/advertise", label: "Advertise" },

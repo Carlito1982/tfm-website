@@ -96,7 +96,6 @@ export default function Footer() {
               { href: "/issues", label: "All Issues" },
               { href: "/articles", label: "All Articles" },
               { href: "/press-releases", label: "Press Releases" },
-              { href: "/tools/rate-calculator", label: "Rate Calculator" },
               { href: "/about", label: "About TFM" },
               { href: "/advertise", label: "Advertise With Us" },
               { href: "/contact", label: "Contact the Editor" },
