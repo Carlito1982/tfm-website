@@ -174,9 +174,9 @@ img { display: block; max-width: 100%; }
 
 /* Hero story selector: plain bars, no icons */
 .hero-dots { position: absolute; right: 28px; bottom: 28px; display: flex; gap: 8px; z-index: 2; }
-.hero-dot { width: 34px; height: 4px; padding: 0; border: none; background: rgba(245,241,237,0.35); cursor: pointer; transition: background 0.2s ease; }
-.hero-dot:hover, .hero-dot:focus-visible { background: rgba(245,241,237,0.7); outline: none; }
-.hero-dot.is-active { background: #B8977A; }
+.hero-dot { width: 34px; height: 4px; padding: 0; border: none; background: rgba(26,26,26,0.22); cursor: pointer; transition: background 0.2s ease; }
+.hero-dot:hover, .hero-dot:focus-visible { background: rgba(26,26,26,0.5); outline: none; }
+.hero-dot.is-active { background: #735C42; }
 @media (max-width: 700px) { .hero-dots { right: 50%; transform: translateX(50%); bottom: 16px; } }
 
 /* Jobs list: stack the Enquire button under the job on phones */
@@ -188,10 +188,14 @@ img { display: block; max-width: 100%; }
 
 /* Homepage hero: text on ink, photograph on a light panel to the right */
 .hero-media { position: absolute; top: 0; right: 0; bottom: 0; width: 46%; background: #ECE6DE; }
+.hero-media__layer { position: absolute; inset: 0; transition: opacity 400ms ease; }
 .hero-text { right: 46% !important; max-width: none !important; margin: 0 !important;
   padding-left: max(28px, calc((100vw - 1200px) / 2 + 28px)) !important; padding-right: 40px !important; }
 @media (max-width: 800px) {
   .hero-media { width: 100%; height: 40%; bottom: auto; }
   .hero-media ~ .hero-text .hero-excerpt { display: none; }
   .hero-text { right: 0 !important; padding: 0 22px 44px !important; }
+}
+@media (max-width: 800px) {
+  .hero-dots { top: calc(40% - 16px); bottom: auto; }
 }

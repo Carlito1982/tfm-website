@@ -103,7 +103,12 @@ export default function HeroRotator({ pool, initial }: Props) {
       <div style={{ opacity: visible ? 1 : 0, transition: "opacity 220ms ease", height: "100%" }}>
         {hasPhoto(current) && (
           <div className="hero-media">
-            <ArticleVisual article={current} priority sizes="(max-width: 700px) 100vw, 46vw" />
+            {/* Every pool photograph is mounted so the next one is already loaded; only the current one is visible. */}
+            {[current, ...eligible.filter((a) => a.slug !== current.slug && hasPhoto(a))].map((a) => (
+              <div key={a.slug} className="hero-media__layer" style={{ opacity: a.slug === current.slug ? 1 : 0 }} aria-hidden={a.slug !== current.slug}>
+                <ArticleVisual article={a} priority={a.slug === current.slug} sizes="(max-width: 800px) 100vw, 46vw" />
+              </div>
+            ))}
           </div>
         )}
         <div
@@ -148,7 +153,7 @@ export default function HeroRotator({ pool, initial }: Props) {
           <h1
             style={{
               fontFamily: "var(--font-playfair), Georgia, serif",
-              fontSize: "clamp(26px, 4vw, 46px)",
+              fontSize: "clamp(24px, 3.2vw, 40px)",
               fontWeight: 700,
               color: "#FFFFFF",
               lineHeight: 1.2,
