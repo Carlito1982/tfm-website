@@ -426,7 +426,7 @@ export const articleContent: ArticleContent[] = [
       { type: "divider" },
       { type: "p", text: "Chair Upholstery: A modern guide to traditional techniques is published by The Crowood Press on 27 October. A full review follows after publication." },
       { type: "link", href: "https://www.crowood.com/book/chair-upholstery/", text: "The book at The Crowood Press" },
-      { type: "source", text: "Answers supplied by Franco Marinelli in writing, 18 September 2026, in response to questions from The Furniture Magazine. Portrait and workshop photographs supplied by the author for this purpose." },
+      { type: "source", text: "Answers supplied by Franco Marinelli in writing, 18 September 2026, in response to questions from The Furniture Magazine. Portrait and workshop photographs: Carol Marinelli, supplied by the author for this purpose." },
     ],
   },
   {
