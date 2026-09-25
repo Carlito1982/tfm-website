@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -25,7 +26,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "15px", color: "#8BA895", marginTop: "12px" }}>
-            Last updated 16 September 2026
+            Last updated 25 September 2026
           </p>
         </div>
       </div>
@@ -35,13 +36,16 @@ export default function PrivacyPage() {
         <p style={p}>
           The Furniture Magazine is a trading name of The Talent Branch Ltd, registered in England and Wales under company number 09615777, registered office 23a High Street, Weaverham, Northwich CW8 3HA. The Talent Branch Ltd is the data controller for the personal data described here. You can contact us at editor@thefurnituremagazine.com.
         </p>
+        {/* TODO(Carlos): add "The Talent Branch Ltd is registered with the Information Commissioner's Office, registration number ZA..." here once the number is confirmed.
+            On 25 Sep 2026 the ICO register search (ico.org.uk, ESDWebPages/Search) returned no entry for "The Talent Branch", "The Talent Branch Ltd",
+            "Talent Branch" or "The Furniture Magazine", and none of the 9 entries at postcode CW8 3HA is The Talent Branch Ltd. Do not publish a number that has not been seen on the register. */}
 
         <h2 style={h2}>What we collect and why</h2>
         <p style={p}>
-          When you subscribe to the newsletter we collect your email address and, if you choose to give it, your name and the type of work you do. We use this to send you the newsletter you asked for and to understand which parts of it readers find useful. The lawful basis is your consent, which you give by subscribing and confirming your email address, and which you can withdraw at any time using the unsubscribe link in every email.
+          When you subscribe to the newsletter on this website we collect your email address only. It is passed to beehiiv, our newsletter service, together with a note that the sign-up came from this website. beehiiv then emails you a link to confirm, and you are not added to the list until you confirm. We use your address to send you the newsletter you asked for, and beehiiv's reports on opens and clicks to understand which parts of it readers find useful. The lawful basis is your consent, which you give by subscribing and confirming your email address, and which you can withdraw at any time using the one-click unsubscribe link at the foot of every issue.
         </p>
         <p style={p}>
-          When you contact us by email, enquire about a vacancy or an advertiser, or submit an event or a contribution, we keep your message and contact details for as long as needed to deal with it. The lawful basis is our legitimate interest in responding to you and running the publication.
+          The website has no contact or enquiry forms. When you contact us by email, enquire about a vacancy or about advertising, or send us an event or a contribution, we keep your message and contact details for as long as needed to deal with it. The lawful basis is our legitimate interest in responding to you and running the publication.
         </p>
         <p style={p}>
           The website uses Vercel Web Analytics to count visits and see which pages are read. It does not set cookies and does not store your IP address; it records a temporary, anonymous hash of the visit that cannot be linked to a named individual. We do not sell personal data and we do not use it for automated decisions about you.
@@ -54,17 +58,17 @@ export default function PrivacyPage() {
 
         <h2 style={h2}>Advertisers and tracked links</h2>
         <p style={p}>
-          Links to advertisers in the newsletter pass through our own link service so that we can tell an advertiser how many readers clicked. We record the time of the click, a hashed form of your IP address, your browser type and, where available, your subscriber reference. Advertisers receive counts, never your identity, unless you choose to fill in an enquiry form that names them as the recipient.
+          Links to other websites in the newsletter and on this site pass through our own link service (addresses beginning thefurnituremagazine.com/go/) so that we can count clicks and tell an advertiser how many readers clicked. For every click we record the time, the link, the type of device (mobile, tablet or desktop, worked out from your browser but without keeping the browser details themselves), the website you came from and your country. For clicks on advertisements we also record a scrambled (hashed) form of your IP address, using a value that changes every day so it cannot be used to follow you over time, and, where the link in your newsletter carries it, your beehiiv subscriber reference. For other links we record no IP address and no subscriber reference. Advertisers receive counts, never your identity.
         </p>
 
         <h2 style={h2}>Job listings</h2>
         <p style={p}>
-          Vacancies on this site are managed by The Talent Branch Ltd. If you respond to one, your details are handled under The Talent Branch privacy notice at thetalentbranch.com and used only for that recruitment purpose.
+          Vacancies on this site are managed by The Talent Branch Ltd and the job pages read them from The Talent Branch's vacancy records. Reading a job page does not send anything about you to those records. If you respond to a vacancy you do so by email to The Talent Branch, and your details are used only for that recruitment purpose.
         </p>
 
         <h2 style={h2}>How long we keep it</h2>
         <p style={p}>
-          Subscriber data is kept while you are subscribed and removed within 30 days of you unsubscribing, apart from a suppression record so that we do not email you again. Correspondence is kept for up to two years. Click data is kept for 24 months in aggregate form.
+          Subscriber data is kept while you are subscribed and removed within 30 days of you unsubscribing, apart from a suppression record so that we do not email you again. Correspondence is kept for up to two years. Click records are kept for up to 24 months.
         </p>
 
         <h2 style={h2}>Your rights</h2>
@@ -74,7 +78,7 @@ export default function PrivacyPage() {
 
         <h2 style={h2}>Cookies</h2>
         <p style={p}>
-          The site sets only the cookies needed for it to work. Visit counting is cookieless, and no advertising or analytics cookies are set by this site.
+          This site does not set cookies. Visit counting is cookieless, and no advertising or analytics cookies are used. The home page keeps a small number in your browser so that it can show you a different story next time; it is not a cookie and is never sent to us. Videos on our Bench pages are played from YouTube in its privacy-enhanced mode, and YouTube may store information in your browser when you play one. Full details are on our <Link href="/cookies" style={{ color: COPPER }}>cookies page</Link>.
         </p>
       </div>
     </div>

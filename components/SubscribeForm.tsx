@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 
 interface SubscribeFormProps {
   variant?: "hero" | "footer"
@@ -15,6 +16,7 @@ export default function SubscribeForm({ variant = "hero" }: SubscribeFormProps) 
     e.preventDefault()
     const form = e.currentTarget
     const email = (form.elements.namedItem("email") as HTMLInputElement)?.value
+    const company_website = (form.elements.namedItem("company_website") as HTMLInputElement)?.value ?? ""
     if (!email) return
 
     setStatus("loading")
@@ -24,14 +26,14 @@ export default function SubscribeForm({ variant = "hero" }: SubscribeFormProps) 
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, company_website }),
       })
 
       if (res.ok) {
         setStatus("success")
         form.reset()
       } else {
-        const data = await res.json()
+        const data = await res.json().catch(() => ({}))
         setErrorMsg(data.error || "Something went wrong. Try again.")
         setStatus("error")
       }
@@ -58,7 +60,7 @@ export default function SubscribeForm({ variant = "hero" }: SubscribeFormProps) 
             lineHeight: 1.5,
           }}
         >
-          You&rsquo;re subscribed. First issue lands in your inbox shortly.
+          Check your inbox to confirm your subscription.
         </p>
       </div>
     )
@@ -83,6 +85,11 @@ export default function SubscribeForm({ variant = "hero" }: SubscribeFormProps) 
         }}>
           Email address
         </label>
+        {/* Honeypot: hidden from people and screen readers; bots that fill it are dropped by /api/subscribe. */}
+        <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: "1px", height: "1px", overflow: "hidden" }}>
+          <label htmlFor={`subscribe-website-${variant}`}>Leave this field empty</label>
+          <input id={`subscribe-website-${variant}`} name="company_website" type="text" tabIndex={-1} autoComplete="off" defaultValue="" />
+        </div>
         <input
           id={`subscribe-email-${variant}`}
           name="email"
@@ -136,6 +143,23 @@ export default function SubscribeForm({ variant = "hero" }: SubscribeFormProps) 
           {errorMsg}
         </p>
       )}
+
+      <p
+        style={{
+          fontFamily: "var(--font-inter), sans-serif",
+          fontSize: "12px",
+          // Both variants currently sit on the dark #2C2C2C subscribe bar on the home page, so light text.
+          color: "rgba(245,241,237,0.7)",
+          lineHeight: 1.5,
+          marginTop: "10px",
+        }}
+      >
+        We will email you to confirm. One click unsubscribes. See our{" "}
+        <Link href="/privacy" style={{ color: "#F5F1ED", textDecoration: "underline" }}>
+          privacy policy
+        </Link>
+        .
+      </p>
     </div>
   )
 }
