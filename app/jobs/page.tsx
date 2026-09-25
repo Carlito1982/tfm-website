@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { supabase, type SupabaseJob } from "@/lib/supabase"
 import { jsonLdHtml } from "@/lib/jsonLd"
-import { formatSalary } from "@/lib/formatSalary"
+import { formatSalary, salaryUnitText, validThroughFor } from "@/lib/formatSalary"
 
 export const revalidate = 3600 // revalidate every hour
 
@@ -26,7 +26,7 @@ function buildJobPostingSchema(job: SupabaseJob) {
             "@type": "QuantitativeValue",
             ...(job.salary_min ? { minValue: job.salary_min } : {}),
             ...(job.salary_max ? { maxValue: job.salary_max } : {}),
-            unitText: "YEAR",
+            unitText: salaryUnitText(job.pay_period),
           },
         }
       : undefined
@@ -40,11 +40,7 @@ function buildJobPostingSchema(job: SupabaseJob) {
       job.description ||
       `${job.title} opportunity in the furniture and upholstery industry, managed by The Talent Branch. Apply for full details.`,
     datePosted: job.published_at || job.created_at,
-    validThrough: (() => {
-      const d = new Date(job.published_at || job.created_at)
-      d.setDate(d.getDate() + 60)
-      return d.toISOString().split("T")[0]
-    })(),
+    validThrough: validThroughFor(job.published_at, job.created_at, job.advert_expires_at),
     employmentType:
       job.job_type === "contract"
         ? "CONTRACTOR"
@@ -76,7 +72,7 @@ export default async function JobsPage() {
   const { data: jobs, error } = await supabase
     .from("tfm_public_jobs")
     .select(
-      "id, title, description, published_description, location, postcode, salary_min, salary_max, job_type, skills_required, status, is_published, published_at, created_at"
+      "id, title, description, published_description, location, postcode, salary_min, salary_max, job_type, skills_required, status, is_published, published_at, created_at, website_slug, pay_period, advert_expires_at"
     )
     .eq("is_published", true)
     .order("published_at", { ascending: false })
@@ -307,7 +303,7 @@ export default async function JobsPage() {
                           color: "#8B7355",
                         }}
                       >
-                        {formatSalary(job.salary_min, job.salary_max)}
+                        {formatSalary(job.salary_min, job.salary_max, job.pay_period)}
                       </p>
 
                       {/* Skills */}

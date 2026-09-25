@@ -20,4 +20,7 @@ export interface SupabaseJob {
   is_published: boolean
   published_at: string | null
   created_at: string
+  website_slug?: string | null
+  pay_period?: "year" | "day" | "hour" | null
+  advert_expires_at?: string | null
 }

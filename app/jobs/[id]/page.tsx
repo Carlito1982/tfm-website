@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { permanentRedirect } from "next/navigation"
 import { supabase, type SupabaseJob } from "@/lib/supabase"
 import { jsonLdHtml } from "@/lib/jsonLd"
-import { formatSalary } from "@/lib/formatSalary"
+import { formatSalary, salaryUnitText, validThroughFor } from "@/lib/formatSalary"
 
 export const revalidate = 3600
 
@@ -14,7 +14,7 @@ async function getJob(id: string): Promise<SupabaseJob | null> {
   const { data, error } = await supabase
     .from("tfm_public_jobs")
     .select(
-      "id, title, description, published_description, location, postcode, salary_min, salary_max, job_type, skills_required, status, is_published, published_at, created_at"
+      "id, title, description, published_description, location, postcode, salary_min, salary_max, job_type, skills_required, status, is_published, published_at, created_at, website_slug, pay_period, advert_expires_at"
     )
     .eq("id", id)
     .eq("is_published", true)
@@ -34,6 +34,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${job.title} — ${location}`,
     description: `${job.title} vacancy in ${location}. Managed by The Talent Branch, specialist recruiters for the furniture and upholstery industry.`,
+    // The same posting is published on thetalentbranch.com; point Google at that copy so the
+    // two sites do not compete for one job (Google shows one version of a duplicated posting).
+    ...(job.website_slug
+      ? { alternates: { canonical: `https://thetalentbranch.com/vacancy/${job.website_slug}.html` } }
+      : {}),
   }
 }
 
@@ -49,7 +54,7 @@ export default async function JobDetailPage({ params }: Props) {
   if (!job) permanentRedirect("/jobs")
 
   const location = [job.location, job.postcode].filter(Boolean).join(", ") || "Location on application"
-  const salary = formatSalary(job.salary_min, job.salary_max)
+  const salary = formatSalary(job.salary_min, job.salary_max, job.pay_period)
   const description = job.published_description || job.description
 
   const structuredData = {
@@ -60,11 +65,7 @@ export default async function JobDetailPage({ params }: Props) {
       description ||
       `${job.title} opportunity in the furniture and upholstery industry, managed by The Talent Branch.`,
     datePosted: job.published_at || job.created_at,
-    validThrough: (() => {
-      const d = new Date(job.published_at || job.created_at)
-      d.setDate(d.getDate() + 60)
-      return d.toISOString().split("T")[0]
-    })(),
+    validThrough: validThroughFor(job.published_at, job.created_at, job.advert_expires_at),
     employmentType:
       job.job_type === "contract"
         ? "CONTRACTOR"
@@ -94,7 +95,7 @@ export default async function JobDetailPage({ params }: Props) {
               "@type": "QuantitativeValue",
               ...(job.salary_min ? { minValue: job.salary_min } : {}),
               ...(job.salary_max ? { maxValue: job.salary_max } : {}),
-              unitText: "YEAR",
+              unitText: salaryUnitText(job.pay_period),
             },
           },
         }
@@ -102,7 +103,9 @@ export default async function JobDetailPage({ params }: Props) {
     ...(job.skills_required && job.skills_required.length > 0
       ? { skills: job.skills_required.join(", ") }
       : {}),
-    url: `https://www.thefurnituremagazine.com/jobs/${job.id}`,
+    url: job.website_slug
+      ? `https://thetalentbranch.com/vacancy/${job.website_slug}.html`
+      : `https://www.thefurnituremagazine.com/jobs/${job.id}`,
   }
 
   const mailtoBody = `Hi Carlos,%0A%0AI'm interested in the ${encodeURIComponent(job.title)} vacancy (${encodeURIComponent(location)}) advertised on The Furniture Magazine.%0A%0APlease send me more details.%0A%0ARegards`
