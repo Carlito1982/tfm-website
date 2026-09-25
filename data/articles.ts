@@ -345,6 +345,34 @@ export const articles: Article[] = [
     readTime: "3 min read",
     date: "22 Sep 2026",
   },
+  {
+    slug: "upholsterers-pricing-guide-valerie-hayes",
+    title: "Valerie Hayes: “A full diary can actually hide underpricing very effectively”",
+    excerpt:
+      "After 30 years in accountancy, upholsterer Valerie Hayes has written The Upholsterer's Pricing Guide, launching at the Festival of Upholstery on 2 October. She answers eight questions on true costs, billable time and why busy is not the same as profitable.",
+    category: "Books",
+    categoryClass: "tag-books",
+    section: "The Trade",
+    image: "/images/valerie-hayes-portrait.jpg",
+    imageAlt: "Valerie Hayes, upholsterer and author of The Upholsterer's Pricing Guide",
+    imageCredit: "Photograph: Sion Edwards",
+    readTime: "6 min read",
+    date: "29 Sep 2026",
+  },
+  {
+    slug: "autumn-long-point-2026-round-up",
+    title: "Autumn Long Point: registrations up 40 per cent as the Guild widens its audience",
+    excerpt:
+      "Thirty furniture brands opened 15 showrooms in and around Long Eaton for Autumn Long Point, 14 to 16 September. The Long Eaton Guild of Furniture Manufacturers reports registrations up 40 per cent on the spring event.",
+    category: "Industry News",
+    categoryClass: "tag-news",
+    section: "The Trade",
+    cover: "+40%",
+    image: "/covers/autumn-long-point-2026-round-up.png",
+    imageAlt: "Autumn Long Point 2026",
+    readTime: "3 min read",
+    date: "29 Sep 2026",
+  },
 ]
 
 // ---------------------------------------------------------------------------

@@ -38,6 +38,18 @@ export const events: Event[] = [
     featured: true,
   },
   {
+    id: "independent-hotel-show-london-2026",
+    name: "Independent Hotel Show London 2026",
+    organiser: "Montgomery Events",
+    date: "2026-10-05",
+    dateDisplay: "5 to 6 October 2026",
+    location: "Olympia London",
+    description:
+      "The show for independent hoteliers and the designers and suppliers who fit out their hotels. The 2026 design partners are Design Command, Obradov Studio, Merav Bustan Design and TUNTU, and charity partner Furnishing Futures is creating a bedroom at the show to highlight its work designing homes for people fleeing domestic abuse.",
+    url: "https://www.independenthotelshow.co.uk",
+    featured: false,
+  },
+  {
     id: "decorex-2026",
     name: "Decorex 2026",
     organiser: "Decorex",
