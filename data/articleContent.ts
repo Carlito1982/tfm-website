@@ -15,6 +15,9 @@ export type ContentBlock =
   | { type: "brief"; items: string[] }
   // A key number, shown large, with its source named underneath.
   | { type: "stat"; value: string; label: string; source?: string }
+  // A cleared photograph inside the body. credit is shown under it and is required for every supplied image.
+  | { type: "image"; src: string; alt: string; credit?: string }
+  | { type: "gallery"; items: { src: string; alt: string; credit?: string }[] }
 
 export type ArticleContent = {
   slug: string
@@ -1585,6 +1588,7 @@ export const articleContent: ArticleContent[] = [
     author: "Valerie Hayes",
     body: [
       {"type": "p", "text": "The Upholsterer's Pricing Guide, by Valerie Hayes of Atelier Valérie Hayes Upholstery, launches at the Festival of Upholstery on 2 October. After around 30 years in accountancy, Hayes retrained as a professional upholsterer, bringing a head for numbers together with a love of chairs. As those two worlds came together, she began developing a practical business model for understanding what upholstery work really needs to earn."},
+      {"type": "image", "src": "/images/festival-of-upholstery-217.jpg", "alt": "A supplier stand at a previous Festival of Upholstery, with tools, threads and samples laid out for visitors", "credit": "Photograph: Festival of Upholstery"},
       {"type": "p", "text": "She also wanted the guide to start a wider conversation in the trade: not about competing on price, but about more openness and trust around how the work is valued."},
       {"type": "p", "text": "The 68-page guide looks at true costs, pricing structure, billable time, profit, logistics, market testing and the boundaries that help make the work sustainable. RRP £49; pre-order £42.75 including UK P&P; £40 when collected at the festival. She answered eight questions for The Furniture Magazine, in her own words."},
       {"type": "h3", "text": "You spent around 30 years in accountancy before becoming an upholsterer. What did each profession teach you about the other?"},
@@ -1651,6 +1655,14 @@ export const articleContent: ArticleContent[] = [
       {"type": "p", "text": "New this year was a Chairman's networking reception at the close of the first day, open to exhibitors and invited guests. David Gascoigne, Chairman of the Guild, said:"},
       {"type": "quote", "text": "We were delighted with Autumn Long Point this year. One of the most encouraging things for us is seeing the audience continue to broaden, with the event now attracting visitors from across the wider interiors and furniture industry, rather than predominantly furniture retailers. The reception on the first evening was a real success. It was very well attended and created a great opportunity for exhibitors and visitors to come together in a more informal setting, catch up with existing contacts and make new connections. Long Point has always been about bringing the industry together in Long Eaton, and it was fantastic to see that happening across the three days.", "attribution": "David Gascoigne, Chairman, Long Eaton Guild of Furniture Manufacturers"},
       {"type": "p", "text": "Long Point will have a standing place in The Furniture Magazine's events diary, and the spring 2027 dates will be listed as soon as the Guild announces them."},
+      {"type": "h3", "text": "In the showrooms"},
+      {"type": "gallery", "items": [
+        {"src": "/images/long-point/siren-furniture.jpg", "alt": "Visitors in the Siren Furniture showroom at Autumn Long Point 2026", "credit": "Photograph: Liquid Image"},
+        {"src": "/images/long-point/wallace-and-howe-2.jpg", "alt": "Sofas on show in the Wallace and Howe showroom at Autumn Long Point 2026", "credit": "Photograph: Liquid Image"},
+        {"src": "/images/long-point/gascoigne-designs-1.jpg", "alt": "The Gascoigne Designs showroom at Autumn Long Point 2026", "credit": "Photograph: Liquid Image"},
+        {"src": "/images/long-point/gascoigne-designs-2.jpg", "alt": "Patterned sofas and chairs in the Gascoigne Designs showroom at Autumn Long Point 2026", "credit": "Photograph: Liquid Image"},
+        {"src": "/images/long-point/long-point-showroom.jpg", "alt": "A cabinet showroom at Autumn Long Point 2026", "credit": "Photograph: Liquid Image"}
+      ]},
       {"type": "link", "href": "https://www.thefurnituremagazine.com/go/long-eaton-guild", "text": "The Long Eaton Guild of Furniture Manufacturers"},
       {"type": "source", "text": "Built from the Guild's Autumn Long Point 2026 exhibition brochure and from information and a quote supplied for publication by Catseye Marketing on behalf of the Long Eaton Guild of Furniture Manufacturers, 17 to 24 September 2026. This round-up is editorial and was not paid for."},
     ],

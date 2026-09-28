@@ -7,6 +7,7 @@ import SideRail from "@/components/SideRail"
 import { absoluteImageUrl, jsonLdHtml } from "@/lib/jsonLd"
 import { isFutureDate } from "@/lib/publishDate"
 import ArticleVisual from "@/components/ArticleVisual"
+import Image from "next/image"
 
 // Design tokens
 const INK    = "#1A1A1A"
@@ -287,6 +288,36 @@ function renderBlock(block: ContentBlock, index: number) {
           {block.source && (
             <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "12px", color: "#6B6866", marginTop: 6 }}>Source: {block.source}</p>
           )}
+        </div>
+      )
+
+    case "image":
+      return (
+        <figure key={index} style={{ margin: "32px 0" }}>
+          <div style={{ position: "relative", width: "100%", aspectRatio: "3 / 2", overflow: "hidden", backgroundColor: "#ECE6DE" }}>
+            <Image src={block.src} alt={block.alt} fill sizes="(max-width: 800px) 100vw, 780px" style={{ objectFit: "cover" }} />
+          </div>
+          {block.credit && (
+            <figcaption style={{ padding: "8px 0 0", textAlign: "right", fontFamily: "var(--font-inter), sans-serif", fontSize: "11px", color: MUTED }}>
+              {block.credit}
+            </figcaption>
+          )}
+        </figure>
+      )
+
+    case "gallery":
+      return (
+        <div key={index} style={{ margin: "32px 0", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px" }}>
+          {block.items.map((item, i) => (
+            <figure key={i} style={{ margin: 0 }}>
+              <div style={{ position: "relative", width: "100%", aspectRatio: "4 / 3", overflow: "hidden", backgroundColor: "#ECE6DE" }}>
+                <Image src={item.src} alt={item.alt} fill sizes="(max-width: 800px) 100vw, 390px" style={{ objectFit: "cover" }} />
+              </div>
+              <figcaption style={{ padding: "6px 0 0", fontFamily: "var(--font-inter), sans-serif", fontSize: "11px", color: MUTED, lineHeight: 1.5 }}>
+                {item.alt}{item.credit ? `. ${item.credit}` : ""}
+              </figcaption>
+            </figure>
+          ))}
         </div>
       )
 
