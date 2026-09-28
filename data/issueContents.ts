@@ -234,20 +234,6 @@ export const issueContents: IssueContents[] = [
             ],
             link: { href: "https://furnitureproduction.net/news/finsa-strengthens-commitment-to-uk-with-20m-logistics-headquarters", text: "Furniture and Joinery Production, 25 September", external: true },
           },
-          {
-            title: "Man Wah's stake in DFS passes 10 per cent",
-            text: [
-              "A stock exchange notice on 23 September records that Man Li Wong, through Man Wah Holdings, raised voting rights in DFS Furniture from 9.12 per cent to 10.18 per cent, crossing the threshold on 22 September. Man Wah is the Chinese upholstery manufacturer behind a large share of the imported recliner market; a growing stake in the largest UK sofa retailer is worth watching from any bench that competes with imports on price.",
-            ],
-            link: { href: "https://www.investegate.co.uk/announcement/rns/dfs-furniture--dfs/holding-s-in-company/9786777", text: "DFS Furniture plc, RNS via Investegate, 23 September", external: true },
-          },
-          {
-            title: "Institute of Carpenters appoints a Programme Manager",
-            text: [
-              "Elaine Morrissey joined the Institute of Carpenters on 21 September as Programme Manager, a new role leading the Wood/Work programme, a CITB-funded in-work support scheme for around 120 apprentices a year.",
-            ],
-            link: { href: "https://instituteofcarpenters.com/institute-of-carpenters-appoint-elaine-morrissey-as-programme-manager/", text: "Institute of Carpenters, 21 September", external: true },
-          },
         ],
       },
       {
