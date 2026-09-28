@@ -1,5 +1,5 @@
 // Table of contents for each issue, in newsletter order. Copy comes from the issue content
-// module (ttb-command-centre/docs/tfm_issue_tools/issue_001_content_v8.py, via gen_issue_contents_ts.py). Nothing here is invented.
+// module (ttb-command-centre/docs/tfm_issue_tools/issue_001_content_v9.py, via gen_issue_contents_ts.py). Nothing here is invented.
 
 export interface IssueLink {
   href: string
@@ -108,18 +108,6 @@ export const issueContents: IssueContents[] = [
         ],
       },
       {
-        label: "Advertisement",
-        items: [
-          {
-            title: "Founding Partner slot",
-            text: [
-              "This space is reserved for the ten Founding Partners of The Furniture Magazine: one fabric house, one foam converter, one machinery supplier, one tools and sundries supplier, one timber merchant, one finishing brand, one training provider, one software or services firm, one event and one publisher. Founding Partners appear here in every issue for their first twelve issues and three long-form editions, and receive a monthly report of the clicks and enquiries their placement produced.",
-            ],
-            link: { href: "/founding-partners", text: "Founding Partner Programme: the one-page terms" },
-          },
-        ],
-      },
-      {
         label: "The Bench",
         items: [
           {
@@ -129,6 +117,27 @@ export const issueContents: IssueContents[] = [
               "Each issue this slot carries one video from a working maker showing a technique, a tool or a repair. The video is the maker's own and plays from their channel; we add the context. Send yours to editor@thefurnituremagazine.com.",
             ],
             link: { href: "/bench/alison-scott-upholstery-buttons", text: "Watch: Introduction to Making Upholstery Buttons, Alison Scott Upholstery" },
+          },
+          {
+            title: "Hand cut dovetails for a drawer",
+            text: [
+              "Blake Bespoke",
+            ],
+            link: { href: "/bench/blake-bespoke-hand-cut-dovetails", text: "Watch on the site" },
+          },
+          {
+            title: "Marc Fish: furniture creation at Robinson House Studio",
+            text: [
+              "Robinson House Studio",
+            ],
+            link: { href: "/bench/marc-fish-robinson-house-studio", text: "Watch on the site" },
+          },
+          {
+            title: "Restoring a 1930s writing bureau",
+            text: [
+              "Mayfield Restorations",
+            ],
+            link: { href: "/bench/mayfield-restorations-writing-bureau", text: "Watch on the site" },
           },
         ],
       },
@@ -211,8 +220,73 @@ export const issueContents: IssueContents[] = [
             ],
             link: { href: "https://www.bigfurnituregroup.com/furniture-imports-up-in-july-2026-exports-rise/", text: "Big Furniture Group, 15 September", external: true },
           },
+          {
+            title: "Elite Office Furniture moves to Goole; 300 lots of surplus machinery under the hammer",
+            text: [
+              "Elite Office Furniture has moved into a 300,000 sq ft purpose-built factory off Rawcliffe Road in Goole, East Yorkshire, and has bought a suite of new CNC machines for its manufacturing divisions. The surplus machinery from the old site, more than 300 lots including Homag, Weeke, Selco, Amada, Prima Power and Gama, is being sold at auction by Walker Singleton, closing on 22 October. For a small workshop that has been pricing a second-hand edgebander or beam saw, that is the date to have in the diary.",
+            ],
+            link: { href: "https://furnitureproduction.net/news/elite-office-furniture-makes-the-move-to-new-purpose-built-factory", text: "Furniture and Joinery Production, 25 September", external: true },
+          },
+          {
+            title: "Finsa opens a £20m logistics base at Birkenhead",
+            text: [
+              "Panel maker Finsa has opened a £20m site at Grandidges Quay, Birkenhead, inside the Wirral Waters Freeport, developed with Peel Ports. It combines a logistics warehouse, a cross-laminated timber office building and a Finsa Home commercial space, with dock and crane capacity to unload vessels directly. For the North West that means MDF, chipboard and melamine-faced board landing closer to the workshops that use it.",
+            ],
+            link: { href: "https://furnitureproduction.net/news/finsa-strengthens-commitment-to-uk-with-20m-logistics-headquarters", text: "Furniture and Joinery Production, 25 September", external: true },
+          },
+          {
+            title: "Man Wah's stake in DFS passes 10 per cent",
+            text: [
+              "A stock exchange notice on 23 September records that Man Li Wong, through Man Wah Holdings, raised voting rights in DFS Furniture from 9.12 per cent to 10.18 per cent, crossing the threshold on 22 September. Man Wah is the Chinese upholstery manufacturer behind a large share of the imported recliner market; a growing stake in the largest UK sofa retailer is worth watching from any bench that competes with imports on price.",
+            ],
+            link: { href: "https://www.investegate.co.uk/announcement/rns/dfs-furniture--dfs/holding-s-in-company/9786777", text: "DFS Furniture plc, RNS via Investegate, 23 September", external: true },
+          },
+          {
+            title: "Institute of Carpenters appoints a Programme Manager",
+            text: [
+              "Elaine Morrissey joined the Institute of Carpenters on 21 September as Programme Manager, a new role leading the Wood/Work programme, a CITB-funded in-work support scheme for around 120 apprentices a year.",
+            ],
+            link: { href: "https://instituteofcarpenters.com/institute-of-carpenters-appoint-elaine-morrissey-as-programme-manager/", text: "Institute of Carpenters, 21 September", external: true },
+          },
         ],
-        adAfter: true,
+      },
+      {
+        label: "On the site this fortnight",
+        items: [
+          {
+            title: "Stanley Mackintosh represents the UK in Cabinet Making at WorldSkills Shanghai",
+            link: { href: "/articles/worldskills-shanghai-2026-cabinet-making-team-uk", text: "Read" },
+          },
+          {
+            title: "Three furniture crafts are critically endangered in the UK, says the Red List",
+            link: { href: "/articles/heritage-crafts-red-list-furniture-crafts", text: "Read" },
+          },
+          {
+            title: "Decorex 2026: Making Spaces returns to Olympia",
+            link: { href: "/articles/decorex-2026-preview", text: "Read" },
+          },
+          {
+            title: "The Wood Awards 2026 shortlist: the furniture to study",
+            link: { href: "/articles/wood-awards-2026-furniture-shortlist", text: "Read" },
+          },
+          {
+            title: "Nearly half of the UK's upholsterers are self-employed, ONS figures show",
+            link: { href: "/articles/uk-upholstery-workforce-ons-2026", text: "Read" },
+          },
+        ],
+      },
+      {
+        label: "Media partner",
+        items: [
+          {
+            title: "The Festival of Upholstery, 2 and 3 October 2026",
+            text: [
+              "Two days for professional upholsterers at the National Conference Centre and Motorcycle Museum, Birmingham: exhibitors, live demonstrations filmed close-up and projected on a big screen, talks and the evening social. The Furniture Magazine is a media partner of the festival. Tickets and the full programme are on the festival website.",
+            ],
+            link: { href: "/go/festival-of-upholstery-001", text: "Tickets and programme at festivalofupholstery.co.uk" },
+            sources: "Reciprocal arrangement with the organisers, agreed in writing on 17 September 2026. No payment either way.",
+          },
+        ],
       },
       {
         label: "Live jobs",
