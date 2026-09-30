@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { supabase, type SupabaseJob } from "@/lib/supabase"
+import SubscribeForm from "@/components/SubscribeForm"
 import { jsonLdHtml } from "@/lib/jsonLd"
 import { formatSalary, salaryUnitText, validThroughFor } from "@/lib/formatSalary"
 
@@ -131,6 +132,19 @@ export default async function JobsPage() {
               Every role on this page is managed by The Talent Branch — the UK&rsquo;s specialist
               recruiter for the furniture and upholstery industry. All enquiries handled confidentially.
             </p>
+            <div style={{ maxWidth: "520px", marginTop: "28px" }}>
+              <p
+                style={{
+                  fontFamily: "var(--font-inter), sans-serif",
+                  fontSize: "13px",
+                  color: "rgba(245,241,237,0.75)",
+                  marginBottom: "10px",
+                }}
+              >
+                Hear about new roles first. Live jobs and the trade news by email, free, every fortnight.
+              </p>
+              <SubscribeForm variant="hero" />
+            </div>
           </div>
         </section>
 
@@ -361,6 +375,38 @@ export default async function JobsPage() {
               </div>
             </>
           )}
+
+          {/* Subscribe band */}
+          <div style={{ marginTop: "56px", backgroundColor: "#2C2C2C", padding: "48px 40px" }}>
+            <h3
+              style={{
+                fontFamily: "var(--font-playfair), Georgia, serif",
+                fontSize: "clamp(20px, 3vw, 26px)",
+                fontWeight: 700,
+                color: "#F5F1ED",
+                marginBottom: "12px",
+              }}
+            >
+              Not the right role this time?
+            </h3>
+            <p
+              style={{
+                fontFamily: "var(--font-inter), sans-serif",
+                fontSize: "14px",
+                color: "rgba(245,241,237,0.6)",
+                lineHeight: 1.75,
+                marginBottom: "24px",
+                maxWidth: "560px",
+              }}
+            >
+              Subscribe free to The Furniture Magazine and the next ones come to you: live jobs
+              like these, plus techniques, finished work and trade news for the people who bring
+              furniture to life. Every fortnight, one click unsubscribes.
+            </p>
+            <div style={{ maxWidth: "520px" }}>
+              <SubscribeForm variant="hero" />
+            </div>
+          </div>
 
           {/* CTA panels */}
           <div
