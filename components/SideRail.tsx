@@ -68,7 +68,8 @@ function JobRow({ job }: { job: RailJob }) {
   )
 }
 
-export default async function SideRail() {
+// ads=false drops the house advert panels (issue archive pages must match the email that was sent: rule 14, #130).
+export default async function SideRail({ ads = true }: { ads?: boolean } = {}) {
   const { data, error } = await supabase
     .from("tfm_public_jobs")
     .select("id, title, location, postcode, salary_min, salary_max, job_type, published_at")
@@ -146,11 +147,15 @@ export default async function SideRail() {
         </p>
       </div>
 
-      <div style={{ marginBottom: "24px" }}>
-        <AdPanel />
-      </div>
+      {ads && (
+        <>
+          <div style={{ marginBottom: "24px" }}>
+            <AdPanel />
+          </div>
 
-      <AdPanel size="small" />
+          <AdPanel size="small" />
+        </>
+      )}
     </aside>
   )
 }

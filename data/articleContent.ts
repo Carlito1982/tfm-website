@@ -27,6 +27,143 @@ export type ArticleContent = {
 
 export const articleContent: ArticleContent[] = [
   {
+    slug: "dids-macdonald-acid-design-protection-ai",
+    author: "Dids Macdonald",
+    body: [
+      {
+        "type": "p",
+        "text": "Dids Macdonald OBE is Chairman and Co-Founder of ACID (Anti Copying in Design) and a Past Master of the Furniture Makers' Company. She spoke on AI and intellectual property at the British Furniture Association's AI Summit in September 2026. Here she answers The Furniture Magazine's questions on what design protection covers, what AI has changed, and what a small workshop can do when it finds a copy."
+      },
+      {
+        "type": "h3",
+        "text": "What does design protection actually cover, and what is the biggest misunderstanding?"
+      },
+      {
+        "type": "p",
+        "text": "Design protection is about how a new design looks in appearance: its shape, configuration, colour, lines, ornamentation, contours and, in some circumstances, texture and materials."
+      },
+      {
+        "type": "p",
+        "text": "UK unregistered design right can protect shape and configuration automatically, while supplementary unregistered design protects appearance for three years. A registered design can protect the appearance for up to 25 years, subject to renewal every five (see the Intellectual Property Office at gov.uk/government/organisations/intellectual-property-office)."
+      },
+      {
+        "type": "p",
+        "text": "The biggest myth is that if you change an original design by a percentage or a number of changes it becomes a new design. It doesn't. It is about whether another design creates the same overall impression."
+      },
+      {
+        "type": "p",
+        "text": "Another is “I designed it; therefore, nobody can copy it.” Design rights have different requirements and scope. Simple IP literacy starts with a basic understanding of what you can and can't protect. ACID holds regular IP Basics webinars."
+      },
+      {
+        "type": "p",
+        "text": "A signed and dated design audit from idea to marketplace is good practice. ACID members benefit from a free IP Databank where different stages of a design process can be lodged, each with a uniquely generated reference. Essential evidence if you are unlucky enough to be copied."
+      },
+      {
+        "type": "p",
+        "text": "Your first line of defence is knowing exactly what you own, what protects it and what evidence you must provide to prove it."
+      },
+      {
+        "type": "h3",
+        "text": "What has AI changed?"
+      },
+      {
+        "type": "p",
+        "text": "AI has dramatically increased the speed and scale of copying. Images, designs and product information can be data scraped, remixed and reproduced in seconds. This creates challenges around attribution, transparency, recompense and labelling. AI cannot come at the expense of an erosion of intellectual property law, we believe. For a small maker, this means that monitoring and documenting your work is more important than ever."
+      },
+      {
+        "type": "h3",
+        "text": "What should a workshop do first when it finds a copy?"
+      },
+      {
+        "type": "p",
+        "text": "Stay calm; it can be a very stressful time. First, gather evidence: your original sketches, CAD files, photographs, invoices, any design registrations and dated development records. Establish exactly what is being copied and what rights you may have. ACID members can benefit from an expert initial free opinion from ACID's team of IP Legal Affiliates on the merits of a case. Never sue on principle; always evaluate a quantifiable loss. It is also advisable not to accuse another of copying before taking legal advice. ACID advocates mediation if possible."
+      },
+      {
+        "type": "h3",
+        "text": "What can be done cheaply?"
+      },
+      {
+        "type": "p",
+        "text": "IP awareness and deterrence should be at the core of a proactive IP strategy. Ensure that all your agreements with third parties have a clause that states your intellectual property ownership. If you don't want to be copied, say so. Include a simple statement on your website running through each page. ACID members, for example, can use a Member of ACID watermark on all their images. Include clear IP ownership and non-copying provisions in supplier and customer agreements. While IPO registration is inexpensive, enforcement is still a challenge, so taking these deterrent steps adds weight to IP protection."
+      },
+      {
+        "type": "h3",
+        "text": "What came out of the BFA AI Summit?"
+      },
+      {
+        "type": "p",
+        "text": "The important message was that AI is already very much here to stay and developing at an exponential pace; it is not a future issue. The opportunities are significant, but businesses need to understand who owns the output, what data is being used and where the risks sit. My session focused on AI and IP, reinforcing the need for businesses to understand what they are putting into AI systems and how their own IP may be used without permission. Being vigilant about which AI systems are used, and about any confidential information that may be shared, is critical. Treating trade secrets as the crown jewels in any business is paramount. Once they go into the public domain, competitive advantage may be lost, as well as legal privilege."
+      },
+      {
+        "type": "h3",
+        "text": "What one change would make the biggest difference?"
+      },
+      {
+        "type": "p",
+        "text": "Responding to the recent Designs Consultation, for which ACID lobbied for over ten years, we provided compelling evidence to support lone, micro and SME designers with a simpler, faster and genuinely affordable enforcement system, and for the intentional infringement of an unregistered right to be made a crime, in line with copyright. The law can provide rights, but they are useless without cost-effective redress when copying occurs. This David versus Goliath problem is precisely why ACID has campaigned for stronger, more accessible and deterrent design protection. ACID advocates mediation as an alternative to expensive and time-consuming litigation as a first port of call."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "p",
+        "text": "ACID invites designers and makers to sign its IP and AI Charter, which calls for IP respect, compliance and ethics."
+      },
+      {
+        "type": "link",
+        "href": "https://www.acid.uk.com/become-a-charter-signatory/",
+        "text": "The ACID IP and AI Charter"
+      },
+      {
+        "type": "p",
+        "text": "Dids Macdonald OBE is Chairman and Co-Founder of ACID (Anti Copying in Design), acid.uk.com."
+      },
+      {
+        "type": "source",
+        "text": "Answers supplied by Dids Macdonald in writing, 25 September 2026, in response to questions from The Furniture Magazine; final text approved by her on 30 September 2026. Introduction arranged by Maya Ings, Shepherd PR, for the British Furniture Association. Photograph supplied by Dids Macdonald."
+      }
+    ],
+  },
+  {
+    slug: "hand-measurement-franco-marinelli-chair-upholstery",
+    author: "The Furniture Magazine",
+    body: [
+      {
+        "type": "p",
+        "text": "Most upholsterers measure part of every job by hand without thinking about it. In Chair Upholstery, Franco Marinelli sets that habit down as a system, so a beginner can learn it on purpose and an experienced hand can check theirs against his."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Two fingers held together: about 3.5cm, the spacing for tacks.",
+          "Three fingers: 5cm, the height of a first stuffing on a dining chair.",
+          "The little finger: about 1.5cm, the gap between rows of blind stitching.",
+          "A closed fist, thumb included: 10cm, the size of a bridle loop.",
+          "Index and middle fingers opened fully: 45 degrees, the angle for the needle when stitching an edge.",
+          "Index finger to thumb: 90 degrees."
+        ]
+      },
+      {
+        "type": "quote",
+        "text": "Of course there are naturally more measurements a craftsperson can take from the hand, and they vary from person to person. It’s always worth sitting with a ruler and noting the key ones on your own hand. This will sharpen the habit and make the system truly yours.",
+        "attribution": "Franco Marinelli"
+      },
+      {
+        "type": "p",
+        "text": "The method comes from page 52 of Chair Upholstery by Franco Marinelli, published by The Crowood Press on 27 October, £24. Described here with the permission of the author and the publisher."
+      },
+      {
+        "type": "link",
+        "href": "https://www.crowood.com/book/chair-upholstery/",
+        "text": "The book at The Crowood Press"
+      },
+      {
+        "type": "source",
+        "text": "Method from Chair Upholstery by Franco Marinelli (The Crowood Press, 2026), page 52, used with the written permission of The Crowood Press (23 September 2026) and the author (24 September 2026); text approved by the author on 30 September 2026. Closing advice from the author's email to The Furniture Magazine, 30 September 2026. Cover image supplied by The Crowood Press."
+      }
+    ],
+  },
+  {
     slug: "uk-upholstery-workforce-ons-2026",
     author: "The Furniture Magazine",
     body: [

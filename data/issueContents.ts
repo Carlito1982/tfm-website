@@ -74,7 +74,6 @@ export const issueContents: IssueContents[] = [
             sources: "Franco Marinelli answered our questions in writing. Introduction arranged by Olivia Hayward at The Crowood Press.",
           },
         ],
-        adAfter: true,
       },
       {
         label: "The Trade",
@@ -152,7 +151,6 @@ export const issueContents: IssueContents[] = [
             sources: "Source: ONS, Producer price inflation, UK: August 2026, and series G75I.",
           },
         ],
-        adAfter: true,
       },
       {
         label: "What the market is paying",
@@ -346,7 +344,6 @@ export const issueContents: IssueContents[] = [
           },
         ],
         note: "Dates checked on each organiser's own website, 16 to 28 September 2026. Organisers: to list an event, write to editor@thefurnituremagazine.com.",
-        adAfter: true,
       },
       {
         label: "Show us your work",

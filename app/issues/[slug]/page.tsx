@@ -218,7 +218,7 @@ export default async function IssuePage({ params }: Props) {
           )}
         </div>
 
-        <SideRail />
+        <SideRail ads={false} />
       </div>
     </div>
   )

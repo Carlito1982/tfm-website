@@ -22,6 +22,13 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      // Retired desk-written articles (#131, 1 Oct 2026). Keep in step with RETIRED in data/articles.ts.
+      { source: "/articles/uk-furniture-skills-crisis-2026", destination: "/articles/uk-upholstery-workforce-ons-2026", permanent: true },
+      { source: "/articles/deep-buttoning-technique-guide", destination: "/bench", permanent: true },
+      { source: "/articles/pricing-guide-self-employed-upholsterers", destination: "/articles/upholsterers-pricing-guide-valerie-hayes", permanent: true },
+      { source: "/articles/uk-foam-material-costs-2026", destination: "/section/the-trade", permanent: true },
+      { source: "/articles/finding-clients-self-employed-upholsterer", destination: "/articles/upholsterers-pricing-guide-valerie-hayes", permanent: true },
+      { source: "/articles/leather-colour-matching-guide", destination: "/bench", permanent: true },
       {
         // Rate calculator withdrawn 23 Sep 2026; send any old links home.
         source: "/tools/:path*",

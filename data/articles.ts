@@ -23,7 +23,37 @@ export type Article = {
   featured?: boolean
 }
 
-export const articles: Article[] = [
+const allArticles: Article[] = [
+  {
+    slug: "dids-macdonald-acid-design-protection-ai",
+    title: "Design protection in the age of AI: a Q and A with Dids Macdonald",
+    excerpt:
+      "The Chairman and Co-Founder of ACID (Anti Copying in Design) on what design protection covers, what AI has changed, and what a small workshop should do first when it finds a copy.",
+    category: "Business Advice",
+    categoryClass: "tag-business",
+    section: "The Trade",
+    image: "/images/dids-macdonald.jpg",
+    imageFit: "contain",
+    imageAlt: "Dids Macdonald OBE, Chairman and Co-Founder of ACID (Anti Copying in Design)",
+    imageCredit: "Photograph supplied by Dids Macdonald",
+    readTime: "5 min read",
+    date: "6 Oct 2026",
+  },
+  {
+    slug: "hand-measurement-franco-marinelli-chair-upholstery",
+    title: "The Bench: your hand is a ruler",
+    excerpt:
+      "In Chair Upholstery, Franco Marinelli sets down the hand measurements most upholsterers use without thinking: tack spacing, stuffing height, blind-stitch rows, bridle loops and the angle of the needle.",
+    category: "Craft & Technique",
+    categoryClass: "tag-craft",
+    section: "The Bench",
+    image: "/images/chair-upholstery-cover.jpg",
+    imageFit: "contain",
+    imageAlt: "Cover of Chair Upholstery: A modern guide to traditional techniques, by Franco Marinelli, The Crowood Press",
+    imageCredit: "Cover image: The Crowood Press",
+    readTime: "1 min read",
+    date: "13 Oct 2026",
+  },
   {
     slug: "uk-upholstery-workforce-ons-2026",
     title: "Nearly half of the UK's upholsterers are self-employed, ONS figures show",
@@ -190,8 +220,9 @@ export const articles: Article[] = [
     categoryClass: "tag-press",
     section: "The Trade",
     cover: "+40%",
-    image: "/covers/hlf-group-revenue-up-40-per-cent.png",
-    imageAlt: "The Furniture Magazine",
+    image: "/images/hlf-rachel-conroy.jpg",
+    imageAlt: "Rachel Conroy, director and co-owner of HLF Group",
+    imageCredit: "Photograph: HLF",
     readTime: "1 min read",
     date: "16 Sep 2026",
   },
@@ -378,25 +409,39 @@ export const articles: Article[] = [
 ]
 
 // ---------------------------------------------------------------------------
+// Retired desk-written pieces (#39, #131; redirected 1 Oct 2026 on Carlos's instruction).
+// They stay in the data above for the record but are dropped from every listing,
+// the sitemap and the hero. The matching 301s live in next.config.ts: keep both lists in step.
+export const RETIRED: Record<string, string> = {
+  "uk-furniture-skills-crisis-2026": "/articles/uk-upholstery-workforce-ons-2026",
+  "deep-buttoning-technique-guide": "/bench",
+  "pricing-guide-self-employed-upholsterers": "/articles/upholsterers-pricing-guide-valerie-hayes",
+  "uk-foam-material-costs-2026": "/section/the-trade",
+  "finding-clients-self-employed-upholsterer": "/articles/upholsterers-pricing-guide-valerie-hayes",
+  "leather-colour-matching-guide": "/bench",
+}
+
+export const articles: Article[] = allArticles.filter((a) => !(a.slug in RETIRED))
+
+// ---------------------------------------------------------------------------
 // Home page hero. Change this one line to swap the lead item on the front page.
-// Set to the Chair Upholstery hand-measurement feature once The Crowood Press
-// have given written permission; until then it is the pricing piece, which is
-// the strongest craft-and-workshop story we own outright.
-export const HERO_SLUG = "pricing-guide-self-employed-upholsterers"
+// 1 Oct 2026: the pricing piece was retired, so the hero is the Issue 001 lead,
+// Franco Marinelli's Q and A. Candidate from 13 Oct: hand-measurement-franco-marinelli-chair-upholstery.
+export const HERO_SLUG = "franco-marinelli-qa-chair-upholstery"
 
 export const getHeroArticle = (): Article =>
   articles.find((a) => a.slug === HERO_SLUG) ?? articles.find((a) => a.featured) ?? articles[0]
 
 // Rotating hero pool (#99): curated, image-bearing, on-positioning pieces only.
 // Server always renders HERO_SLUG first (SEO, no-JS); HeroRotator advances
-// through this pool client-side on repeat visits. Retire-list pieces never
+// through this pool client-side on repeat visits. Retired pieces never
 // go in here, and nothing goes in with a date after today.
 export const HERO_POOL = [
+  "franco-marinelli-qa-chair-upholstery",
   "uk-upholstery-workforce-ons-2026",
+  "upholsterers-pricing-guide-valerie-hayes",
   "worldskills-shanghai-2026-cabinet-making-team-uk",
-  "pricing-guide-self-employed-upholsterers",
   "heritage-crafts-red-list-furniture-crafts",
-  "deep-buttoning-technique-guide",
 ]
 
 export const getHeroPoolArticles = (): Article[] =>
@@ -407,9 +452,9 @@ export const getHeroPoolArticles = (): Article[] =>
 // Three pieces that prove the value fast to a first-time visitor: one craft,
 // one piece of data nobody else in the UK publishes, one business.
 export const START_HERE_SLUGS = [
-  "deep-buttoning-technique-guide",
+  "franco-marinelli-qa-chair-upholstery",
   "upholstery-salary-report-2026",
-  "finding-clients-self-employed-upholsterer",
+  "upholsterers-pricing-guide-valerie-hayes",
 ]
 
 export const getStartHereArticles = (): Article[] =>
