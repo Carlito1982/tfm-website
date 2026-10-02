@@ -8,13 +8,20 @@ export default function HomeFeatureBoxes() {
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))", gap: 24 }}>
         <div className="tfm-callout tfm-callout--dark" style={{ display: "flex", flexDirection: "column" }}>
           <p className="tfm-callout__kicker">Issue 001</p>
-          <p className="tfm-callout__title">The first issue is on its way</p>
+          <p className="tfm-callout__title">Issue 001 is out</p>
           <p className="tfm-callout__body" style={{ flex: 1 }}>
-            A conversation with Master Upholsterer Franco Marinelli, a Bench video from a working maker, the trade news that
-            matters to a small workshop, and live jobs. Free, every fortnight.
+            A conversation with Master Upholsterer Franco Marinelli, the Festival of Upholstery preview, Valerie Hayes on
+            pricing, a Bench video from a working maker, the trade news that matters to a small workshop, and live jobs.
+            Free, every fortnight.
           </p>
           <div style={{ marginTop: 20 }}>
             <Link href="/#subscribe" className="tfm-button">Subscribe free</Link>
+            <Link
+              href="/issues/issue-001"
+              style={{ marginLeft: 20, color: "#F5F1ED", textDecoration: "underline", textUnderlineOffset: 4, fontSize: 15 }}
+            >
+              Read Issue 001
+            </Link>
           </div>
         </div>
         <div className="tfm-callout" style={{ display: "flex", flexDirection: "column" }}>

@@ -146,7 +146,7 @@ export default function HeroRotator({ pool, initial }: Props) {
                 letterSpacing: "0.06em",
               }}
             >
-              Issue 001 · Out 29 September
+              Issue 001 · Out now
             </span>
           </div>
 

@@ -146,8 +146,8 @@ export default async function HomePage() {
             marginBottom: "30px",
           }}
         >
-          A technique you can use on the next job, pay data from live UK vacancies,
-          and five sources of work that actually fill an order book.
+          A Master Upholsterer on the work beneath the fabric, what the trade is actually paying,
+          and why a full diary can hide underpricing.
         </p>
 
         <div
