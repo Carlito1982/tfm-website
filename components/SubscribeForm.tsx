@@ -60,7 +60,7 @@ export default function SubscribeForm({ variant = "hero" }: SubscribeFormProps) 
             lineHeight: 1.5,
           }}
         >
-          Check your inbox to confirm your subscription.
+          You are in. The welcome email is on its way.
         </p>
       </div>
     )
@@ -154,7 +154,7 @@ export default function SubscribeForm({ variant = "hero" }: SubscribeFormProps) 
           marginTop: "10px",
         }}
       >
-        We will email you to confirm. One click unsubscribes. See our{" "}
+        Free, every fortnight. One click unsubscribes. See our{" "}
         <Link href="/privacy" style={{ color: "#F5F1ED", textDecoration: "underline" }}>
           privacy policy
         </Link>

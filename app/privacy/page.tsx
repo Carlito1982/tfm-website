@@ -42,7 +42,7 @@ export default function PrivacyPage() {
 
         <h2 style={h2}>What we collect and why</h2>
         <p style={p}>
-          When you subscribe to the newsletter on this website we collect your email address only. It is passed to beehiiv, our newsletter service, together with a note that the sign-up came from this website. beehiiv then emails you a link to confirm, and you are not added to the list until you confirm. We use your address to send you the newsletter you asked for, and beehiiv's reports on opens and clicks to understand which parts of it readers find useful. The lawful basis is your consent, which you give by subscribing and confirming your email address, and which you can withdraw at any time using the one-click unsubscribe link at the foot of every issue.
+          When you subscribe to the newsletter on this website we collect your email address only. It is passed to beehiiv, our newsletter service, together with a note that the sign-up came from this website. beehiiv adds you to the list and sends the welcome email. We use your address to send you the newsletter you asked for, and beehiiv's reports on opens and clicks to understand which parts of it readers find useful. The lawful basis is your consent, which you give by subscribing, and which you can withdraw at any time using the one-click unsubscribe link at the foot of every issue.
         </p>
         <p style={p}>
           The website has no contact or enquiry forms. When you contact us by email, enquire about a vacancy or about advertising, or send us an event or a contribution, we keep your message and contact details for as long as needed to deal with it. The lawful basis is our legitimate interest in responding to you and running the publication.

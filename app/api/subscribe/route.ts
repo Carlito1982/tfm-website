@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 
-// Newsletter sign-up. Posts the email to Beehiiv, which sends the double opt-in confirmation.
+// Newsletter sign-up. Posts the email to Beehiiv. Single opt-in since 3 Oct 2026: the welcome email follows at once.
 // TODO(Carlos): add Cloudflare Turnstile once site and secret keys exist (verify the token here before calling Beehiiv).
 
 const MAX_EMAIL_LENGTH = 254
@@ -34,7 +34,7 @@ function clientIp(request: NextRequest): string {
   )
 }
 
-const SUCCESS = { success: true, message: "Check your inbox to confirm your subscription." }
+const SUCCESS = { success: true, message: "You are in. The welcome email is on its way." }
 
 export async function POST(request: NextRequest) {
   if (rateLimited(clientIp(request))) {
