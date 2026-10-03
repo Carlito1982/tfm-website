@@ -27,7 +27,7 @@ export default function FoundingPartnersPage() {
             Founding Partner Programme
           </h1>
           <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "15px", color: "#BDB5AA", marginTop: "12px" }}>
-            One page. Ten partners, one per category. Valid for agreements made before 31 October 2026.
+            One page. Ten partners, one per category. Valid for agreements made before 31 December 2026.
           </p>
         </div>
       </div>
@@ -45,7 +45,7 @@ export default function FoundingPartnersPage() {
           <li style={li}>A placement in every issue for twelve consecutive issues from the first issue after signing, and in the next three long-form editions: fifty words, one image, one tracked link and one promo code, labelled Advertisement at the top of the item.</li>
           <li style={li}>Category exclusivity for the term: no other company in the same category appears in the same issue.</li>
           <li style={li}>A monthly report on the first working day showing sends, opens, clicks on the partner link, enquiries received through the magazine, promo-code redemptions and cost per lead at rate-card price. The report is generated from the magazine's own tracking, not from screenshots.</li>
-          <li style={li}>A review call at week six and at week twelve.</li>
+          <li style={li}>A review call after the sixth issue and after the twelfth issue. The term ends with the twelfth issue, or twenty-six weeks after the first placement if twelve issues have not been published by then.</li>
           <li style={li}>Every invoice shows the published rate-card price for each placement and a 100% Founding Partner discount. Amount payable for the term: nil.</li>
         </ul>
 
@@ -54,16 +54,16 @@ export default function FoundingPartnersPage() {
           <li style={li}>Supply a destination web page, a promo code the partner will honour, and the fifty words and image, or approve the magazine's draft, at least three working days before the first issue.</li>
           <li style={li}>Complete a three-question return each month (enquiries received, orders attributed, approximate value). Where no return is made, the report uses the magazine's tracked data only.</li>
           <li style={li}>Send one email about The Furniture Magazine to the partner's own trade customers during the term, using wording supplied by the magazine.</li>
-          <li style={li}>Permit the magazine to name the partner as a Founding Partner and to quote the week-twelve results, subject to the partner's approval of the exact wording.</li>
+          <li style={li}>Permit the magazine to name the partner as a Founding Partner and to quote the end-of-term results, subject to the partner's approval of the exact wording.</li>
         </ul>
 
-        <h2 style={h2}>What happens at week twelve</h2>
+        <h2 style={h2}>What happens at the end of the term</h2>
         <p style={p}>
-          The week-twelve report states cost per lead at rate-card price. Where that figure beats the partner's cost per lead on any comparable channel the partner chooses to share, or the placement has produced five or more enquiries attributable through the tracked link, promo code or magazine enquiry form, the partner may continue at the founder rate below for a further twelve months. Where it has not, the arrangement ends with no charge and no obligation on either side. Nothing renews automatically and nothing is invoiced without the partner's written agreement.
+          The end-of-term report states cost per lead at rate-card price. Where that figure beats the partner's cost per lead on any comparable channel the partner chooses to share, or the placement has produced five or more enquiries attributable through the tracked link, promo code or magazine enquiry form, the partner may continue at the founder rate below for a further twelve months. Where it has not, the arrangement ends with no charge and no obligation on either side. Nothing renews automatically and nothing is invoiced without the partner's written agreement.
         </p>
         <table style={{ width: "100%", borderCollapse: "collapse", margin: "8px 0 12px" }}>
           <thead>
-            <tr><th style={th}>Placement</th><th style={th}>Published rate (current)</th><th style={th}>Founder rate after week twelve</th></tr>
+            <tr><th style={th}>Placement</th><th style={th}>Published rate (current)</th><th style={th}>Founder rate after the term</th></tr>
           </thead>
           <tbody>
             <tr><td style={td}>Partner slot, per issue</td><td style={td}>£150</td><td style={td}>£112.50 (25% below the published rate for twelve months)</td></tr>
@@ -78,7 +78,7 @@ export default function FoundingPartnersPage() {
 
         <h2 style={h2}>Second cohort</h2>
         <p style={p}>
-          Once ten Founding Partners are in place, further partners are offered the same placements and reporting at a nominal £25 per month for the twelve-week term, on the same conditions.
+          Once ten Founding Partners are in place, further partners are offered the same placements and reporting at a nominal £25 per month for the twelve-issue term, on the same conditions.
         </p>
 
         <h2 style={h2}>Standards</h2>
