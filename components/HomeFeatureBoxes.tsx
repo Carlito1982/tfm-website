@@ -18,7 +18,7 @@ export default function HomeFeatureBoxes() {
             <Link href="/#subscribe" className="tfm-button">Subscribe free</Link>
             <Link
               href="/issues/issue-001"
-              style={{ marginLeft: 20, color: "#F5F1ED", textDecoration: "underline", textUnderlineOffset: 4, fontSize: 15 }}
+              style={{ marginLeft: 20, color: "#FAF7F2", textDecoration: "underline", textUnderlineOffset: 4, fontSize: 15 }}
             >
               Read Issue 001
             </Link>

@@ -3,7 +3,7 @@ import { supabase, type SupabaseJob } from "@/lib/supabase"
 import AdPanel from "@/components/AdPanel"
 
 const INK = "#1A1A1A"
-const COPPER = "#8B7355"
+const COPPER = "#6B4423"
 const MUTED = "#6B6866"
 const BORDER = "#E2DDD8"
 const PAPER = "#FAFAF8"

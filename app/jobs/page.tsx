@@ -90,7 +90,7 @@ export default async function JobsPage() {
         dangerouslySetInnerHTML={jsonLdHtml(structuredData)}
       />
 
-      <div style={{ backgroundColor: "#F5F1ED", minHeight: "100vh" }}>
+      <div style={{ backgroundColor: "#FAF7F2", minHeight: "100vh" }}>
 
         {/* Header */}
         <section style={{ backgroundColor: "#1A1A1A", padding: "60px 28px 56px" }}>
@@ -100,7 +100,7 @@ export default async function JobsPage() {
                 fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "10px",
                 letterSpacing: "0.18em",
-                color: "#8B7355",
+                color: "#6B4423",
                 fontWeight: 700,
                 textTransform: "uppercase",
                 marginBottom: "12px",
@@ -113,7 +113,7 @@ export default async function JobsPage() {
                 fontFamily: "var(--font-playfair), Georgia, serif",
                 fontSize: "clamp(30px, 5vw, 48px)",
                 fontWeight: 700,
-                color: "#F5F1ED",
+                color: "#FAF7F2",
                 lineHeight: 1.15,
                 marginBottom: "16px",
               }}
@@ -124,7 +124,7 @@ export default async function JobsPage() {
               style={{
                 fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "15px",
-                color: "rgba(245,241,237,0.55)",
+                color: "rgba(250,247,242,0.55)",
                 lineHeight: 1.7,
                 maxWidth: "520px",
               }}
@@ -137,7 +137,7 @@ export default async function JobsPage() {
                 style={{
                   fontFamily: "var(--font-inter), sans-serif",
                   fontSize: "13px",
-                  color: "rgba(245,241,237,0.75)",
+                  color: "rgba(250,247,242,0.75)",
                   marginBottom: "10px",
                 }}
               >
@@ -250,7 +250,7 @@ export default async function JobsPage() {
                       >
                         <span
                           style={{
-                            backgroundColor: "#8B7355",
+                            backgroundColor: "#6B4423",
                             color: "#fff",
                             fontSize: "9px",
                             fontFamily: "var(--font-inter), sans-serif",
@@ -305,7 +305,7 @@ export default async function JobsPage() {
                       >
                         {[job.location, job.postcode].filter(Boolean).join(", ") ||
                           "Location on application"}
-                        &nbsp;·&nbsp;Confidential employer · <span style={{ color: "#8B7355", fontWeight: 600 }}>View full details →</span>
+                        &nbsp;·&nbsp;Confidential employer · <span style={{ color: "#6B4423", fontWeight: 600 }}>View full details →</span>
                       </p>
 
                       {/* Salary */}
@@ -314,7 +314,7 @@ export default async function JobsPage() {
                           fontFamily: "var(--font-inter), sans-serif",
                           fontSize: "15px",
                           fontWeight: 700,
-                          color: "#8B7355",
+                          color: "#6B4423",
                         }}
                       >
                         {formatSalary(job.salary_min, job.salary_max, job.pay_period)}
@@ -356,7 +356,7 @@ export default async function JobsPage() {
                         style={{
                           display: "inline-block",
                           backgroundColor: "#1A1A1A",
-                          color: "#F5F1ED",
+                          color: "#FAF7F2",
                           padding: "13px 24px",
                           fontFamily: "var(--font-inter), sans-serif",
                           fontWeight: 700,
@@ -383,7 +383,7 @@ export default async function JobsPage() {
                 fontFamily: "var(--font-playfair), Georgia, serif",
                 fontSize: "clamp(20px, 3vw, 26px)",
                 fontWeight: 700,
-                color: "#F5F1ED",
+                color: "#FAF7F2",
                 marginBottom: "12px",
               }}
             >
@@ -393,7 +393,7 @@ export default async function JobsPage() {
               style={{
                 fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "14px",
-                color: "rgba(245,241,237,0.6)",
+                color: "rgba(250,247,242,0.6)",
                 lineHeight: 1.75,
                 marginBottom: "24px",
                 maxWidth: "560px",
@@ -424,7 +424,7 @@ export default async function JobsPage() {
                   fontFamily: "var(--font-playfair), Georgia, serif",
                   fontSize: "22px",
                   fontWeight: 700,
-                  color: "#F5F1ED",
+                  color: "#FAF7F2",
                   marginBottom: "12px",
                 }}
               >
@@ -434,7 +434,7 @@ export default async function JobsPage() {
                 style={{
                   fontFamily: "var(--font-inter), sans-serif",
                   fontSize: "14px",
-                  color: "rgba(245,241,237,0.55)",
+                  color: "rgba(250,247,242,0.55)",
                   lineHeight: 1.75,
                   marginBottom: "24px",
                 }}
@@ -446,7 +446,7 @@ export default async function JobsPage() {
                 href="mailto:carlos@thetalentbranch.com?subject=Job Advertising Enquiry — The Furniture Magazine"
                 style={{
                   display: "inline-block",
-                  backgroundColor: "#8B7355",
+                  backgroundColor: "#6B4423",
                   color: "#fff",
                   padding: "12px 24px",
                   fontFamily: "var(--font-inter), sans-serif",

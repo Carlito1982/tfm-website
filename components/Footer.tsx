@@ -2,8 +2,8 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "#1A1A1A", color: "#F5F1ED", marginTop: "auto" }}>
-      <div style={{ height: "3px", backgroundColor: "#8B7355" }} />
+    <footer style={{ backgroundColor: "#1A1A1A", color: "#FAF7F2", marginTop: "auto" }}>
+      <div style={{ height: "3px", backgroundColor: "#6B4423" }} />
 
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "56px 28px 32px" }}>
         <div
@@ -21,7 +21,7 @@ export default function Footer() {
                 fontFamily: "var(--font-playfair), Georgia, serif",
                 fontSize: "18px",
                 fontWeight: 700,
-                color: "#F5F1ED",
+                color: "#FAF7F2",
                 letterSpacing: "0.04em",
                 textTransform: "uppercase",
                 lineHeight: 1,
@@ -34,7 +34,7 @@ export default function Footer() {
               style={{
                 fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "9px",
-                color: "#8B7355",
+                color: "#6B4423",
                 letterSpacing: "0.28em",
                 textTransform: "uppercase",
                 fontWeight: 600,
@@ -46,7 +46,7 @@ export default function Footer() {
             <p
               style={{
                 fontSize: "13px",
-                color: "rgba(245,241,237,0.45)",
+                color: "rgba(250,247,242,0.45)",
                 lineHeight: 1.75,
                 fontFamily: "var(--font-inter), sans-serif",
                 maxWidth: "240px",
@@ -61,7 +61,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/thefurnituremagazine"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: "#8B7355", fontSize: "12px", fontFamily: "var(--font-inter), sans-serif", fontWeight: 500 }}
+                style={{ color: "#6B4423", fontSize: "12px", fontFamily: "var(--font-inter), sans-serif", fontWeight: 500 }}
               >
                 LinkedIn
               </a>
@@ -70,7 +70,7 @@ export default function Footer() {
                 href="https://www.instagram.com/thefurnituremagazine"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: "#8B7355", fontSize: "12px", fontFamily: "var(--font-inter), sans-serif", fontWeight: 500 }}
+                style={{ color: "#6B4423", fontSize: "12px", fontFamily: "var(--font-inter), sans-serif", fontWeight: 500 }}
               >
                 Instagram
               </a>
@@ -85,7 +85,7 @@ export default function Footer() {
                 fontSize: "10px",
                 fontWeight: 700,
                 letterSpacing: "0.14em",
-                color: "#8B7355",
+                color: "#6B4423",
                 marginBottom: "18px",
                 textTransform: "uppercase",
               }}
@@ -106,7 +106,7 @@ export default function Footer() {
                 href={l.href}
                 style={{
                   display: "block",
-                  color: "rgba(245,241,237,0.50)",
+                  color: "rgba(250,247,242,0.50)",
                   fontSize: "13px",
                   fontFamily: "var(--font-inter), sans-serif",
                   marginBottom: "10px",
@@ -126,7 +126,7 @@ export default function Footer() {
                 fontSize: "10px",
                 fontWeight: 700,
                 letterSpacing: "0.14em",
-                color: "#8B7355",
+                color: "#6B4423",
                 marginBottom: "18px",
                 textTransform: "uppercase",
               }}
@@ -146,7 +146,7 @@ export default function Footer() {
                 rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 style={{
                   display: "block",
-                  color: "rgba(245,241,237,0.50)",
+                  color: "rgba(250,247,242,0.50)",
                   fontSize: "13px",
                   fontFamily: "var(--font-inter), sans-serif",
                   marginBottom: "10px",
@@ -166,7 +166,7 @@ export default function Footer() {
                 fontSize: "10px",
                 fontWeight: 700,
                 letterSpacing: "0.14em",
-                color: "#8B7355",
+                color: "#6B4423",
                 marginBottom: "18px",
                 textTransform: "uppercase",
               }}
@@ -176,7 +176,7 @@ export default function Footer() {
             <p
               style={{
                 fontSize: "13px",
-                color: "rgba(245,241,237,0.45)",
+                color: "rgba(250,247,242,0.45)",
                 lineHeight: 1.75,
                 fontFamily: "var(--font-inter), sans-serif",
                 marginBottom: "18px",
@@ -196,8 +196,8 @@ export default function Footer() {
               rel="noopener noreferrer"
               style={{
                 display: "inline-block",
-                border: "1px solid #8B7355",
-                color: "#8B7355",
+                border: "1px solid #6B4423",
+                color: "#6B4423",
                 padding: "9px 18px",
                 fontSize: "11px",
                 fontFamily: "var(--font-inter), sans-serif",
@@ -224,7 +224,7 @@ export default function Footer() {
             alignItems: "center",
           }}
         >
-          <p style={{ fontSize: "12px", color: "rgba(245,241,237,0.28)", fontFamily: "var(--font-inter), sans-serif" }}>
+          <p style={{ fontSize: "12px", color: "rgba(250,247,242,0.28)", fontFamily: "var(--font-inter), sans-serif" }}>
             &copy; {new Date().getFullYear()} The Furniture Magazine. Published by The Talent Branch Ltd.
           </p>
           <div style={{ display: "flex", gap: "20px" }}>
@@ -234,7 +234,7 @@ export default function Footer() {
                 href={href}
                 style={{
                   fontSize: "12px",
-                  color: "rgba(245,241,237,0.28)",
+                  color: "rgba(250,247,242,0.28)",
                   fontFamily: "var(--font-inter), sans-serif",
                   textDecoration: "none",
                 }}

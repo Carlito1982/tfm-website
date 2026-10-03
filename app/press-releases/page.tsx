@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 }
 
 const INK = "#1A1A1A"
-const CREAM = "#F5F1ED"
-const COPPER = "#8B7355"
+const CREAM = "#FAF7F2"
+const COPPER = "#6B4423"
 const MUTED = "#6B6866"
 
 export default function PressReleasesPage() {
@@ -34,7 +34,7 @@ export default function PressReleasesPage() {
           <h1 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 400, color: CREAM }}>
             Press releases
           </h1>
-          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "rgba(245,241,237,0.6)", marginTop: "12px", maxWidth: "640px", lineHeight: 1.6 }}>
+          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "rgba(250,247,242,0.6)", marginTop: "12px", maxWidth: "640px", lineHeight: 1.6 }}>
             Releases from trade bodies, organisations and companies in the UK furniture industry. Each one is labelled, the issuing organisation is named at the top, the meaning is unchanged and the source is linked. To send one, email editor@thefurnituremagazine.com.
           </p>
         </div>

@@ -9,8 +9,8 @@ import { isFutureDate } from "@/lib/publishDate"
 
 const INK = "#1A1A1A"
 const CHARCOAL = "#2C2C2C"
-const CREAM = "#F5F1ED"
-const COPPER = "#8B7355"
+const CREAM = "#FAF7F2"
+const COPPER = "#6B4423"
 const MUTED = "#6B6866"
 const BORDER = "#E2DDD8"
 const PAPER = "#FAFAF8"
@@ -142,11 +142,11 @@ export default async function IssuePage({ params }: Props) {
             {issue.title}
           </h1>
           {contents && (
-            <p style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "clamp(17px, 2.2vw, 22px)", fontWeight: 400, color: "rgba(245,241,237,0.85)", lineHeight: 1.4, maxWidth: "760px", marginBottom: "12px" }}>
+            <p style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "clamp(17px, 2.2vw, 22px)", fontWeight: 400, color: "rgba(250,247,242,0.85)", lineHeight: 1.4, maxWidth: "760px", marginBottom: "12px" }}>
               {contents.subject}
             </p>
           )}
-          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "13px", color: "rgba(245,241,237,0.6)" }}>
+          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "13px", color: "rgba(250,247,242,0.6)" }}>
             {issue.beehiivUrl ? `Sent ${formatDate(issue.date)}` : "Launching autumn 2026"}
             {issue.beehiivUrl && (
               <>

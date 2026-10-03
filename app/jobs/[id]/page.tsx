@@ -117,7 +117,7 @@ export default async function JobDetailPage({ params }: Props) {
         dangerouslySetInnerHTML={jsonLdHtml(structuredData)}
       />
 
-      <div style={{ backgroundColor: "#F5F1ED", minHeight: "100vh" }}>
+      <div style={{ backgroundColor: "#FAF7F2", minHeight: "100vh" }}>
 
         {/* Header */}
         <section style={{ backgroundColor: "#1A1A1A", padding: "48px 28px 40px" }}>
@@ -128,7 +128,7 @@ export default async function JobDetailPage({ params }: Props) {
                 fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "11px",
                 letterSpacing: "0.1em",
-                color: "#8B7355",
+                color: "#6B4423",
                 textDecoration: "none",
                 textTransform: "uppercase",
                 display: "inline-flex",
@@ -143,7 +143,7 @@ export default async function JobDetailPage({ params }: Props) {
             <div style={{ display: "flex", gap: "10px", alignItems: "center", marginBottom: "14px", flexWrap: "wrap" }}>
               <span
                 style={{
-                  backgroundColor: "#8B7355",
+                  backgroundColor: "#6B4423",
                   color: "#fff",
                   fontSize: "9px",
                   fontFamily: "var(--font-inter), sans-serif",
@@ -156,7 +156,7 @@ export default async function JobDetailPage({ params }: Props) {
                 {capitalise(job.job_type ?? "permanent")}
               </span>
               {job.published_at && (
-                <span style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "11px", color: "rgba(245,241,237,0.4)" }}>
+                <span style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "11px", color: "rgba(250,247,242,0.4)" }}>
                   Posted{" "}
                   {new Date(job.published_at).toLocaleDateString("en-GB", {
                     day: "numeric",
@@ -172,7 +172,7 @@ export default async function JobDetailPage({ params }: Props) {
                 fontFamily: "var(--font-playfair), Georgia, serif",
                 fontSize: "clamp(26px, 4vw, 40px)",
                 fontWeight: 700,
-                color: "#F5F1ED",
+                color: "#FAF7F2",
                 lineHeight: 1.2,
                 marginBottom: "16px",
               }}
@@ -180,10 +180,10 @@ export default async function JobDetailPage({ params }: Props) {
               {job.title}
             </h1>
 
-            <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "14px", color: "rgba(245,241,237,0.5)", marginBottom: "4px" }}>
+            <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "14px", color: "rgba(250,247,242,0.5)", marginBottom: "4px" }}>
               {location} · Confidential employer
             </p>
-            <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "18px", fontWeight: 700, color: "#8B7355" }}>
+            <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "18px", fontWeight: 700, color: "#6B4423" }}>
               {salary}
             </p>
           </div>
@@ -244,7 +244,7 @@ export default async function JobDetailPage({ params }: Props) {
                     style={{
                       display: "inline-block",
                       backgroundColor: "#1A1A1A",
-                      color: "#F5F1ED",
+                      color: "#FAF7F2",
                       padding: "13px 28px",
                       fontFamily: "var(--font-inter), sans-serif",
                       fontWeight: 700,
@@ -310,7 +310,7 @@ export default async function JobDetailPage({ params }: Props) {
                   fontWeight: 700,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
-                  color: "#8B7355",
+                  color: "#6B4423",
                   marginBottom: "16px",
                 }}
               >
@@ -320,7 +320,7 @@ export default async function JobDetailPage({ params }: Props) {
                 style={{
                   fontFamily: "var(--font-inter), sans-serif",
                   fontSize: "13px",
-                  color: "rgba(245,241,237,0.55)",
+                  color: "rgba(250,247,242,0.55)",
                   lineHeight: 1.7,
                   marginBottom: "24px",
                 }}
@@ -332,7 +332,7 @@ export default async function JobDetailPage({ params }: Props) {
                 style={{
                   display: "block",
                   textAlign: "center",
-                  backgroundColor: "#8B7355",
+                  backgroundColor: "#6B4423",
                   color: "#fff",
                   padding: "14px 20px",
                   fontFamily: "var(--font-inter), sans-serif",
@@ -351,8 +351,8 @@ export default async function JobDetailPage({ params }: Props) {
                 style={{
                   display: "block",
                   textAlign: "center",
-                  border: "1px solid rgba(245,241,237,0.2)",
-                  color: "rgba(245,241,237,0.6)",
+                  border: "1px solid rgba(250,247,242,0.2)",
+                  color: "rgba(250,247,242,0.6)",
                   padding: "12px 20px",
                   fontFamily: "var(--font-inter), sans-serif",
                   fontWeight: 600,
@@ -365,8 +365,8 @@ export default async function JobDetailPage({ params }: Props) {
                 Register with TTB
               </a>
 
-              <div style={{ marginTop: "24px", paddingTop: "20px", borderTop: "1px solid rgba(245,241,237,0.1)" }}>
-                <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "11px", color: "rgba(245,241,237,0.35)", lineHeight: 1.6 }}>
+              <div style={{ marginTop: "24px", paddingTop: "20px", borderTop: "1px solid rgba(250,247,242,0.1)" }}>
+                <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "11px", color: "rgba(250,247,242,0.35)", lineHeight: 1.6 }}>
                   Managed by The Talent Branch<br />
                   carlos@thetalentbranch.com<br />
                   Specialist furniture &amp; upholstery recruitment
@@ -382,7 +382,7 @@ export default async function JobDetailPage({ params }: Props) {
               style={{
                 fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "12px",
-                color: "#8B7355",
+                color: "#6B4423",
                 textDecoration: "none",
                 letterSpacing: "0.05em",
               }}

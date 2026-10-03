@@ -30,7 +30,7 @@ export default async function SectionPage({ params }: Props) {
   const items = getArticlesBySection(section.name)
 
   return (
-    <div style={{ backgroundColor: "#F5F1ED" }}>
+    <div style={{ backgroundColor: "#FAF7F2" }}>
       <SectionHeader kicker="Section" title={section.name} intro={section.description} />
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "48px 16px 80px" }}>
         {items.length > 0 ? (
@@ -51,7 +51,7 @@ export default async function SectionPage({ params }: Props) {
           </div>
         )}
         <p style={{ marginTop: 40, fontFamily: "var(--font-inter), sans-serif", fontSize: 14 }}>
-          <Link href="/articles" style={{ color: "#8B7355" }}>See every article</Link>
+          <Link href="/articles" style={{ color: "#6B4423" }}>See every article</Link>
         </p>
       </div>
     </div>

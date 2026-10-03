@@ -12,8 +12,8 @@ import Image from "next/image"
 // Design tokens
 const INK    = "#1A1A1A"
 const CHARCOAL = "#2C2C2C"
-const CREAM  = "#F5F1ED"
-const COPPER = "#8B7355"
+const CREAM  = "#FAF7F2"
+const COPPER = "#6B4423"
 const MUTED  = "#6B6866"
 const BORDER = "#E2DDD8"
 const SOFT   = "#FAFAF8"
@@ -23,7 +23,7 @@ const categoryColour: Record<string, string> = {
   "Craft & Technique": "#6B4C2A",
   "Salary Data":     "#1A2A3A",
   "Business Advice": "#3A2A1A",
-  "Press Release":   "#8B7355",
+  "Press Release":   "#6B4423",
   "Books":           "#4A6B5C",
 }
 
@@ -528,7 +528,7 @@ export default async function ArticlePage({ params }: Props) {
       {/* ── ARTICLE HEADER ──────────────────────────────────────── */}
       <div style={{ backgroundColor: INK, padding: "48px 24px 40px" }}>
         <div style={{ maxWidth: "780px", margin: "0 auto" }}>
-          <Link href="/articles" style={{ display: "inline-block", marginBottom: 22, fontFamily: "var(--font-inter), sans-serif", fontSize: 12, color: "rgba(245,241,237,0.7)", textDecoration: "none", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+          <Link href="/articles" style={{ display: "inline-block", marginBottom: 22, fontFamily: "var(--font-inter), sans-serif", fontSize: 12, color: "rgba(250,247,242,0.7)", textDecoration: "none", letterSpacing: "0.06em", textTransform: "uppercase" }}>
             All articles
           </Link>
           <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "20px" }}>
@@ -563,7 +563,7 @@ export default async function ArticlePage({ params }: Props) {
               fontFamily: "var(--font-playfair), Georgia, serif",
               fontSize: "clamp(28px, 4.5vw, 44px)",
               fontWeight: 700,
-              color: "#F5F1ED",
+              color: "#FAF7F2",
               lineHeight: 1.2,
               marginBottom: "20px",
             }}
