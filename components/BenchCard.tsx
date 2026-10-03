@@ -17,12 +17,12 @@ export default function BenchCard({ video, dark = false }: { video: BenchVideo; 
             style={{ objectFit: "cover" }}
           />
           <span className="bench-play" aria-hidden="true">Watch</span>
-          <span style={{ position: "absolute", left: 12, top: 12, backgroundColor: "rgba(26,26,26,0.85)", color: "#F5F1ED", fontFamily: "var(--font-inter), sans-serif", fontSize: 10, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", padding: "5px 8px" }}>
+          <span style={{ position: "absolute", left: 12, top: 12, backgroundColor: "rgba(26,26,26,0.85)", color: "#FAF7F2", fontFamily: "var(--font-inter), sans-serif", fontSize: 10, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", padding: "5px 8px" }}>
             The Bench · Video
           </span>
         </div>
         <div style={{ padding: "18px 20px 20px" }}>
-          <h3 className="card-headline" style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: 18, fontWeight: 600, lineHeight: 1.3, color: dark ? "#F5F1ED" : "#1A1A1A", marginBottom: 8 }}>
+          <h3 className="card-headline" style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: 18, fontWeight: 600, lineHeight: 1.3, color: dark ? "#FAF7F2" : "#1A1A1A", marginBottom: 8 }}>
             {video.title}
           </h3>
           <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: 13, color: "#B8977A" }}>{video.maker}</p>

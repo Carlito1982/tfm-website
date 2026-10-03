@@ -46,7 +46,7 @@ export default async function HomePage() {
   const featuredJobs: Pick<SupabaseJob, "id" | "title" | "location" | "postcode" | "salary_min" | "salary_max" | "job_type" | "published_at">[] = liveJobs ?? []
 
   return (
-    <div style={{ backgroundColor: "#F5F1ED" }}>
+    <div style={{ backgroundColor: "#FAF7F2" }}>
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
       <HeroRotator pool={getHeroPoolArticles()} initial={featured} />
@@ -73,7 +73,7 @@ export default async function HomePage() {
                 fontFamily: "var(--font-playfair), Georgia, serif",
                 fontSize: "clamp(17px, 2.2vw, 21px)",
                 fontWeight: 600,
-                color: "#F5F1ED",
+                color: "#FAF7F2",
                 lineHeight: 1.3,
                 marginBottom: "6px",
               }}
@@ -84,7 +84,7 @@ export default async function HomePage() {
               style={{
                 fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "13px",
-                color: "rgba(245,241,237,0.5)",
+                color: "rgba(250,247,242,0.5)",
               }}
             >
               Free, every fortnight. For the bench and the studio.
@@ -97,7 +97,7 @@ export default async function HomePage() {
               style={{
                 fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "11px",
-                color: "rgba(245,241,237,0.32)",
+                color: "rgba(250,247,242,0.32)",
                 marginTop: "10px",
               }}
             >
@@ -117,7 +117,7 @@ export default async function HomePage() {
               fontWeight: 600,
               letterSpacing: "0.16em",
               textTransform: "uppercase",
-              color: "#8B7355",
+              color: "#6B4423",
             }}
           >
             Start here
@@ -194,7 +194,7 @@ export default async function HomePage() {
               fontFamily: "var(--font-inter), sans-serif",
               fontSize: "12px",
               fontWeight: 600,
-              color: "#8B7355",
+              color: "#6B4423",
               letterSpacing: "0.07em",
               textTransform: "uppercase",
               textDecoration: "none",
@@ -221,8 +221,8 @@ export default async function HomePage() {
       {bench.length > 0 && (
         <section style={{ backgroundColor: "#141414", padding: "56px 28px" }}>
           <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", borderBottom: "2px solid #F5F1ED", paddingBottom: 14, marginBottom: 28 }}>
-              <h2 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "clamp(20px, 2.8vw, 26px)", fontWeight: 700, color: "#F5F1ED" }}>
+            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", borderBottom: "2px solid #FAF7F2", paddingBottom: 14, marginBottom: 28 }}>
+              <h2 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "clamp(20px, 2.8vw, 26px)", fontWeight: 700, color: "#FAF7F2" }}>
                 From the Bench
               </h2>
               <Link href="/bench" style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: 12, fontWeight: 600, color: "#B8977A", letterSpacing: "0.07em", textTransform: "uppercase", textDecoration: "none" }}>
@@ -246,7 +246,7 @@ export default async function HomePage() {
               fontFamily: "var(--font-playfair), Georgia, serif",
               fontSize: "clamp(20px, 2.5vw, 24px)",
               fontWeight: 600,
-              color: "#F5F1ED",
+              color: "#FAF7F2",
               marginBottom: "32px",
               textAlign: "center",
             }}
@@ -280,7 +280,7 @@ export default async function HomePage() {
                   style={{
                     fontFamily: "var(--font-inter), sans-serif",
                     fontSize: "13px",
-                    color: "rgba(245,241,237,0.72)",
+                    color: "rgba(250,247,242,0.72)",
                     lineHeight: 1.6,
                   }}
                 >
@@ -340,7 +340,7 @@ export default async function HomePage() {
                 justifyContent: "space-between",
                 alignItems: "baseline",
                 marginBottom: "32px",
-                borderBottom: "1px solid rgba(245,241,237,0.12)",
+                borderBottom: "1px solid rgba(250,247,242,0.12)",
                 paddingBottom: "16px",
               }}
             >
@@ -351,7 +351,7 @@ export default async function HomePage() {
                     fontSize: "10px",
                     fontWeight: 700,
                     letterSpacing: "0.16em",
-                    color: "#8B7355",
+                    color: "#6B4423",
                     textTransform: "uppercase",
                     marginBottom: "6px",
                   }}
@@ -363,7 +363,7 @@ export default async function HomePage() {
                     fontFamily: "var(--font-playfair), Georgia, serif",
                     fontSize: "clamp(20px, 3vw, 28px)",
                     fontWeight: 700,
-                    color: "#F5F1ED",
+                    color: "#FAF7F2",
                   }}
                 >
                   Live UK Vacancies
@@ -376,7 +376,7 @@ export default async function HomePage() {
                   fontSize: "11px",
                   fontWeight: 700,
                   letterSpacing: "0.08em",
-                  color: "#8B7355",
+                  color: "#6B4423",
                   textDecoration: "none",
                   textTransform: "uppercase",
                   whiteSpace: "nowrap",
@@ -386,7 +386,7 @@ export default async function HomePage() {
               </Link>
             </div>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "1px", backgroundColor: "rgba(245,241,237,0.08)" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1px", backgroundColor: "rgba(250,247,242,0.08)" }}>
               {featuredJobs.map((job) => {
                 const salary =
                   job.salary_min && job.salary_max
@@ -404,7 +404,7 @@ export default async function HomePage() {
                       gridTemplateColumns: "1fr auto",
                       gap: "20px",
                       alignItems: "center",
-                      backgroundColor: "rgba(245,241,237,0.04)",
+                      backgroundColor: "rgba(250,247,242,0.04)",
                       padding: "22px 28px",
                       textDecoration: "none",
                     }}
@@ -416,7 +416,7 @@ export default async function HomePage() {
                           fontSize: "9px",
                           fontWeight: 700,
                           letterSpacing: "0.1em",
-                          color: "#8B7355",
+                          color: "#6B4423",
                           textTransform: "uppercase",
                           display: "block",
                           marginBottom: "6px",
@@ -429,7 +429,7 @@ export default async function HomePage() {
                           fontFamily: "var(--font-playfair), Georgia, serif",
                           fontSize: "clamp(16px, 2vw, 19px)",
                           fontWeight: 700,
-                          color: "#F5F1ED",
+                          color: "#FAF7F2",
                           display: "block",
                           lineHeight: 1.25,
                         }}
@@ -442,7 +442,7 @@ export default async function HomePage() {
                         fontFamily: "var(--font-inter), sans-serif",
                         fontSize: "14px",
                         fontWeight: 700,
-                        color: "#8B7355",
+                        color: "#6B4423",
                         whiteSpace: "nowrap",
                       }}
                     >
@@ -459,7 +459,7 @@ export default async function HomePage() {
                 style={{
                   display: "inline-block",
                   border: "1.5px solid rgba(139,115,85,0.6)",
-                  color: "#8B7355",
+                  color: "#6B4423",
                   padding: "11px 28px",
                   fontFamily: "var(--font-inter), sans-serif",
                   fontWeight: 700,
@@ -490,7 +490,7 @@ export default async function HomePage() {
               fontFamily: "var(--font-inter), sans-serif",
               fontSize: "10px",
               fontWeight: 700,
-              color: "#8B7355",
+              color: "#6B4423",
               letterSpacing: "0.16em",
               textTransform: "uppercase",
               marginBottom: "18px",
@@ -529,7 +529,7 @@ export default async function HomePage() {
               href="/#subscribe"
               style={{
                 backgroundColor: "#1A1A1A",
-                color: "#F5F1ED",
+                color: "#FAF7F2",
                 padding: "13px 32px",
                 fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "12px",

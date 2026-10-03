@@ -6,8 +6,8 @@ import SideRail from "@/components/SideRail"
 
 const INK = "#1A1A1A"
 const CHARCOAL = "#2C2C2C"
-const CREAM = "#F5F1ED"
-const COPPER = "#8B7355"
+const CREAM = "#FAF7F2"
+const COPPER = "#6B4423"
 const MUTED = "#6B6866"
 const BORDER = "#E2DDD8"
 
@@ -70,7 +70,7 @@ export default async function BenchVideoPage({ params }: Props) {
           >
             {video.title}
           </h1>
-          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "13px", color: "rgba(245,241,237,0.6)" }}>
+          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "13px", color: "rgba(250,247,242,0.6)" }}>
             {video.maker}{video.issue ? ` · Issue ${String(video.issue).padStart(3, "0")}` : ""} · {formatDate(video.date)}
           </p>
         </div>

@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <header
       style={{
-        backgroundColor: "#F5F1ED",
+        backgroundColor: "#FAF7F2",
         borderBottom: "1px solid #E2DDD8",
         position: "sticky",
         top: 0,
@@ -57,7 +57,7 @@ export default function Navbar() {
               style={{
                 fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "9px",
-                color: "#8B7355",
+                color: "#6B4423",
                 letterSpacing: "0.28em",
                 lineHeight: 1,
                 marginTop: "4px",
@@ -95,7 +95,7 @@ export default function Navbar() {
             href="/#subscribe"
             style={{
               backgroundColor: "#1A1A1A",
-              color: "#F5F1ED",
+              color: "#FAF7F2",
               padding: "9px 20px",
               fontFamily: "var(--font-inter), sans-serif",
               fontSize: "11px",
@@ -146,7 +146,7 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               style={{
                 display: "block",
-                color: "#F5F1ED",
+                color: "#FAF7F2",
                 fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "15px",
                 padding: "12px 0",
@@ -162,7 +162,7 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
             style={{
               display: "block",
-              backgroundColor: "#8B7355",
+              backgroundColor: "#6B4423",
               color: "#fff",
               padding: "13px 20px",
               marginTop: "20px",

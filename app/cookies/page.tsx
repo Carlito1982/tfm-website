@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 }
 
 const GREEN  = "#1A1A1A"
-const CREAM  = "#F5F1ED"
-const COPPER = "#8B7355"
+const CREAM  = "#FAF7F2"
+const COPPER = "#6B4423"
 const BLACK  = "#1A1A1A"
 
 const h2: React.CSSProperties = { fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "22px", color: BLACK, margin: "36px 0 12px" }

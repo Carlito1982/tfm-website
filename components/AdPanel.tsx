@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const INK = "#1A1A1A"
 const CHARCOAL = "#2C2C2C"
-const COPPER = "#8B7355"
+const COPPER = "#6B4423"
 const MUTED = "#6B6866"
 const BORDER = "#E2DDD8"
 const PAPER = "#FAFAF8"

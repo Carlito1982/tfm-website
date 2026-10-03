@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 }
 
 const GREEN  = "#1A1A1A"
-const CREAM  = "#F5F1ED"
-const COPPER = "#8B7355"
+const CREAM  = "#FAF7F2"
+const COPPER = "#6B4423"
 const BLACK  = "#1A1A1A"
 const BORDER = "#E2DDD8"
 
@@ -18,7 +18,7 @@ const categoryColour: Record<string, string> = {
   "Craft & Technique":   "#6B4C2A",
   "Industry News":       "#1A2A3A",
   "Business Advice":     "#3A2A1A",
-  "Press Release":       "#8B7355",
+  "Press Release":       "#6B4423",
   "Books":               "#4A6B5C",
 }
 

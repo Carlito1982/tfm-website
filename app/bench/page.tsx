@@ -16,7 +16,7 @@ export default function BenchIndexPage() {
   const videos = getBenchVideos()
   const guides = getArticlesBySection("The Bench")
   return (
-    <div style={{ backgroundColor: "#F5F1ED" }}>
+    <div style={{ backgroundColor: "#FAF7F2" }}>
       <SectionHeader
         kicker="The Bench"
         title="Technique, tools and materials"

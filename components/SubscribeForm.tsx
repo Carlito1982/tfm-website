@@ -48,7 +48,7 @@ export default function SubscribeForm({ variant = "hero" }: SubscribeFormProps) 
       <div
         style={{
           padding: "14px 20px",
-          backgroundColor: isFooter ? "rgba(74,107,92,0.15)" : "rgba(245,241,237,0.12)",
+          backgroundColor: isFooter ? "rgba(74,107,92,0.15)" : "rgba(250,247,242,0.12)",
           borderLeft: "3px solid #4A6B5C",
         }}
       >
@@ -56,7 +56,7 @@ export default function SubscribeForm({ variant = "hero" }: SubscribeFormProps) 
           style={{
             fontFamily: "var(--font-inter), sans-serif",
             fontSize: "14px",
-            color: isFooter ? "#1A1A1A" : "#F5F1ED",
+            color: isFooter ? "#1A1A1A" : "#FAF7F2",
             lineHeight: 1.5,
           }}
         >
@@ -106,7 +106,7 @@ export default function SubscribeForm({ variant = "hero" }: SubscribeFormProps) 
             border: "none",
             outline: "none",
             backgroundColor: isFooter ? "#fff" : "rgba(255,255,255,0.12)",
-            color: isFooter ? "#1A1A1A" : "#F5F1ED",
+            color: isFooter ? "#1A1A1A" : "#FAF7F2",
             opacity: status === "loading" ? 0.6 : 1,
           }}
         />
@@ -114,7 +114,7 @@ export default function SubscribeForm({ variant = "hero" }: SubscribeFormProps) 
           type="submit"
           disabled={status === "loading"}
           style={{
-            backgroundColor: status === "loading" ? "#6B6B5A" : "#8B7355",
+            backgroundColor: status === "loading" ? "#6B6B5A" : "#6B4423",
             color: "#fff",
             padding: "13px 24px",
             border: "none",
@@ -149,13 +149,13 @@ export default function SubscribeForm({ variant = "hero" }: SubscribeFormProps) 
           fontFamily: "var(--font-inter), sans-serif",
           fontSize: "12px",
           // Both variants currently sit on the dark #2C2C2C subscribe bar on the home page, so light text.
-          color: "rgba(245,241,237,0.7)",
+          color: "rgba(250,247,242,0.7)",
           lineHeight: 1.5,
           marginTop: "10px",
         }}
       >
         We will email you to confirm. One click unsubscribes. See our{" "}
-        <Link href="/privacy" style={{ color: "#F5F1ED", textDecoration: "underline" }}>
+        <Link href="/privacy" style={{ color: "#FAF7F2", textDecoration: "underline" }}>
           privacy policy
         </Link>
         .

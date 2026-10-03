@@ -126,7 +126,7 @@ export default function HeroRotator({ pool, initial }: Props) {
           <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
             <span
               style={{
-                backgroundColor: "#8B7355",
+                backgroundColor: "#6B4423",
                 color: "#fff",
                 fontSize: "10px",
                 fontWeight: 700,
@@ -140,7 +140,7 @@ export default function HeroRotator({ pool, initial }: Props) {
             </span>
             <span
               style={{
-                color: "rgba(245,241,237,0.6)",
+                color: "rgba(250,247,242,0.6)",
                 fontSize: "11px",
                 fontFamily: "var(--font-inter), sans-serif",
                 letterSpacing: "0.06em",
@@ -168,7 +168,7 @@ export default function HeroRotator({ pool, initial }: Props) {
             style={{
               fontFamily: "var(--font-inter), sans-serif",
               fontSize: "clamp(14px, 1.6vw, 16px)",
-              color: "rgba(245,241,237,0.78)",
+              color: "rgba(250,247,242,0.78)",
               lineHeight: 1.65,
               maxWidth: "500px",
               marginBottom: "28px",
@@ -183,8 +183,8 @@ export default function HeroRotator({ pool, initial }: Props) {
               display: "inline-flex",
               alignItems: "center",
               gap: "6px",
-              border: "1.5px solid rgba(245,241,237,0.7)",
-              color: "#F5F1ED",
+              border: "1.5px solid rgba(250,247,242,0.7)",
+              color: "#FAF7F2",
               padding: "10px 24px",
               fontFamily: "var(--font-inter), sans-serif",
               fontSize: "12px",

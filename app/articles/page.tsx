@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function ArticlesIndexPage() {
   const all = getPublishedArticles()
   return (
-    <div style={{ backgroundColor: "#F5F1ED" }}>
+    <div style={{ backgroundColor: "#FAF7F2" }}>
       <SectionHeader
         kicker="Archive"
         title="All articles"

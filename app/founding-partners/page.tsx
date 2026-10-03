@@ -6,8 +6,8 @@ export const metadata: Metadata = {
 }
 
 const INK    = "#1A1A1A"
-const CREAM  = "#F5F1ED"
-const COPPER = "#8B7355"
+const CREAM  = "#FAF7F2"
+const COPPER = "#6B4423"
 
 const h2: React.CSSProperties = { fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "22px", color: INK, margin: "36px 0 12px" }
 const p: React.CSSProperties = { fontFamily: "var(--font-inter), sans-serif", fontSize: "15px", color: "#333", lineHeight: 1.75, marginBottom: "14px" }

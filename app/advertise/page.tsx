@@ -6,8 +6,8 @@ export const metadata: Metadata = {
 }
 
 const GREEN  = "#1A1A1A"
-const CREAM  = "#F5F1ED"
-const COPPER = "#8B7355"
+const CREAM  = "#FAF7F2"
+const COPPER = "#6B4423"
 const BLACK  = "#1A1A1A"
 const BORDER = "#E2DDD8"
 
@@ -92,7 +92,7 @@ export default function AdvertisePage() {
         <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px", color: "#555", marginBottom: "40px" }}>
           All packages include placement across newsletter, website and LinkedIn unless otherwise stated.
           Custom packages available on request. Until 31 October 2026, ten suppliers, one per category, can join the{" "}
-          <a href="/founding-partners" style={{ color: "#8B7355", textDecoration: "underline" }}>Founding Partner Programme</a>: twelve issues and three long-form editions at no charge in exchange for tracked results.
+          <a href="/founding-partners" style={{ color: "#6B4423", textDecoration: "underline" }}>Founding Partner Programme</a>: twelve issues and three long-form editions at no charge in exchange for tracked results.
         </p>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(260px, 100%), 1fr))", gap: "1px", backgroundColor: BORDER }}>
